@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WEB_KHACHSAN_MVC.Models.LOAIPHONG>
+
+@{
+    ViewBag.Title = "ListLoaiPhong";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LOẠI PHÒNG</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateLoaiPhong")
+</p>
+<style>
+    table, th , td{
+        border: 1px solid black;
+    }
+</style>
+<table class="table">
+    <tr>
+        <th>
+            Tên Loại phòng
+        </th>
+        <th>
+            Giá Thuê
+        </th>
+        <th>
+            Chức năng
+        </th>
+    </tr>
+
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENLOAIPHONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GIATHUE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditLoaiPhong", new { maLoaiPhong=item.MALOAIPHONG }) |
+            @Html.ActionLink("Delete", "DeleteLoaiPhong", new { maLoaiPhong = item.MALOAIPHONG })
+        </td>
+    </tr>
+}
+
+</table>

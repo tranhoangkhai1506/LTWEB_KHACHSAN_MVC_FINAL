@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WEB_KHACHSAN_MVC.Models.PHONG>
+
+@{
+    ViewBag.Title = "ViewPhong";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table class="table">
+    <tr>
+        <th> Mã Phòng</th>
+        <th> Tên Phòng</th>
+        <th> Hình </th>
+        <th> Số Người Tối Đa</th>
+        <th> Tình Trạng </th>
+        <th> Mã Loại Phòng</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.MAPHONG)</td>
+            <td>@Html.DisplayFor(modelItem => item.TENPHONG)</td>
+            <td><img class="img-fluid" src="@item.HINH" width="200" alt=""></td>
+            <td>@Html.DisplayFor(modelItem => item.SONGUOITOIDA)</td>
+            <td>@Html.DisplayFor(modelItem => item.TINHTRANG)</td>
+            <td>@Html.DisplayFor(modelItem => item.MALOAIPHONG)</td>
+            <td>
+                @Html.ActionLink("Book Now", "Detail", new { id = item.MAPHONG })
+            </td>
+        </tr>
+    }
+</table>
