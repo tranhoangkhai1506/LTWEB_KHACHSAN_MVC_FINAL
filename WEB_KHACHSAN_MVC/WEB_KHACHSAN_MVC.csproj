@@ -119,11 +119,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrator\DichVuHuyController.cs" />
+    <Compile Include="Administrator\HoaDonQuangController.cs" />
     <Compile Include="Administrator\KhachHangController.cs" />
+    <Compile Include="Administrator\KhachHangQuangController.cs" />
     <Compile Include="Administrator\LoaiDichVuHuyController.cs" />
     <Compile Include="Administrator\LoaiPhongHuyController.cs" />
     <Compile Include="Administrator\NhanVienHuyController.cs" />
     <Compile Include="Administrator\PhanQuyenHuyController.cs" />
+    <Compile Include="Administrator\PhieuDatPhongQuangController.cs" />
     <Compile Include="Administrator\PhongHuyController.cs" />
     <Compile Include="Administrator\TaiKhoanHuyController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -376,6 +379,18 @@
     <Content Include="Views\TaiKhoanHuy\CreateTaiKhoan.cshtml" />
     <Content Include="Views\TaiKhoanHuy\EditTaiKhoan.cshtml" />
     <Content Include="Views\TaiKhoanHuy\DeleteTaiKhoan.cshtml" />
+    <Content Include="Views\KhachHangQuang\Create.cshtml" />
+    <Content Include="Views\KhachHangQuang\Delete.cshtml" />
+    <Content Include="Views\KhachHangQuang\Edit.cshtml" />
+    <Content Include="Views\KhachHangQuang\Index.cshtml" />
+    <Content Include="Views\HoaDonQuang\Create.cshtml" />
+    <Content Include="Views\HoaDonQuang\Delete.cshtml" />
+    <Content Include="Views\HoaDonQuang\Edit.cshtml" />
+    <Content Include="Views\HoaDonQuang\Index.cshtml" />
+    <Content Include="Views\PhieuDatPhongQuang\Create.cshtml" />
+    <Content Include="Views\PhieuDatPhongQuang\Delete.cshtml" />
+    <Content Include="Views\PhieuDatPhongQuang\Edit.cshtml" />
+    <Content Include="Views\PhieuDatPhongQuang\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

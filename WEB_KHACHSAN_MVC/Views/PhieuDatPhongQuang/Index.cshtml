@@ -1,0 +1,70 @@
+﻿@model IEnumerable<WEB_KHACHSAN_MVC.Models.PHIEUDATPHONG>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">Thông Tin Phiếu Đặt Phòng</h2>
+
+<div style="text-align:center">
+    @Html.ActionLink("Thêm Phiếu Đặt Phòng", "Create")
+</div>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SONGUOI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYNHANPHONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYTRADUKIEN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIENCOC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAPHONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MANHANVIEN)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SONGUOI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYNHANPHONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYTRADUKIEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIENCOC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAPHONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAKH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MANHANVIEN)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MAPHIEUDATPHONG }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MAPHIEUDATPHONG })
+        </td>
+    </tr>
+}
+
+</table>

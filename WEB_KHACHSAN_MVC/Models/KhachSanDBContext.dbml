@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYKHACHSAN_WEB" Class="KhachSanDBContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-M1CIIM24\SQLEXPRESS;Initial Catalog=QUANLYKHACHSAN_WEB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QUANLYKHACHSAN_WEBConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DICHVU" Member="DICHVUs">
     <Type Name="DICHVU">
       <Column Name="MADICHVU" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -11,6 +10,16 @@
       <Association Name="LOAIDICHVU_DICHVU" Member="LOAIDICHVU" ThisKey="MALOAIDICHVU" OtherKey="MALOAIDICHVU" Type="LOAIDICHVU" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
+  <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
+    <Type Name="KHACHHANG">
+      <Column Name="MAKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TENKH" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CCCD" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DT" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Association Name="KHACHHANG_PHIEUDATPHONG" Member="PHIEUDATPHONGs" ThisKey="MAKH" OtherKey="MAKH" Type="PHIEUDATPHONG" />
+    </Type>
+  </Table>
   <Table Name="dbo.HOADON" Member="HOADONs">
     <Type Name="HOADON">
       <Column Name="MAHOADON" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -20,16 +29,6 @@
       <Column Name="MANHANVIEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="NHANVIEN_HOADON" Member="NHANVIEN" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
       <Association Name="PHIEUDATPHONG_HOADON" Member="PHIEUDATPHONG" ThisKey="MAPHIEUDATPHONG" OtherKey="MAPHIEUDATPHONG" Type="PHIEUDATPHONG" IsForeignKey="true" DeleteRule="CASCADE" />
-    </Type>
-  </Table>
-  <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
-    <Type Name="KHACHHANG">
-      <Column Name="MAKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TENKH" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="CCCD" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="DT" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
-      <Association Name="KHACHHANG_PHIEUDATPHONG" Member="PHIEUDATPHONGs" ThisKey="MAKH" OtherKey="MAKH" Type="PHIEUDATPHONG" />
     </Type>
   </Table>
   <Table Name="dbo.LOAIDICHVU" Member="LOAIDICHVUs">
