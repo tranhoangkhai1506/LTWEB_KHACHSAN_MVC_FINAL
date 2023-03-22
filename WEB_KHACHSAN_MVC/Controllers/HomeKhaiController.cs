@@ -15,11 +15,5 @@ namespace WEB_KHACHSAN_MVC.Controllers
         {
             return View();
         }
-
-        public ActionResult Test()
-        {
-            var list_Phong = from all in data.PHONGs select all;
-            return View(list_Phong);
-        }
     }
 }

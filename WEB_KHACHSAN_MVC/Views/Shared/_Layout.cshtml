@@ -74,36 +74,33 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <p class="nav-item nav-link"> @Html.ActionLink("HOME", "Index", "HomeKhai") </p>
-                                <p class="nav-item nav-link"> @Html.ActionLink("ABOUT", "Index", "AboutKhai") </p>
-                                <p class="nav-item nav-link"> @Html.ActionLink("SERVICE", "Index", "ServiceHuy") </p>
-                                <p class="nav-item nav-link"> @Html.ActionLink("ROOMS", "Index", "RoomQuang") </p>
-                                <p class="nav-item nav-link"> @Html.ActionLink("CONTACT", "Index", "ContactHuy") </p>
+                                <a href="@Url.Action("Index", "HomeKhai")" class="nav-item nav-link">HOME</a>
+                                <a href="@Url.Action("Index", "RoomQuang")" class="nav-item nav-link">ROOMS</a>
+                                <a href="@Url.Action("Index", "BookingQuang")" class="nav-item nav-link">BOOKING</a>
+                                <a href="@Url.Action("Index", "ContactHuy")" class="nav-item nav-link">CONTACT</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">PAGES</a>
                                     <div class="dropdown-menu rounded-0 m-0">
-                                        <p class="dropdown-item"> @Html.ActionLink("Booking", "Index", "BookingQuang") </p>
-                                        <p class="dropdown-item"> @Html.ActionLink("Our Team", "Index", "OurTeamDinh") </p>
-
-                                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                        <a href="@Url.Action("Index", "AboutKhai")" class="dropdown-item">About Us</a>
+                                        <a href="@Url.Action("Index", "ServiceHuy")" class="dropdown-item">Service</a>
+                                        <a href="@Url.Action("Index", "ContactHuy")" class="dropdown-item">Contact Us</a>
+                                        <a href="@Url.Action("Index", "TestimonialDinh")" class="dropdown-item">Testimonial</a>
+                                        <a href="@Url.Action("Index", "OurTeamDinh")" class="dropdown-item">Our Teams</a>
                                     </div>
                                 </div>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">ADMINISTRATOR</a>
                                     <div class="dropdown-menu rounded-0 m-0">
-                                        <p class="dropdown-item"> @Html.ActionLink("Booking", "Index", "BookingQuang") </p>
-                                        <p class="dropdown-item"> @Html.ActionLink("Our Team", "Index", "OurTeamDinh") </p>
-                                        <p class="dropdown-item"> @Html.ActionLink("Khach Hang", "Index", "KhachHangQuang") </p>
-                                        <p class="dropdown-item"> @Html.ActionLink("Hoa Don", "Index", "HoaDonQuang") </p>
-                                        <p class="dropdown-item"> @Html.ActionLink("Phieu dat Phong", "Index", "PhieuDatPhongQuang") </p>
-                                        <p class="dropdown-item"> @Html.ActionLink("QL_LoaiPhong", "ListLoaiPhong", "LoaiPhongHuy") </p>
-                                        <p class="dropdown-item"> @Html.ActionLink("QL_Phong", "ListPhong", "PhongHuy") </p>
-                                        <p class="dropdown-item"> @Html.ActionLink("QL_LoaiDichVu", "ListLoaiDichVu", "LoaiDichVuHuy") </p>
-                                        <p class="dropdown-item"> @Html.ActionLink("QL_DichVu", "ListDichVu", "DichVuHuy") </p>
-                                        <p class="dropdown-item"> @Html.ActionLink("QL_NhanVien", "ListNhanVien", "NhanVienHuy") </p>
-                                        <p class="dropdown-item"> @Html.ActionLink("QL_PhanQuyen", "ListPhanQuyen", "PhanQuyenHuy") </p>
-                                        <p class="dropdown-item"> @Html.ActionLink("QL_TaiKhoan", "ListTaiKhoan", "TaiKhoanHuy") </p>
-                                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                        <a href="@Url.Action("ListPhanQuyen", "PhanQuyenHuy")" class="dropdown-item">PHÂN QUYỀN</a>
+                                        <a href="@Url.Action("ListTaiKhoan", "TaiKhoanHuy")" class="dropdown-item">QUẢN LÝ TÀI KHOẢN</a>
+                                        <a href="@Url.Action("ListNhanVien", "NhanVienHuy")" class="dropdown-item">QUẢN LÝ NHÂN VIÊN</a>
+                                        <a href="@Url.Action("Index", "KhachHangQuang")" class="dropdown-item">KHÁCH HÀNG</a>
+                                        <a href="@Url.Action("Index", "HoaDonQuang")" class="dropdown-item">HÓA ĐƠN</a>
+                                        <a href="@Url.Action("Index", "PhieuDatPhongQuang")" class="dropdown-item">PHIẾU ĐẶT PHÒNG</a>
+                                        <a href="@Url.Action("ListLoaiPhong", "LoaiPhongHuy")" class="dropdown-item">LOẠI PHÒNG</a>
+                                        <a href="@Url.Action("ListPhong", "PhongHuy")" class="dropdown-item">QUẢN LÝ PHÒNG</a>
+                                        <a href="@Url.Action("ListLoaiDichVu", "LoaiDichVuHuy")" class="dropdown-item">LOẠI DỊCH VỤ</a>
+                                        <a href="@Url.Action("ListDichVu", "DichVuHuy")" class="dropdown-item">QUẢN LÝ DỊCH VỤ</a>
                                     </div>
                                 </div>
                             </div>
@@ -124,9 +121,9 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-4">
                     <div class="bg-primary rounded p-4">
-                        <a href="index.html"><h1 class="text-white text-uppercase mb-3">LOUTUS</h1></a>
+                        <a href="@Url.Action("Index", "HomeKhai")"><h1 class="text-white text-uppercase mb-3">LOUTUS</h1></a>
                         <p class="text-white mb-0">
-                            <a class="text-dark fw-medium" href="https://htmlcodex.com/hotel-html-template-pro">Your Satisfaction is our happiness!Thank you used our service.</a>
+                            <a class="text-dark fw-medium">Your Satisfaction is our happiness! Thank you used our service.</a>
                         </p>
                     </div>
                 </div>
@@ -140,11 +137,11 @@
                     <div class="row gy-5 g-4">
                         <div class="col-md-6">
                             <h6 class="section-title text-start text-primary text-uppercase mb-4">Services</h6>
-                            <a class="btn btn-link" href="">Food & Restaurant</a>
-                            <a class="btn btn-link" href="">Spa & Fitness</a>
-                            <a class="btn btn-link" href="">Sports & Gaming</a>
-                            <a class="btn btn-link" href="">Event & Party</a>
-                            <a class="btn btn-link" href="">GYM & Yoga</a>
+                            <a class="btn btn-link" href="@Url.Action("Index", "ServiceHuy")">Food & Restaurant</a>
+                            <a class="btn btn-link" href="@Url.Action("Index", "ServiceHuy")">Spa & Fitness</a>
+                            <a class="btn btn-link" href="@Url.Action("Index", "ServiceHuy")">Sports & Gaming</a>
+                            <a class="btn btn-link" href="@Url.Action("Index", "ServiceHuy")">Event & Party</a>
+                            <a class="btn btn-link" href="@Url.Action("Index", "ServiceHuy")">GYM & Yoga</a>
                         </div>
                     </div>
                 </div>

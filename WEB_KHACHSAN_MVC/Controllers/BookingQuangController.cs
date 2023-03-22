@@ -42,7 +42,70 @@ namespace WEB_KHACHSAN_MVC.Controllers
             }
             return View(listPhongSapDuocTra);
         }
-
-
+        public ActionResult TaoPhieuDatPhong()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult TaoPhieuDatPhong(FormCollection collection, PHIEUDATPHONG pd)
+        {
+            var C_songuoi = collection["SONGUOI"];
+            var C_ngaynhanphong = collection["NGAYNHANPHONG"];
+            var C_ngaytradukien = collection["NGAYTRADUKIEN"];
+            var E_tiencoc = collection["TIENCOC"];
+            if (string.IsNullOrEmpty(E_tiencoc))
+            {
+                ViewData["Error"] = "Don't empty!";
+            }
+            else
+            {
+                KHACHHANG khachhang = context.KHACHHANGs.Where(p => p.CCCD == long.Parse(cccdKhachHang_Booking)).FirstOrDefault();
+                if (khachhang != null)
+                {
+                    pd.SONGUOI = int.Parse(C_songuoi);
+                    pd.NGAYNHANPHONG = Convert.ToDateTime(C_ngaynhanphong);
+                    pd.NGAYTRADUKIEN = Convert.ToDateTime(C_ngaytradukien);
+                    pd.MAPHONG = maPhongBooking;
+                    pd.MAKH = khachhang.MAKH;
+                    pd.MANHANVIEN = 1;
+                    pd.TIENCOC = decimal.Parse(E_tiencoc);
+                    context.PHIEUDATPHONGs.InsertOnSubmit(pd);
+                    context.SubmitChanges();
+                    return RedirectToAction("Index"); 
+                }
+            }
+            return this.TaoPhieuDatPhong();
+        }
+        public static int maPhongBooking;
+        public ActionResult ThemKhachHang(int MaPhong)
+        {
+            maPhongBooking = MaPhong;
+            return View();
+        }
+        public static string cccdKhachHang_Booking;
+        [HttpPost]    
+        public ActionResult ThemKhachHang(FormCollection collection, KHACHHANG kh)
+        {
+            var E_TenKhachHang = collection["TENKH"];
+            var E_CCCD = collection["CCCD"];
+            var E_email = collection["EMAIL"];
+            var E_SDT = collection["DT"];
+            if (string.IsNullOrEmpty(E_TenKhachHang))
+            {
+                ViewData["Error"] = "Don't empty!";
+            }
+            else
+            {
+                cccdKhachHang_Booking = E_CCCD;
+                kh.TENKH = E_TenKhachHang;
+                kh.CCCD = int.Parse(E_CCCD);
+                kh.EMAIL = E_email;
+                kh.DT = E_SDT;
+                context.KHACHHANGs.InsertOnSubmit(kh);
+                context.SubmitChanges();
+                return RedirectToAction("TaoPhieuDatPhong");
+            }
+            return this.ThemKhachHang(maPhongBooking);
+        }
     }
 }

@@ -13,8 +13,7 @@ namespace WEB_KHACHSAN_MVC.Controllers
         KhachSanDBContextDataContext kh = new KhachSanDBContextDataContext();
         public ActionResult Index()
         {
-            var list_Phong = from all in kh.PHONGs select all;
-            return View(list_Phong);
+            return View();
         }
     }
 }
