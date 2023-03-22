@@ -42,5 +42,7 @@ namespace WEB_KHACHSAN_MVC.Controllers
             }
             return View(listPhongSapDuocTra);
         }
+
+
     }
 }

@@ -38,8 +38,8 @@ namespace WEB_KHACHSAN_MVC.Administrator
             else
             {
                 pd.SONGUOI = int.Parse(C_songuoi);
-                pd.NGAYNHANPHONG = DateTime.Parse(C_ngaynhanphong);
-                pd.NGAYTRADUKIEN = DateTime.Parse(C_ngaytradukien);
+                pd.NGAYNHANPHONG = Convert.ToDateTime(C_ngaynhanphong);
+                pd.NGAYTRADUKIEN = Convert.ToDateTime(C_ngaytradukien);
                 pd.MAPHONG = int.Parse(C_maphong);
                 pd.MAKH = int.Parse(C_makh);
                 pd.MANHANVIEN = int.Parse(C_manhanvien);
@@ -74,8 +74,8 @@ namespace WEB_KHACHSAN_MVC.Administrator
             else
             {
                 pdp.SONGUOI = int.Parse(E_songuoi); ;
-                pdp.NGAYNHANPHONG = DateTime.Parse(E_ngaynhanphong);
-                pdp.NGAYTRADUKIEN = DateTime.Parse(E_ngaytradukien);
+                pdp.NGAYNHANPHONG = Convert.ToDateTime(E_ngaynhanphong);
+                pdp.NGAYTRADUKIEN = Convert.ToDateTime(E_ngaytradukien);
                 pdp.MAPHONG = int.Parse(E_maphong);
                 pdp.MAKH = int.Parse(E_makh);
                 pdp.MANHANVIEN = int.Parse(E_manhanvien);
