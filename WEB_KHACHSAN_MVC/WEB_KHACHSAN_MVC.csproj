@@ -120,7 +120,6 @@
   <ItemGroup>
     <Compile Include="Administrator\DichVuHuyController.cs" />
     <Compile Include="Administrator\HoaDonQuangController.cs" />
-    <Compile Include="Administrator\KhachHangController.cs" />
     <Compile Include="Administrator\KhachHangQuangController.cs" />
     <Compile Include="Administrator\LoaiDichVuHuyController.cs" />
     <Compile Include="Administrator\LoaiPhongHuyController.cs" />
@@ -349,7 +348,6 @@
     <Content Include="Views\RoomQuang\Index.cshtml" />
     <Content Include="Views\ContactHuy\Index.cshtml" />
     <Content Include="Views\AboutKhai\Index.cshtml" />
-    <Content Include="Views\KhachHang\Index.cshtml" />
     <Content Include="Views\RoomQuang\ViewPhong.cshtml" />
     <Content Include="Views\LoaiPhongHuy\ListLoaiPhong.cshtml" />
     <Content Include="Views\LoaiPhongHuy\CreateLoaiPhong.cshtml" />
@@ -391,6 +389,7 @@
     <Content Include="Views\PhieuDatPhongQuang\Delete.cshtml" />
     <Content Include="Views\PhieuDatPhongQuang\Edit.cshtml" />
     <Content Include="Views\PhieuDatPhongQuang\Index.cshtml" />
+    <Content Include="Views\BookingQuang\Booking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
