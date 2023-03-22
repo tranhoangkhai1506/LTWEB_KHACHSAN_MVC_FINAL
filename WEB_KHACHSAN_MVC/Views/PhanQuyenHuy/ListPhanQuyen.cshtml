@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WEB_KHACHSAN_MVC.Models.PHANQUYEN>
+
+@{
+    ViewBag.Title = "ListPhanQuyen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LIST PHÂN QUYỀN</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreatePhanQuyen")
+</p>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+<table class="table" style="text-align:center">
+    <tr>
+        <th>
+            Tên phân quyền
+        </th>
+        <th>
+            Quyền hạn
+        </th>
+        <th>
+            Chức năng
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENPHANQUYEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QUYENHAN)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditPhanQuyen", new { maPhanQuyen=item.MAPHANQUYEN }) |
+            @Html.ActionLink("Delete", "DeletePhanQuyen", new { maPhanQuyen = item.MAPHANQUYEN })
+        </td>
+    </tr>
+}
+
+</table>

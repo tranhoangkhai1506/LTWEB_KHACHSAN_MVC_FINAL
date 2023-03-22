@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WEB_KHACHSAN_MVC.Models.TAIKHOAN>
+
+@{
+    ViewBag.Title = "ListTaiKhoan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LIST TÀI KHOẢN</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateTaiKhoan")
+</p>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+<table class="table" style="text-align:center">
+    <tr>
+        <th>
+            Tên đăng nhập
+        </th>
+        <th>
+            Mật khẩu
+        </th>
+        <th>
+            Mã nhân viên
+        </th>
+        <th>
+            Mã phân quyên
+        </th>
+        <th>
+            Chức năng
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENDANGNHAP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MATKHAU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MANHANVIEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAPHANQUYEN)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditTaiKhoan", new { tenDangNhap = item.TENDANGNHAP }) |
+            @Html.ActionLink("Delete", "DeleteTaiKhoan", new { tenDangNhap = item.TENDANGNHAP })
+        </td>
+    </tr>
+}
+
+</table>

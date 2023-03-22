@@ -1,0 +1,55 @@
+﻿@model WEB_KHACHSAN_MVC.Models.TAIKHOAN
+
+@{
+    ViewBag.Title = "DeleteTaiKhoan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DeleteTaiKhoan</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TAIKHOAN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên đăng nhập
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TENDANGNHAP)
+        </dd>
+        <dt>
+            Mật khẩu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MATKHAU)
+        </dd>
+
+        <dt>
+            Mã nhân viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MANHANVIEN)
+        </dd>
+
+        <dt>
+            Mã phân quyền
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAPHANQUYEN)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "ListTaiKhoan")
+        </div>
+    }
+</div>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<WEB_KHACHSAN_MVC.Models.NHANVIEN>
+
+@{
+    ViewBag.Title = "ListNhanVien";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LIST NHÂN VIÊN</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateNhanVien")
+</p>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+<table class="table" style="text-align:center">
+    <tr>
+        <th>
+            Tên nhân viên
+        </th>
+        <th>
+            Nhân viên
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Căn cước công dân
+        </th>
+        <th>
+            Chức vụ
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Chức năng
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENNHANVIEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NAMSINH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CCCD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CHUCVU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DIACHI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DT)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditNhanVien", new { maNhanVien=item.MANHANVIEN }) |
+            @Html.ActionLink("Delete", "DeleteNhanVien", new { maNhanVien=item.MANHANVIEN })
+        </td>
+    </tr>
+}
+
+</table>

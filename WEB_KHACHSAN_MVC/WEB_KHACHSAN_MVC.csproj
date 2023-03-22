@@ -122,7 +122,10 @@
     <Compile Include="Administrator\KhachHangController.cs" />
     <Compile Include="Administrator\LoaiDichVuHuyController.cs" />
     <Compile Include="Administrator\LoaiPhongHuyController.cs" />
+    <Compile Include="Administrator\NhanVienHuyController.cs" />
+    <Compile Include="Administrator\PhanQuyenHuyController.cs" />
     <Compile Include="Administrator\PhongHuyController.cs" />
+    <Compile Include="Administrator\TaiKhoanHuyController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -361,6 +364,18 @@
     <Content Include="Views\DichVuHuy\CreateDichVu.cshtml" />
     <Content Include="Views\DichVuHuy\EditDichVu.cshtml" />
     <Content Include="Views\DichVuHuy\DeleteDichVu.cshtml" />
+    <Content Include="Views\NhanVienHuy\ListNhanVien.cshtml" />
+    <Content Include="Views\NhanVienHuy\CreateNhanVien.cshtml" />
+    <Content Include="Views\NhanVienHuy\EditNhanVien.cshtml" />
+    <Content Include="Views\NhanVienHuy\DeleteNhanVien.cshtml" />
+    <Content Include="Views\PhanQuyenHuy\ListPhanQuyen.cshtml" />
+    <Content Include="Views\PhanQuyenHuy\CreatePhanQuyen.cshtml" />
+    <Content Include="Views\PhanQuyenHuy\EditPhanQuyen.cshtml" />
+    <Content Include="Views\PhanQuyenHuy\DeletePhanQuyen.cshtml" />
+    <Content Include="Views\TaiKhoanHuy\ListTaiKhoan.cshtml" />
+    <Content Include="Views\TaiKhoanHuy\CreateTaiKhoan.cshtml" />
+    <Content Include="Views\TaiKhoanHuy\EditTaiKhoan.cshtml" />
+    <Content Include="Views\TaiKhoanHuy\DeleteTaiKhoan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
