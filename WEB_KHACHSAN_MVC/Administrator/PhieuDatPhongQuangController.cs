@@ -30,7 +30,7 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var C_makh = collection["MAKH"];
             var C_manhanvien = collection["MANHANVIEN"];
 
-            var E_maloaidichvu = collection["TIENCOC"];
+            var E_tiencoc = collection["TIENCOC"];
             if (string.IsNullOrEmpty(C_maphong))
             {
                 ViewData["Error"] = "Don't empty!";
@@ -38,11 +38,12 @@ namespace WEB_KHACHSAN_MVC.Administrator
             else
             {
                 pd.SONGUOI = int.Parse(C_songuoi);
-                pd.NGAYNHANPHONG = Convert.ToDateTime(C_ngaynhanphong);
-                pd.NGAYTRADUKIEN = Convert.ToDateTime(C_ngaytradukien);
+                pd.NGAYNHANPHONG = DateTime.Parse(C_ngaynhanphong);
+                pd.NGAYTRADUKIEN = DateTime.Parse(C_ngaytradukien);
                 pd.MAPHONG = int.Parse(C_maphong);
                 pd.MAKH = int.Parse(C_makh);
                 pd.MANHANVIEN = int.Parse(C_manhanvien);
+                pd.TIENCOC = decimal.Parse(E_tiencoc);
                 data.PHIEUDATPHONGs.InsertOnSubmit(pd);
                 data.SubmitChanges();
                 return RedirectToAction("Index");
@@ -65,6 +66,7 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var E_maphong = collection["MAPHONG"];
             var E_makh = collection["MAKH"];
             var E_manhanvien = collection["MANHANVIEN"];
+            var E_tiencoc = collection["TIENCOC"];
             if (string.IsNullOrEmpty(E_maphong))
             {
                 ViewData["Error"] = "Don't empty!";
@@ -72,11 +74,12 @@ namespace WEB_KHACHSAN_MVC.Administrator
             else
             {
                 pdp.SONGUOI = int.Parse(E_songuoi); ;
-                pdp.NGAYNHANPHONG = Convert.ToDateTime(E_ngaynhanphong);
-                pdp.NGAYTRADUKIEN = Convert.ToDateTime(E_ngaytradukien);
+                pdp.NGAYNHANPHONG = DateTime.Parse(E_ngaynhanphong);
+                pdp.NGAYTRADUKIEN = DateTime.Parse(E_ngaytradukien);
                 pdp.MAPHONG = int.Parse(E_maphong);
                 pdp.MAKH = int.Parse(E_makh);
                 pdp.MANHANVIEN = int.Parse(E_manhanvien);
+                pdp.TIENCOC = decimal.Parse(E_tiencoc);
                 UpdateModel(pdp);
                 data.SubmitChanges();
                 return RedirectToAction("Index");

@@ -22,23 +22,23 @@ namespace WEB_KHACHSAN_MVC.Administrator
             return View();
         }
         [HttpPost]
-        public ActionResult Create(FormCollection collection, DICHVU dv)
+        public ActionResult Create(FormCollection collection, KHACHHANG kh)
         {
-            var E_tendichvu = collection["TENDICHVU"];
-            var E_donvitinh = collection["DONVITINH"];
-            var E_giathue = collection["GIATHUEDICHVU"];
-            var E_maloaidichvu = collection["MALOAIDICHVU"];
-            if (string.IsNullOrEmpty(E_tendichvu))
+            var E_TenKhachHang= collection["TENKH"];
+            var E_CCCD = collection["CCCD"];
+            var E_email = collection["EMAIL"];
+            var E_SDT = collection["DT"];
+            if (string.IsNullOrEmpty(E_TenKhachHang))
             {
                 ViewData["Error"] = "Don't empty!";
             }
             else
             {
-                dv.TENDICHVU = E_tendichvu;
-                dv.DONVITINH = E_donvitinh;
-                dv.GIATHUEDICHVU = decimal.Parse(E_giathue);
-                dv.MALOAIDICHVU = int.Parse(E_maloaidichvu);
-                data.DICHVUs.InsertOnSubmit(dv);
+                kh.TENKH = E_TenKhachHang;
+                kh.CCCD = int.Parse(E_CCCD);
+                kh.EMAIL = E_email;
+                kh.DT = E_SDT;
+                data.KHACHHANGs.InsertOnSubmit(kh);
                 data.SubmitChanges();
                 return RedirectToAction("Index");
             }
