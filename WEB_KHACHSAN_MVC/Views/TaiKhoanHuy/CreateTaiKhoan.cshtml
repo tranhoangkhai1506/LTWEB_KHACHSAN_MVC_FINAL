@@ -27,6 +27,7 @@
         <div class="col-md-10">
             @Html.EditorFor(model => model.MATKHAU, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.MATKHAU, "", new { @class = "text-danger" })
+            <h6 style="color: red">@ViewData["ChuoiMatKhauSai"]</h6>
         </div>
     </div>
 

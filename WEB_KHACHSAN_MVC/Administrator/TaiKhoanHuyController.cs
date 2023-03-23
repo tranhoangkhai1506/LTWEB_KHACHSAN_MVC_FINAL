@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using WEB_KHACHSAN_MVC.Models;
@@ -27,9 +28,14 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var E_matkhau = collection["MATKHAU"];
             var E_manhanvien = collection["MANHANVIEN"];
             var E_maphanquyen = collection["MAPHANQUYEN"];
+            string ketquaMatKhau = "";
             if (string.IsNullOrEmpty(E_tendangnhap))
             {
                 ViewData["Error"] = "Don't empty!";
+            }
+            else if (kiemTraMatKhauDauVao(E_matkhau, out ketquaMatKhau) == false)
+            {
+                ViewData["ChuoiMatKhauSai"] = ketquaMatKhau;
             }
             else
             {
@@ -57,9 +63,14 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var E_matkhau = collection["MATKHAU"];
             var E_manhanvien = collection["MANHANVIEN"];
             var E_maphanquyen = collection["MAPHANQUYEN"];
+            string ketquaMatKhau = "";
             if (string.IsNullOrEmpty(E_tendangnhap))
             {
                 ViewData["Error"] = "Don't empty!";
+            }
+            else if (kiemTraMatKhauDauVao(E_matkhau, out ketquaMatKhau) == false)
+            {
+                ViewData["ChuoiMatKhauSai"] = ketquaMatKhau;
             }
             else
             {
@@ -87,5 +98,52 @@ namespace WEB_KHACHSAN_MVC.Administrator
             return RedirectToAction("ListTaiKhoan");
         }
 
+        private bool kiemTraMatKhauDauVao(string matKhau, out string ketQua)
+        {
+            var input = matKhau;
+            ketQua = string.Empty;
+
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new Exception("Password should not be empty");
+            }
+
+            var hasNumber = new Regex(@"[0-9]+");
+            var hasUpperChar = new Regex(@"[A-Z]+");
+            var hasMiniMaxChars = new Regex(@".{6,8}");
+            var hasLowerChar = new Regex(@"[a-z]+");
+            var hasSymbols = new Regex(@"[!@#$%^&*()_+=\[{\]};:<>|./?,-]");
+
+            if (!hasLowerChar.IsMatch(input))
+            {
+                ketQua = "Mật khẩu phải có một kí tự chữ cái thường";
+                return false;
+            }
+            else if (!hasUpperChar.IsMatch(input))
+            {
+                ketQua = "Mật khẩu phải có một kí tự chữ cái hoa";
+                return false;
+            }
+            else if (!hasMiniMaxChars.IsMatch(input))
+            {
+                ketQua = "Mật khẩu phải có ít nhất 8 kí tự đến 15 kí tự";
+                return false;
+            }
+            else if (!hasNumber.IsMatch(input))
+            {
+                ketQua = "Mật khẩu phải có một kí tự số";
+                return false;
+            }
+
+            else if (!hasSymbols.IsMatch(input))
+            {
+                ketQua = "Mật khẩu phải có một kí tự đặc biệt";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

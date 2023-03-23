@@ -188,6 +188,7 @@
     <Content Include="img\carousel-2.jpg" />
     <Content Include="img\background-home-1.jpg" />
     <Content Include="img\background-home-2.jpg" />
+    <Content Include="img\video.jpg" />
     <Content Include="img\room-1.jpg" />
     <Content Include="img\room-2.jpg" />
     <Content Include="img\room-3.jpg" />
@@ -202,7 +203,6 @@
     <Content Include="img\testimonial-2.jpg" />
     <Content Include="img\testimonial-3.jpg" />
     <Content Include="img\testimonial-4.jpg" />
-    <Content Include="img\video.jpg" />
     <Content Include="js\main.js" />
     <Content Include="lib\animate\animate.css" />
     <Content Include="lib\animate\animate.min.css" />
