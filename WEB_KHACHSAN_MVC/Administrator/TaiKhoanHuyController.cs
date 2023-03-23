@@ -44,13 +44,13 @@ namespace WEB_KHACHSAN_MVC.Administrator
             return this.CreateTaiKhoan();
         }
 
-        public ActionResult EditTaiKhoan(String tenDangNhap)
+        public ActionResult EditTaiKhoan(string tenDangNhap)
         {
             var db = context.TAIKHOANs.First(m => m.TENDANGNHAP == tenDangNhap);
             return View(db);
         }
         [HttpPost]
-        public ActionResult EditTaiKhoan(String tenDangNhap, FormCollection collection)
+        public ActionResult EditTaiKhoan(string tenDangNhap, FormCollection collection)
         {
             TAIKHOAN db = context.TAIKHOANs.FirstOrDefault(p => p.TENDANGNHAP == tenDangNhap);
             var E_tendangnhap = collection["TENDANGNHAP"];
@@ -74,13 +74,13 @@ namespace WEB_KHACHSAN_MVC.Administrator
             return this.EditTaiKhoan(tenDangNhap);
         }
 
-        public ActionResult DeleteTaiKhoan(String tenDangNhap)
+        public ActionResult DeleteTaiKhoan(string tenDangNhap)
         {
             var dbDelete = context.TAIKHOANs.First(m => m.TENDANGNHAP == tenDangNhap);
             return View(dbDelete);
         }
         [HttpPost]
-        public ActionResult DeleteTaiKhoan(String tenDangNhap, FormCollection collection)
+        public ActionResult DeleteTaiKhoan(string tenDangNhap, FormCollection collection)
         {
             var dbDelete = context.TAIKHOANs.Where(m => m.TENDANGNHAP == tenDangNhap).First();
             context.TAIKHOANs.DeleteOnSubmit(dbDelete);

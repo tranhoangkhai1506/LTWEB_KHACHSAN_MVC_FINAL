@@ -2,30 +2,23 @@
 
 @{
     ViewBag.Title = "ListPhanQuyen";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>LIST PHÂN QUYỀN</h2>
+<h2>ListPhanQuyen</h2>
 
 <p>
     @Html.ActionLink("Create New", "CreatePhanQuyen")
 </p>
-<style>
-    table, th, td {
-        border: 1px solid black;
-    }
-</style>
-<table class="table" style="text-align:center">
+<table class="table">
     <tr>
         <th>
-            Tên phân quyền
+            @Html.DisplayNameFor(model => model.TENPHANQUYEN)
         </th>
         <th>
-            Quyền hạn
+            @Html.DisplayNameFor(model => model.QUYENHAN)
         </th>
-        <th>
-            Chức năng
-        </th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -37,7 +30,8 @@
             @Html.DisplayFor(modelItem => item.QUYENHAN)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditPhanQuyen", new { maPhanQuyen=item.MAPHANQUYEN }) |
+            @Html.ActionLink("Edit", "EditPhanQuyen", new { maPhanQuyen = item.MAPHANQUYEN }) |
+            @Html.ActionLink("Details", "Details", new { maPhanQuyen = item.MAPHANQUYEN }) |
             @Html.ActionLink("Delete", "DeletePhanQuyen", new { maPhanQuyen = item.MAPHANQUYEN })
         </td>
     </tr>

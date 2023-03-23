@@ -2,47 +2,36 @@
 
 @{
     ViewBag.Title = "ListPhong";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>LIST ROOMS</h2>
+<h2>ListPhong</h2>
 
 <p>
     @Html.ActionLink("Create New", "CreatePhong")
 </p>
-<style>
-    table, th, td {
-        border: 1px solid black;
-    }
-</style>
-<table class="table" style="text-align:center">
+<table class="table">
     <tr>
         <th>
-            Mã phòng
+            @Html.DisplayNameFor(model => model.TENPHONG)
         </th>
         <th>
-            Tên phòng
+            @Html.DisplayNameFor(model => model.SONGUOITOIDA)
         </th>
         <th>
-            Số người tối đa
+            @Html.DisplayNameFor(model => model.TINHTRANG)
         </th>
         <th>
-            Tình trạng
+            @Html.DisplayNameFor(model => model.HINH)
         </th>
         <th>
-            Hình
+            @Html.DisplayNameFor(model => model.MALOAIPHONG)
         </th>
-        <th>
-            Mã loại phòng
-        </th>
-        <th>Chức năng</th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MAPHONG)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.TENPHONG)
         </td>
@@ -60,6 +49,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "EditPhong", new { maPhong = item.MAPHONG }) |
+            @Html.ActionLink("Details", "Details", new { maPhong = item.MAPHONG }) |
             @Html.ActionLink("Delete", "DeletePhong", new { maPhong = item.MAPHONG })
         </td>
     </tr>

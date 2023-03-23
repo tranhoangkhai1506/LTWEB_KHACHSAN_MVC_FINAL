@@ -2,32 +2,27 @@
 
 @{
     ViewBag.Title = "ListDichVu";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>List Dịch Vụ</h2>
+<h2>ListDichVu</h2>
 
 <p>
     @Html.ActionLink("Create New", "CreateDichVu")
 </p>
-<style>
-    table, th, td {
-        border: 1px solid black;
-    }
-</style>
-<table class="table" style="text-align:center">
+<table class="table">
     <tr>
         <th>
-            Tên dịch vụ
+            @Html.DisplayNameFor(model => model.TENDICHVU)
         </th>
         <th>
-            Đơn vị tính
+            @Html.DisplayNameFor(model => model.DONVITINH)
         </th>
         <th>
-            Giá thuê
+            @Html.DisplayNameFor(model => model.GIATHUEDICHVU)
         </th>
         <th>
-            Mã loại dịch vụ
+            @Html.DisplayNameFor(model => model.MALOAIDICHVU)
         </th>
         <th></th>
     </tr>
@@ -47,8 +42,9 @@
             @Html.DisplayFor(modelItem => item.MALOAIDICHVU)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditDichVu", new { maDichVu=item.MADICHVU }) |
-            @Html.ActionLink("Delete", "DeleteDichVu", new { maDichVu=item.MADICHVU })
+            @Html.ActionLink("Edit", "EditDichVu", new { maDichVu = item.MADICHVU }) |
+            @Html.ActionLink("Details", "Details", new { maDichVu = item.MADICHVU }) |
+            @Html.ActionLink("Delete", "DeleteDichVu", new { maDichVu = item.MADICHVU })
         </td>
     </tr>
 }

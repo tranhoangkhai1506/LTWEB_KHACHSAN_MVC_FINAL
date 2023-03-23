@@ -2,45 +2,38 @@
 
 @{
     ViewBag.Title = "ListNhanVien";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>LIST NHÂN VIÊN</h2>
+<h2>ListNhanVien</h2>
 
 <p>
     @Html.ActionLink("Create New", "CreateNhanVien")
 </p>
-<style>
-    table, th, td {
-        border: 1px solid black;
-    }
-</style>
-<table class="table" style="text-align:center">
+<table class="table">
     <tr>
         <th>
-            Tên nhân viên
+            @Html.DisplayNameFor(model => model.TENNHANVIEN)
         </th>
         <th>
-            Nhân viên
+            @Html.DisplayNameFor(model => model.NAMSINH)
         </th>
         <th>
-            Email
+            @Html.DisplayNameFor(model => model.EMAIL)
         </th>
         <th>
-            Căn cước công dân
+            @Html.DisplayNameFor(model => model.CCCD)
         </th>
         <th>
-            Chức vụ
+            @Html.DisplayNameFor(model => model.CHUCVU)
         </th>
         <th>
-            Địa chỉ
+            @Html.DisplayNameFor(model => model.DIACHI)
         </th>
         <th>
-            Số điện thoại
+            @Html.DisplayNameFor(model => model.DT)
         </th>
-        <th>
-            Chức năng
-        </th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -67,8 +60,9 @@
             @Html.DisplayFor(modelItem => item.DT)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditNhanVien", new { maNhanVien=item.MANHANVIEN }) |
-            @Html.ActionLink("Delete", "DeleteNhanVien", new { maNhanVien=item.MANHANVIEN })
+            @Html.ActionLink("Edit", "EditNhanVien", new { maNhanVien = item.MANHANVIEN }) |
+            @Html.ActionLink("Details", "Details", new { maNhanVien = item.MANHANVIEN }) |
+            @Html.ActionLink("Delete", "DeleteNhanVien", new { maNhanVien = item.MANHANVIEN })
         </td>
     </tr>
 }

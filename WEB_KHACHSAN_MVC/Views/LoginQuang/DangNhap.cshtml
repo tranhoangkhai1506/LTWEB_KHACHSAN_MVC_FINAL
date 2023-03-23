@@ -1,0 +1,44 @@
+﻿@model WEB_KHACHSAN_MVC.Models.TAIKHOAN
+
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>ĐĂNG NHẬP</h4>
+        <hr />
+        <div class="form-group">
+            <h5>Tài Khoản</h5>
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.TENDANGNHAP, new { htmlAttributes = new { @class = "form-control", @type = "text" } })
+                @Html.ValidationMessageFor(model => model.TENDANGNHAP, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @Html.ValidationSummary(true, "ViewBag", new { @class = "text-danger" })
+        <div class="form-group">
+            <h5>Mật Khẩu</h5>
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.MATKHAU, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                @Html.ValidationMessageFor(model => model.MATKHAU, "", new { @class = "text-danger" })
+                @ViewBag.ThongBao
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Đăng Nhập" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

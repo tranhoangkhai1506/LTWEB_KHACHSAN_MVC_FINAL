@@ -2,16 +2,18 @@
 
 @{
     ViewBag.Title = "DeleteDichVu";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
+<h2>DeleteDichVu</h2>
 
-<h3 style="text-align:center">Are you sure you want to delete this?</h3>
-<div style="text-align:center">
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DICHVU</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Tên dịch vụ
+            @Html.DisplayNameFor(model => model.TENDICHVU)
         </dt>
 
         <dd>
@@ -19,7 +21,7 @@
         </dd>
 
         <dt>
-            Đơn vị tính
+            @Html.DisplayNameFor(model => model.DONVITINH)
         </dt>
 
         <dd>
@@ -27,7 +29,7 @@
         </dd>
 
         <dt>
-            Giá thuê dịch vụ
+            @Html.DisplayNameFor(model => model.GIATHUEDICHVU)
         </dt>
 
         <dd>
@@ -35,7 +37,7 @@
         </dd>
 
         <dt>
-            Mã loại dịch vụ
+            @Html.DisplayNameFor(model => model.MALOAIDICHVU)
         </dt>
 
         <dd>

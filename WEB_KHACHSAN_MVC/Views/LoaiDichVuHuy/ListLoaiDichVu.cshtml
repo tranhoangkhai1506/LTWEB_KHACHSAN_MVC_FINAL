@@ -2,27 +2,20 @@
 
 @{
     ViewBag.Title = "ListLoaiDichVu";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>LIST SERVICES</h2>
+<h2>ListLoaiDichVu</h2>
 
 <p>
     @Html.ActionLink("Create New", "CreateLoaiDichVu")
 </p>
-<style>
-    table, th, td {
-        border: 1px solid black;
-    }
-</style>
-<table class="table" style="text-align:center">
+<table class="table">
     <tr>
         <th>
-            Tên loại dịch vụ
+            @Html.DisplayNameFor(model => model.TENLOAIDICHVU)
         </th>
-        <th>
-            Chức năng
-        </th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -31,7 +24,8 @@
             @Html.DisplayFor(modelItem => item.TENLOAIDICHVU)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditLoaiDichVu", new { maLoaiDichVu=item.MALOAIDICHVU }) |
+            @Html.ActionLink("Edit", "EditLoaiDichVu", new { maLoaiDichVu = item.MALOAIDICHVU }) |
+            @Html.ActionLink("Details", "Details", new { maLoaiDichVu = item.MALOAIDICHVU }) |
             @Html.ActionLink("Delete", "DeleteLoaiDichVu", new { maLoaiDichVu = item.MALOAIDICHVU })
         </td>
     </tr>

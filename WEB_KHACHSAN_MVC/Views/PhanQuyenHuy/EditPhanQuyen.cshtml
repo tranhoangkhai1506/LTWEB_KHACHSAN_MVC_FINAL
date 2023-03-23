@@ -2,22 +2,23 @@
 
 @{
     ViewBag.Title = "EditPhanQuyen";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>EDIT PHÂN QUYỀN</h2>
+<h2>EditPhanQuyen</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
+        <h4>PHANQUYEN</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.MAPHANQUYEN)
 
         <div class="form-group">
-            Tên phân quyền
+            @Html.LabelFor(model => model.TENPHANQUYEN, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TENPHANQUYEN, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TENPHANQUYEN, "", new { @class = "text-danger" })
@@ -25,7 +26,7 @@
         </div>
 
         <div class="form-group">
-            Quyền hạn
+            @Html.LabelFor(model => model.QUYENHAN, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.QUYENHAN, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.QUYENHAN, "", new { @class = "text-danger" })

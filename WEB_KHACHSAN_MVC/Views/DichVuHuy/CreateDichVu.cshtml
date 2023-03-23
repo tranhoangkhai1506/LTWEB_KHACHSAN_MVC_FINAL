@@ -2,20 +2,21 @@
 
 @{
     ViewBag.Title = "CreateDichVu";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
+<h2>CreateDichVu</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>TẠO DỊCH VỤ</h4>
+        <h4>DICHVU</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            Tên dịch vụ
+            @Html.LabelFor(model => model.TENDICHVU, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TENDICHVU, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.TENDICHVU, "", new { @class = "text-danger" })
@@ -23,7 +24,7 @@
         </div>
 
         <div class="form-group">
-            Đơn vị tính
+            @Html.LabelFor(model => model.DONVITINH, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DONVITINH, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DONVITINH, "", new { @class = "text-danger" })
@@ -31,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            Giá thuê dịch vụ
+            @Html.LabelFor(model => model.GIATHUEDICHVU, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.GIATHUEDICHVU, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.GIATHUEDICHVU, "", new { @class = "text-danger" })
@@ -39,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            Mã loại dịch vụ
+            @Html.LabelFor(model => model.MALOAIDICHVU, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.MALOAIDICHVU, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MALOAIDICHVU, "", new { @class = "text-danger" })

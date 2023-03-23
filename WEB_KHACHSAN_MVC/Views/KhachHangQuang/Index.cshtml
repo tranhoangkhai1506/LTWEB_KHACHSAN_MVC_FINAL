@@ -2,15 +2,14 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2 style="text-align:center">Thông Tin Khách Hàng</h2>
+<h2>Index</h2>
 
-<div style="text-align:center">
-    @Html.ActionLink("Khách Hàng Mới", "Create")
-</div>
-<br />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
 <table class="table">
     <tr>
         <th>
@@ -44,6 +43,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MAKH }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MAKH }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.MAKH })
         </td>
     </tr>

@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "DeleteTaiKhoan";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <h2>DeleteTaiKhoan</h2>
@@ -13,13 +13,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Tên đăng nhập
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.TENDANGNHAP)
-        </dd>
-        <dt>
-            Mật khẩu
+            @Html.DisplayNameFor(model => model.MATKHAU)
         </dt>
 
         <dd>
@@ -27,7 +21,7 @@
         </dd>
 
         <dt>
-            Mã nhân viên
+            @Html.DisplayNameFor(model => model.MANHANVIEN)
         </dt>
 
         <dd>
@@ -35,7 +29,7 @@
         </dd>
 
         <dt>
-            Mã phân quyền
+            @Html.DisplayNameFor(model => model.MAPHANQUYEN)
         </dt>
 
         <dd>
