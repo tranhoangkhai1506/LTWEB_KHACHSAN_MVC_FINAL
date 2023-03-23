@@ -392,6 +392,7 @@
     <Content Include="Views\BookingQuang\TaoPhieuDatPhong.cshtml" />
     <Content Include="Views\BookingQuang\ThemKhachHang.cshtml" />
     <Content Include="Views\AboutKhai\Index.cshtml" />
+    <Content Include="Views\BookingQuang\ThongBaoKhongCoPhongTrong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

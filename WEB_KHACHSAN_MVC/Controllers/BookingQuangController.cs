@@ -24,12 +24,14 @@ namespace WEB_KHACHSAN_MVC.Controllers
             List<PHONG> listPhongSapDuocTra = new List<PHONG>();
             foreach (var phongDangDuocThue in listPhongDangDuocThue)
             {
-                foreach (var phieuDatPhongDangDuocThue in listPhieuDatPhong)
+                PHIEUDATPHONG PhieuDatPhong_Cuoi = listPhieuDatPhong.LastOrDefault(p => p.MAPHONG == phongDangDuocThue.MAPHONG);
+
+                if (PhieuDatPhong_Cuoi != null)
                 {
-                    if (phongDangDuocThue.MAPHONG == Convert.ToInt32(phieuDatPhongDangDuocThue.MAPHONG) && Convert.ToDateTime(phieuDatPhongDangDuocThue.NGAYTRADUKIEN) <= ngayNhanPhong)
+                    if (Convert.ToDateTime(PhieuDatPhong_Cuoi.NGAYTRADUKIEN) <= ngayNhanPhong)
                     {
                         listPhongSapDuocTra.Add(phongDangDuocThue);
-                    }
+                    } 
                 }
             }
             if (listPhongTrong_BinhThuong.Count() != 0)
@@ -40,8 +42,19 @@ namespace WEB_KHACHSAN_MVC.Controllers
             {
                 return View(listPhongSapDuocTra);
             }
-            return View(listPhongSapDuocTra);
+            else
+            {
+                var all_PhongTrong = context.PHONGs.Where(p => p.TINHTRANG == "Bình thường").ToList();
+                return Redirect(@Url.Action("ThongBaoKhongCoPhongTrong","BookingQuang", "all_PhongTrong"));
+            }            
         }
+
+        public ActionResult ThongBaoKhongCoPhongTrong()
+        {
+            var all_PhongTrong = context.PHONGs.Where(p => p.TINHTRANG == "Bình thường").ToList();
+            return View(all_PhongTrong);
+        }
+
         public ActionResult TaoPhieuDatPhong()
         {
             return View();
@@ -60,18 +73,24 @@ namespace WEB_KHACHSAN_MVC.Controllers
             else
             {
                 KHACHHANG khachhang = context.KHACHHANGs.Where(p => p.CCCD == long.Parse(cccdKhachHang_Booking)).FirstOrDefault();
-                if (khachhang != null)
+                PHONG phongDuocThue = context.PHONGs.Where(p => p.MAPHONG == maPhongBooking).FirstOrDefault();
+
+                if (phongDuocThue != null)
                 {
-                    pd.SONGUOI = int.Parse(C_songuoi);
-                    pd.NGAYNHANPHONG = Convert.ToDateTime(C_ngaynhanphong);
-                    pd.NGAYTRADUKIEN = Convert.ToDateTime(C_ngaytradukien);
-                    pd.MAPHONG = maPhongBooking;
-                    pd.MAKH = khachhang.MAKH;
-                    pd.MANHANVIEN = 1;
-                    pd.TIENCOC = decimal.Parse(E_tiencoc);
-                    context.PHIEUDATPHONGs.InsertOnSubmit(pd);
-                    context.SubmitChanges();
-                    return RedirectToAction("Index"); 
+                    if (khachhang != null)
+                    {
+                        pd.SONGUOI = int.Parse(C_songuoi);
+                        pd.NGAYNHANPHONG = Convert.ToDateTime(C_ngaynhanphong);
+                        pd.NGAYTRADUKIEN = Convert.ToDateTime(C_ngaytradukien);
+                        pd.MAPHONG = maPhongBooking;
+                        pd.MAKH = khachhang.MAKH;
+                        pd.MANHANVIEN = 1;
+                        pd.TIENCOC = decimal.Parse(E_tiencoc);
+                        context.PHIEUDATPHONGs.InsertOnSubmit(pd);
+                        phongDuocThue.TINHTRANG = "Đang được thuê";
+                        context.SubmitChanges();
+                        return RedirectToAction("Index");
+                    } 
                 }
             }
             return this.TaoPhieuDatPhong();

@@ -18,6 +18,9 @@
 <table class="table" style="text-align:center">
     <tr>
         <th>
+            Mã phòng
+        </th>
+        <th>
             Tên phòng
         </th>
         <th>
@@ -38,6 +41,9 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.MAPHONG)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.TENPHONG)
         </td>
         <td>
@@ -53,8 +59,8 @@
             @Html.DisplayFor(modelItem => item.MALOAIPHONG)
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditPhong", new { maPhong=item.MAPHONG }) |
-            @Html.ActionLink("Delete", "DeletePhong", new { maPhong=item.MAPHONG })
+            @Html.ActionLink("Edit", "EditPhong", new { maPhong = item.MAPHONG }) |
+            @Html.ActionLink("Delete", "DeletePhong", new { maPhong = item.MAPHONG })
         </td>
     </tr>
 }
