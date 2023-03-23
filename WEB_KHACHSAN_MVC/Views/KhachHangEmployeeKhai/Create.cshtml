@@ -2,13 +2,13 @@
 
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>KHACHHANG</h4>
         <h3>@ViewData["Error_Client"]</h3>

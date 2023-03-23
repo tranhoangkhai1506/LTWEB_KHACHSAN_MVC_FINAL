@@ -74,7 +74,6 @@ namespace WEB_KHACHSAN_MVC.Controllers
             {
                 KHACHHANG khachhang = context.KHACHHANGs.Where(p => p.CCCD == long.Parse(cccdKhachHang_Booking)).FirstOrDefault();
                 PHONG phongDuocThue = context.PHONGs.Where(p => p.MAPHONG == maPhongBooking).FirstOrDefault();
-
                 if (phongDuocThue != null)
                 {
                     if (khachhang != null)

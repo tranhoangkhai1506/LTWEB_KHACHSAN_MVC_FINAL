@@ -5,19 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using WEB_KHACHSAN_MVC.Models;
 
-namespace WEB_KHACHSAN_MVC.Administrator
+namespace WEB_KHACHSAN_MVC.Employee
 {
-    public class PhongHuyController : Controller
+    public class QuanLyPhongEmployeeKhaiController : Controller
     {
-        // GET: PhongHuy
+        // GET: QuanLyPhongKhai
         KhachSanDBContextDataContext context = new KhachSanDBContextDataContext();
-                // list phòng
+        // list phòng
         public ActionResult ListPhong()
         {
             var all_Phong = context.PHONGs.ToList();
             return View(all_Phong);
         }
-                // Tạo phòng
+        // Tạo phòng
         public ActionResult CreatePhong()
         {
             return View();
@@ -49,7 +49,7 @@ namespace WEB_KHACHSAN_MVC.Administrator
             }
             return this.CreatePhong();
         }
-                    // Sửa phòng
+        // Sửa phòng
         public ActionResult EditPhong(int maPhong)
         {
             var db = context.PHONGs.First(m => m.MAPHONG == maPhong);
@@ -80,7 +80,7 @@ namespace WEB_KHACHSAN_MVC.Administrator
             }
             return this.EditPhong(maPhong);
         }
-                                // Xóa phòng
+        // Xóa phòng
         public ActionResult DeletePhong(int maPhong)
         {
             var dbDelete = context.PHONGs.First(m => m.MAPHONG == maPhong);
@@ -94,6 +94,5 @@ namespace WEB_KHACHSAN_MVC.Administrator
             context.SubmitChanges();
             return RedirectToAction("ListPhong");
         }
-
     }
 }

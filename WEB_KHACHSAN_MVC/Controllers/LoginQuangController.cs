@@ -26,17 +26,15 @@ namespace WEB_KHACHSAN_MVC.Controllers
             if (taikhoandangnhap != null)
             {
                 ViewBag.ThongBao = "Chúc mừng đăng nhập thành công";
-                Session["TENDANGNHAP"] = taikhoandangnhap.TENDANGNHAP;
-                var valueID = Session["TENDANGNHAP"];
-                if (valueID != null)
+                if (taikhoandangnhap != null)
                 {
-                    if (valueID.ToString() == "admin")
+                    if (taikhoandangnhap.MAPHANQUYEN == 1)
                     {
                         return RedirectToAction("Index", "HomeAdminQuang");
                     }
                     else
                     {
-                        return RedirectToAction("Index", "HomeAdminQuang");
+                        return RedirectToAction("Index", "HomeEmployeeKhai");
                     }
                 }
                 else

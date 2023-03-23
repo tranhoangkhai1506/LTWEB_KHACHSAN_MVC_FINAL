@@ -1,0 +1,58 @@
+﻿@model WEB_KHACHSAN_MVC.Models.DICHVU
+
+@{
+    ViewBag.Title = "DeleteDichVu";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+<h2>DeleteDichVu</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DICHVU</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENDICHVU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENDICHVU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DONVITINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DONVITINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIATHUEDICHVU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIATHUEDICHVU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MALOAIDICHVU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MALOAIDICHVU)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "ListDichVu")
+        </div>
+    }
+</div>

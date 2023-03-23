@@ -67,7 +67,6 @@ namespace WEB_KHACHSAN_MVC.Administrator
                 db.MATKHAU = E_matkhau;
                 db.MANHANVIEN = int.Parse(E_manhanvien);
                 db.MAPHANQUYEN = int.Parse(E_maphanquyen);
-                context.TAIKHOANs.InsertOnSubmit(db);
                 context.SubmitChanges();
                 return RedirectToAction("ListTaiKhoan");
             }

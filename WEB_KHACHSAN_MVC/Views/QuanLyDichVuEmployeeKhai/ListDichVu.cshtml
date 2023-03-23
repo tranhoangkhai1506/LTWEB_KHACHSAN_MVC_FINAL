@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WEB_KHACHSAN_MVC.Models.DICHVU>
+
+@{
+    ViewBag.Title = "ListDichVu";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+<h2>ListDichVu</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateDichVu")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TENDICHVU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DONVITINH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GIATHUEDICHVU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MALOAIDICHVU)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENDICHVU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DONVITINH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIATHUEDICHVU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MALOAIDICHVU)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditDichVu", new { maDichVu = item.MADICHVU }) |
+                @Html.ActionLink("Details", "Details", new { maDichVu = item.MADICHVU }) |
+                @Html.ActionLink("Delete", "DeleteDichVu", new { maDichVu = item.MADICHVU })
+            </td>
+        </tr>
+    }
+
+</table>

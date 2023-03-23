@@ -141,6 +141,13 @@
     <Compile Include="Controllers\RoomQuangController.cs" />
     <Compile Include="Controllers\ServiceHuyController.cs" />
     <Compile Include="Controllers\TestimonialDinhController.cs" />
+    <Compile Include="Employee\HomeEmployeeKhaiController.cs" />
+    <Compile Include="Employee\KhachHangEmployeeKhaiController.cs" />
+    <Compile Include="Employee\LoaiDichVuEmployKhaiController.cs" />
+    <Compile Include="Employee\LoaiPhongEmployeeKhaiController.cs" />
+    <Compile Include="Employee\PhieuDatPhongEmployKhaiController.cs" />
+    <Compile Include="Employee\QuanLyDichVuEmployeeKhaiController.cs" />
+    <Compile Include="Employee\QuanLyPhongEmployeeKhaiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -398,9 +405,36 @@
     <Content Include="Views\TaiKhoanHuy\CreateTaiKhoan.cshtml" />
     <Content Include="Views\TaiKhoanHuy\EditTaiKhoan.cshtml" />
     <Content Include="Views\TaiKhoanHuy\DeleteTaiKhoan.cshtml" />
+    <Content Include="Views\Shared\_LayoutEmployee.cshtml" />
+    <Content Include="Views\HomeEmployeeKhai\Index.cshtml" />
+    <Content Include="Views\KhachHangEmployeeKhai\Index.cshtml" />
+    <Content Include="Views\KhachHangEmployeeKhai\Create.cshtml" />
+    <Content Include="Views\KhachHangEmployeeKhai\Edit.cshtml" />
+    <Content Include="Views\KhachHangEmployeeKhai\Delete.cshtml" />
+    <Content Include="Views\LoaiDichVuEmployKhai\ListLoaiDichVu.cshtml" />
+    <Content Include="Views\LoaiDichVuEmployKhai\CreateLoaiDichVu.cshtml" />
+    <Content Include="Views\LoaiDichVuEmployKhai\EditLoaiDichVu.cshtml" />
+    <Content Include="Views\LoaiDichVuEmployKhai\DeleteLoaiDichVu.cshtml" />
+    <Content Include="Views\LoaiPhongEmployeeKhai\ListLoaiPhong.cshtml" />
+    <Content Include="Views\LoaiPhongEmployeeKhai\CreateLoaiPhong.cshtml" />
+    <Content Include="Views\LoaiPhongEmployeeKhai\EditLoaiPhong.cshtml" />
+    <Content Include="Views\LoaiPhongEmployeeKhai\DeleteLoaiPhong.cshtml" />
+    <Content Include="Views\PhieuDatPhongEmployKhai\Index.cshtml" />
+    <Content Include="Views\PhieuDatPhongEmployKhai\Create.cshtml" />
+    <Content Include="Views\PhieuDatPhongEmployKhai\Edit.cshtml" />
+    <Content Include="Views\PhieuDatPhongEmployKhai\Delete.cshtml" />
+    <Content Include="Views\QuanLyDichVuEmployeeKhai\ListDichVu.cshtml" />
+    <Content Include="Views\QuanLyDichVuEmployeeKhai\CreateDichVu.cshtml" />
+    <Content Include="Views\QuanLyDichVuEmployeeKhai\EditDichVu.cshtml" />
+    <Content Include="Views\QuanLyDichVuEmployeeKhai\DeleteDichVu.cshtml" />
+    <Content Include="Views\QuanLyPhongEmployeeKhai\ListPhong.cshtml" />
+    <Content Include="Views\QuanLyPhongEmployeeKhai\CreatePhong.cshtml" />
+    <Content Include="Views\QuanLyPhongEmployeeKhai\EditPhong.cshtml" />
+    <Content Include="Views\QuanLyPhongEmployeeKhai\DeletePhong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\QuanLyPhongKhai\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

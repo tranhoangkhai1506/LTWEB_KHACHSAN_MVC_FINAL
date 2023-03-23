@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WEB_KHACHSAN_MVC.Models.LOAIDICHVU>
+
+@{
+    ViewBag.Title = "ListLoaiDichVu";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+<h2>ListLoaiDichVu</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateLoaiDichVu")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TENLOAIDICHVU)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENLOAIDICHVU)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditLoaiDichVu", new { maLoaiDichVu = item.MALOAIDICHVU }) |
+                @Html.ActionLink("Details", "Details", new { maLoaiDichVu = item.MALOAIDICHVU }) |
+                @Html.ActionLink("Delete", "DeleteLoaiDichVu", new { maLoaiDichVu = item.MALOAIDICHVU })
+            </td>
+        </tr>
+    }
+
+</table>

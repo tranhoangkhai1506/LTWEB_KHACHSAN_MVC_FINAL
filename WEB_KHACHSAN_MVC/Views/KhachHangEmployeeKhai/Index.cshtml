@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WEB_KHACHSAN_MVC.Models.KHACHHANG>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TENKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CCCD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DT)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CCCD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DT)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MAKH }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MAKH }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MAKH })
+            </td>
+        </tr>
+    }
+
+</table>

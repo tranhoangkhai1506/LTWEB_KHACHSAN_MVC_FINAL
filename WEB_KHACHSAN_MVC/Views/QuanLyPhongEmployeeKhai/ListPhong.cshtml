@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WEB_KHACHSAN_MVC.Models.PHONG>
+
+@{
+    ViewBag.Title = "ListPhong";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+<h2>ListPhong</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreatePhong")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TENPHONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SONGUOITOIDA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TINHTRANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HINH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MALOAIPHONG)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENPHONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SONGUOITOIDA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TINHTRANG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HINH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MALOAIPHONG)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditPhong", new { maPhong = item.MAPHONG }) |
+                @Html.ActionLink("Details", "Details", new { maPhong = item.MAPHONG }) |
+                @Html.ActionLink("Delete", "DeletePhong", new { maPhong = item.MAPHONG })
+            </td>
+        </tr>
+    }
+
+</table>

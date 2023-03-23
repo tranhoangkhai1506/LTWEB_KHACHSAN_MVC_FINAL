@@ -59,7 +59,6 @@ namespace WEB_KHACHSAN_MVC.Administrator
             {
                 db.TENPHANQUYEN = E_tenphanquyen;
                 db.QUYENHAN = E_quyenhan;
-
                 context.SubmitChanges();
                 return RedirectToAction("ListPhanQuyen");
             }

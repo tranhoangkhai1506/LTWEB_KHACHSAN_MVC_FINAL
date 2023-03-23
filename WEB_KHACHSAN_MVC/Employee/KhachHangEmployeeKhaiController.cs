@@ -5,11 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using WEB_KHACHSAN_MVC.Models;
 
-namespace WEB_KHACHSAN_MVC.Administrator
+namespace WEB_KHACHSAN_MVC.Employee
 {
-    public class KhachHangQuangController : Controller
+    public class KhachHangEmployeeKhaiController : Controller
     {
-        // GET: KhachHang
+        // GET: KhachHangEmployeeKhai
         KhachSanDBContextDataContext data = new KhachSanDBContextDataContext();
 
         public ActionResult Index()
@@ -24,7 +24,7 @@ namespace WEB_KHACHSAN_MVC.Administrator
         [HttpPost]
         public ActionResult Create(FormCollection collection, KHACHHANG kh)
         {
-            var E_TenKhachHang= collection["TENKH"];
+            var E_TenKhachHang = collection["TENKH"];
             var E_CCCD = collection["CCCD"];
             var E_email = collection["EMAIL"];
             var E_SDT = collection["DT"];
@@ -34,7 +34,7 @@ namespace WEB_KHACHSAN_MVC.Administrator
             {
                 ViewData["Error_Name"] = "Don't empty!";
             }
-            else if(kiemtraKH != null)
+            else if (kiemtraKH != null)
             {
                 ViewData["Error_Client"] = "Da co khach hang!";
             }

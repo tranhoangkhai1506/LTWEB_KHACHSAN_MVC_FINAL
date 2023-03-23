@@ -1,0 +1,66 @@
+﻿@model WEB_KHACHSAN_MVC.Models.PHONG
+
+@{
+    ViewBag.Title = "DeletePhong";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+<h2>DeletePhong</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PHONG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENPHONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENPHONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SONGUOITOIDA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SONGUOITOIDA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TINHTRANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TINHTRANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MALOAIPHONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MALOAIPHONG)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "ListPhong")
+        </div>
+    }
+</div>
