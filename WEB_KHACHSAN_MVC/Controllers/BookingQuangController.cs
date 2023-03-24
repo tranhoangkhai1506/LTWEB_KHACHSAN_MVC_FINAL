@@ -88,7 +88,7 @@ namespace WEB_KHACHSAN_MVC.Controllers
                         context.PHIEUDATPHONGs.InsertOnSubmit(pd);
                         phongDuocThue.TINHTRANG = "Đang được thuê";
                         context.SubmitChanges();
-                        return RedirectToAction("DangKyThanhCong");
+                        return RedirectToAction("Payment","VnPayQuang");
                     } 
                 }
             }
