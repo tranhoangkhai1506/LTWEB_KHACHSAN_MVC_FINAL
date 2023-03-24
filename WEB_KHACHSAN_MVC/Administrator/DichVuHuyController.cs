@@ -16,6 +16,12 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var all_listdichvu = context.DICHVUs.ToList();
             return View(all_listdichvu);
         }
+        public ActionResult DetailDichVu(int maDichVu)
+        {
+            var D_dichvu = context.DICHVUs.Where(m => m.MADICHVU == maDichVu).First();
+            return View(D_dichvu);
+        }
+
 
         public ActionResult CreateDichVu()
         {

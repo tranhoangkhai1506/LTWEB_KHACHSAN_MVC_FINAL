@@ -1,0 +1,50 @@
+﻿@model WEB_KHACHSAN_MVC.Models.DICHVU
+
+@{
+    ViewBag.Title = "DetailDichVu";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>DetailDichVu</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên dịch vụ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENDICHVU)
+        </dd>
+
+        <dt>
+            Đơn vị tính
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DONVITINH)
+        </dd>
+
+        <dt>
+            Giá thuê dịch vụ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIATHUEDICHVU)
+        </dd>
+
+        <dt>
+            Mã loại dịch vụ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MALOAIDICHVU)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditDichVu", new { maDichVu = Model.MADICHVU }) |
+    @Html.ActionLink("Back to List", "ListDichVu")
+</p>

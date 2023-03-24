@@ -1,0 +1,26 @@
+﻿@model WEB_KHACHSAN_MVC.Models.LOAIDICHVU
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên loại dịch vụ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENLOAIDICHVU)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditLoaiDichVu", new { maLoaiDichVu = Model.MALOAIDICHVU }) |
+    @Html.ActionLink("Back to List", "ListLoaiDichVu")
+</p>

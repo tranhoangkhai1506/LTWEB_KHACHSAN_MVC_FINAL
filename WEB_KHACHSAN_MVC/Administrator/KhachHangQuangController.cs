@@ -17,6 +17,11 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var list_KhachHang = from all in data.KHACHHANGs select all;
             return View(list_KhachHang);
         }
+        public ActionResult Detail(int id)
+        {
+            var D_khachhang = data.KHACHHANGs.Where(m => m.MAKH == id).First();
+            return View(D_khachhang);
+        }
         public ActionResult Create()
         {
             return View();

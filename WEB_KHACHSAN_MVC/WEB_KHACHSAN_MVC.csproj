@@ -153,8 +153,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachSanDBContext.designer.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>KhachSanDBContext.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -441,6 +441,10 @@
     <Content Include="Views\PhieuSDDVQuang\Create.cshtml" />
     <Content Include="Views\PhieuSDDVQuang\Edit.cshtml" />
     <Content Include="Views\PhieuSDDVQuang\Delete.cshtml" />
+    <Content Include="Views\DichVuHuy\DetailDichVu.cshtml" />
+    <Content Include="Views\HoaDonQuang\Detail.cshtml" />
+    <Content Include="Views\KhachHangQuang\Detail.cshtml" />
+    <Content Include="Views\LoaiDichVuHuy\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

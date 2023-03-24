@@ -16,6 +16,11 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var list_HoaDon = from all in data.HOADONs select all;
             return View(list_HoaDon);
         }
+        public ActionResult Detail(int id)
+        {
+            var D_hoadon = data.HOADONs.Where(m => m.MAHOADON == id).First();
+            return View(D_hoadon);
+        }
         public ActionResult Create()
         {
             return View();

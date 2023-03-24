@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYKHACHSAN_WEB" Class="KhachSanDBContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Table Name="dbo.DICHVU" Member="DICHVUs">
-    <Type Name="DICHVU">
-      <Column Name="MADICHVU" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TENDICHVU" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="DONVITINH" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="GIATHUEDICHVU" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="MALOAIDICHVU" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="DICHVU_PHIEUSDDV" Member="PHIEUSDDVs" ThisKey="MADICHVU" OtherKey="MADICHVU" Type="PHIEUSDDV" />
-      <Association Name="LOAIDICHVU_DICHVU" Member="LOAIDICHVU" ThisKey="MALOAIDICHVU" OtherKey="MALOAIDICHVU" Type="LOAIDICHVU" IsForeignKey="true" DeleteRule="CASCADE" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-M1CIIM24\SQLEXPRESS;Initial Catalog=QUANLYKHACHSAN_WEB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QUANLYKHACHSAN_WEBConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.HOADON" Member="HOADONs">
+    <Type Name="HOADON">
+      <Column Name="MAHOADON" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TONGTIEN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NGAYTHANHTOAN" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MAPHIEUDATPHONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MANHANVIEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="NHANVIEN_HOADON" Member="NHANVIEN" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
+      <Association Name="PHIEUDATPHONG_HOADON" Member="PHIEUDATPHONG" ThisKey="MAPHIEUDATPHONG" OtherKey="MAPHIEUDATPHONG" Type="PHIEUDATPHONG" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
@@ -20,15 +21,15 @@
       <Association Name="KHACHHANG_PHIEUDATPHONG" Member="PHIEUDATPHONGs" ThisKey="MAKH" OtherKey="MAKH" Type="PHIEUDATPHONG" />
     </Type>
   </Table>
-  <Table Name="dbo.HOADON" Member="HOADONs">
-    <Type Name="HOADON">
-      <Column Name="MAHOADON" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TONGTIEN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="NGAYTHANHTOAN" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="MAPHIEUDATPHONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MANHANVIEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="NHANVIEN_HOADON" Member="NHANVIEN" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
-      <Association Name="PHIEUDATPHONG_HOADON" Member="PHIEUDATPHONG" ThisKey="MAPHIEUDATPHONG" OtherKey="MAPHIEUDATPHONG" Type="PHIEUDATPHONG" IsForeignKey="true" DeleteRule="CASCADE" />
+  <Table Name="dbo.DICHVU" Member="DICHVUs">
+    <Type Name="DICHVU">
+      <Column Name="MADICHVU" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TENDICHVU" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DONVITINH" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="GIATHUEDICHVU" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MALOAIDICHVU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DICHVU_PHIEUSDDV" Member="PHIEUSDDVs" ThisKey="MADICHVU" OtherKey="MADICHVU" Type="PHIEUSDDV" />
+      <Association Name="LOAIDICHVU_DICHVU" Member="LOAIDICHVU" ThisKey="MALOAIDICHVU" OtherKey="MALOAIDICHVU" Type="LOAIDICHVU" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.LOAIDICHVU" Member="LOAIDICHVUs">

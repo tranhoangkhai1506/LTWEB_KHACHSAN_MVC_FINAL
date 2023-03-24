@@ -16,6 +16,11 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var all_loaidichvu = context.LOAIDICHVUs.ToList();
             return View(all_loaidichvu);
         }
+        public ActionResult Detail(int maLoaiDichVu)
+        {
+            var D_loaidichvu = context.LOAIDICHVUs.Where(m => m.MALOAIDICHVU == maLoaiDichVu).First();
+            return View(D_loaidichvu);
+        }
 
         public ActionResult CreateLoaiDichVu()
         {

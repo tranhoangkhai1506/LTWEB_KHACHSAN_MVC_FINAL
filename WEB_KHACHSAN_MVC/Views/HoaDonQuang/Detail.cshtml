@@ -1,0 +1,50 @@
+﻿@model WEB_KHACHSAN_MVC.Models.HOADON
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tổng tiền
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TONGTIEN)
+        </dd>
+
+        <dt>
+            Ngày thanh toán
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYTHANHTOAN)
+        </dd>
+
+        <dt>
+            Mã phiếu đặt phòng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAPHIEUDATPHONG)
+        </dd>
+
+        <dt>
+            Mã nhân viên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MANHANVIEN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MAHOADON }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
