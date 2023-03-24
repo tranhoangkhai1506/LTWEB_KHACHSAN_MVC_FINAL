@@ -431,6 +431,10 @@
     <Content Include="Views\QuanLyPhongEmployeeKhai\CreatePhong.cshtml" />
     <Content Include="Views\QuanLyPhongEmployeeKhai\EditPhong.cshtml" />
     <Content Include="Views\QuanLyPhongEmployeeKhai\DeletePhong.cshtml" />
+    <Content Include="Views\LoaiPhongHuy\Details.cshtml" />
+    <Content Include="Views\NhanVienHuy\Details.cshtml" />
+    <Content Include="Views\PhanQuyenHuy\Details.cshtml" />
+    <Content Include="Views\PhieuDatPhongQuang\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -16,6 +16,11 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var all_nhanvien = context.NHANVIENs.ToList();
             return View(all_nhanvien);
         }
+        public ActionResult Details(int maNhanVien)
+        {
+            var D_NhanVien = context.NHANVIENs.Where(m => Convert.ToInt32(m.MANHANVIEN) == maNhanVien).First();
+            return View(D_NhanVien);
+        }
 
         public ActionResult CreateNhanVien()
         {

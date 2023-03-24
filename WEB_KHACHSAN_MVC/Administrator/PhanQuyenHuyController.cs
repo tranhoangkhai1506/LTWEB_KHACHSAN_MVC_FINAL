@@ -16,6 +16,11 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var all_phanquyen = context.PHANQUYENs.ToList();
             return View(all_phanquyen);
         }
+        public ActionResult Details(int maPhanQuyen)
+        {
+            var D_PhanQuyen = context.PHANQUYENs.Where(m => Convert.ToInt32(m.MAPHANQUYEN) == maPhanQuyen).First();
+            return View(D_PhanQuyen);
+        }
         public ActionResult CreatePhanQuyen()
         {
             return View();

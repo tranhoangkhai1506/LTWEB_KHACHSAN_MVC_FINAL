@@ -16,6 +16,11 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var all_loaiPhong = context.LOAIPHONGs.ToList();
             return View(all_loaiPhong);
         }
+        public ActionResult Details(int maLoaiPhong)
+        {
+            var D_LoaiPhong = context.LOAIPHONGs.Where(m => Convert.ToInt32(m.MALOAIPHONG) == maLoaiPhong).First();
+            return View(D_LoaiPhong);
+        }
 
         public ActionResult CreateLoaiPhong()
         {

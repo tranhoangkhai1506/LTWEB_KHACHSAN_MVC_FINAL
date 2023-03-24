@@ -16,6 +16,11 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var listPhieuDatPhong = from all in data.PHIEUDATPHONGs select all;
             return View(listPhieuDatPhong);
         }
+        public ActionResult Details(int id)
+        {
+            var D_PhieuDatPhong = data.PHIEUDATPHONGs.Where(m => Convert.ToInt32(m.MAPHIEUDATPHONG) == id).First();
+            return View(D_PhieuDatPhong);
+        }
         public ActionResult Create()
         {
             return View();

@@ -1,0 +1,75 @@
+﻿@model WEB_KHACHSAN_MVC.Models.PHIEUDATPHONG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PHIEUDATPHONG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SONGUOI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SONGUOI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYNHANPHONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYNHANPHONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYTRADUKIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYTRADUKIEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIENCOC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIENCOC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAPHONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAPHONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAKH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MANHANVIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MANHANVIEN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MAPHIEUDATPHONG }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

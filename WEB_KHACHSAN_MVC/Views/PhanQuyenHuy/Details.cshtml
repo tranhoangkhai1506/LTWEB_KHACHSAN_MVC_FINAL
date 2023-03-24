@@ -1,0 +1,35 @@
+﻿@model WEB_KHACHSAN_MVC.Models.PHANQUYEN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PHANQUYEN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENPHANQUYEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENPHANQUYEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUYENHAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUYENHAN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MAPHANQUYEN }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
