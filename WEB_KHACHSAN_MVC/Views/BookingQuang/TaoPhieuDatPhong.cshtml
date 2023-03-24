@@ -28,6 +28,7 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NGAYNHANPHONG, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NGAYNHANPHONG, "", new { @class = "text-danger" })
+                @ViewData["NgayNhanPhong"]
             </div>
         </div>
 
@@ -36,14 +37,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.NGAYTRADUKIEN, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NGAYTRADUKIEN, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TIENCOC, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TIENCOC, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TIENCOC, "", new { @class = "text-danger" })
             </div>
         </div>
 

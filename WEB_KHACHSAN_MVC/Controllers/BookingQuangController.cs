@@ -65,10 +65,13 @@ namespace WEB_KHACHSAN_MVC.Controllers
             var C_songuoi = collection["SONGUOI"];
             var C_ngaynhanphong = collection["NGAYNHANPHONG"];
             var C_ngaytradukien = collection["NGAYTRADUKIEN"];
-            var E_tiencoc = collection["TIENCOC"];
-            if (string.IsNullOrEmpty(E_tiencoc))
+            if (int.Parse(C_songuoi) == 0)
             {
                 ViewData["Error"] = "Don't empty!";
+            }
+            else if (C_ngaynhanphong.ToString() == "")
+            {
+                ViewData["NgayNhanPhong"] = "Chac huy met moi r!";
             }
             else
             {
@@ -84,11 +87,11 @@ namespace WEB_KHACHSAN_MVC.Controllers
                         pd.MAPHONG = maPhongBooking;
                         pd.MAKH = khachhang.MAKH;
                         pd.MANHANVIEN = 1;
-                        pd.TIENCOC = decimal.Parse(E_tiencoc);
+                        pd.TIENCOC = 100000;
                         context.PHIEUDATPHONGs.InsertOnSubmit(pd);
                         phongDuocThue.TINHTRANG = "Đang được thuê";
                         context.SubmitChanges();
-                        return RedirectToAction("PaymentConfirm","VnPayQuang", E_tiencoc);
+                        return RedirectToAction("Payment","VnPayQuang");
                     } 
                 }
             }
