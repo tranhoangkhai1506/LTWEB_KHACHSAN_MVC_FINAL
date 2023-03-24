@@ -88,7 +88,7 @@ namespace WEB_KHACHSAN_MVC.Controllers
                         context.PHIEUDATPHONGs.InsertOnSubmit(pd);
                         phongDuocThue.TINHTRANG = "Đang được thuê";
                         context.SubmitChanges();
-                        return RedirectToAction("Index");
+                        return RedirectToAction("DangKyThanhCong");
                     } 
                 }
             }
@@ -124,6 +124,12 @@ namespace WEB_KHACHSAN_MVC.Controllers
                 return RedirectToAction("TaoPhieuDatPhong");
             }
             return this.ThemKhachHang(maPhongBooking);
+        }
+
+        public ActionResult DangKyThanhCong()
+        {
+           
+            return View();
         }
     }
 }

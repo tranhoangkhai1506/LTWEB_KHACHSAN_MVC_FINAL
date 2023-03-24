@@ -459,9 +459,11 @@
     <Content Include="Views\PhieuSDDVEmployeeKhai\Create.cshtml" />
     <Content Include="Views\PhieuSDDVEmployeeKhai\Edit.cshtml" />
     <Content Include="Views\PhieuSDDVEmployeeKhai\Delete.cshtml" />
+    <Content Include="Views\BookingQuang\DangKyThanhCong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\DangKyThanhCong\" />
     <Folder Include="Views\QuanLyPhongKhai\" />
   </ItemGroup>
   <ItemGroup>
