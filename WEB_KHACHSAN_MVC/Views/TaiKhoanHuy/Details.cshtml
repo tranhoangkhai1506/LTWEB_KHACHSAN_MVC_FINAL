@@ -1,0 +1,43 @@
+﻿@model WEB_KHACHSAN_MVC.Models.TAIKHOAN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TAIKHOAN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MATKHAU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MATKHAU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MANHANVIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MANHANVIEN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAPHANQUYEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAPHANQUYEN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TENDANGNHAP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -83,6 +83,11 @@ namespace WEB_KHACHSAN_MVC.Administrator
             }
             return this.EditTaiKhoan(tenDangNhap);
         }
+        public ActionResult Details(string id)
+        {
+            var D_sach = context.TAIKHOANs.Where(m => m.TENDANGNHAP == id).FirstOrDefault();
+            return View(D_sach);
+        }
 
         public ActionResult DeleteTaiKhoan(string tenDangNhap)
         {

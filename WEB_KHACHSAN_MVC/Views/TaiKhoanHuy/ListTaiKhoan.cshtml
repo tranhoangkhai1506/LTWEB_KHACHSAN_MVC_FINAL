@@ -43,7 +43,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "EditTaiKhoan", new { tenDangNhap = item.TENDANGNHAP }) |
-            @Html.ActionLink("Details", "Details", new { tenDangNhap = item.TENDANGNHAP }) |
+            @Html.ActionLink("Details", "Details", new { id = item.TENDANGNHAP }) |
             @Html.ActionLink("Delete", "DeleteTaiKhoan", new { tenDangNhap = item.TENDANGNHAP })
         </td>
     </tr>

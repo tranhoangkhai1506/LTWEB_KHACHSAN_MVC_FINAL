@@ -80,7 +80,11 @@ namespace WEB_KHACHSAN_MVC.Employee
             }
             return this.Edit(id);
         }
-
+        public ActionResult Details(int id)
+        {
+            var D_sach = data.KHACHHANGs.Where(m => m.MAKH == id).FirstOrDefault();
+            return View(D_sach);
+        }
         public ActionResult Delete(int id)
         {
             var dbDelete = data.KHACHHANGs.First(m => m.MAKH == id);

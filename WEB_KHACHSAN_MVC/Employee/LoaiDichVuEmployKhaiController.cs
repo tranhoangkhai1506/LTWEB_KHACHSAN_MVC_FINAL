@@ -64,8 +64,12 @@ namespace WEB_KHACHSAN_MVC.Employee
                 }
                 return this.EditLoaiDichVu(maLoaiDichVu);
             }
-
-            public ActionResult DeleteLoaiDichVu(int maLoaiDichVu)
+        public ActionResult DetailsLoaiDichVu(int id)
+        {
+            var D_sach = context.LOAIDICHVUs.Where(m => m.MALOAIDICHVU == id).FirstOrDefault();
+            return View(D_sach);
+        }
+        public ActionResult DeleteLoaiDichVu(int maLoaiDichVu)
             {
                 var dbDelete = context.LOAIDICHVUs.First(m => m.MALOAIDICHVU == maLoaiDichVu);
                 return View(dbDelete);

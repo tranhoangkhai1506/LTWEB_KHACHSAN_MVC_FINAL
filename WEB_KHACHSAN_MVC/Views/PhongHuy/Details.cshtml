@@ -1,0 +1,59 @@
+﻿@model WEB_KHACHSAN_MVC.Models.PHONG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PHONG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENPHONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENPHONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SONGUOITOIDA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SONGUOITOIDA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TINHTRANG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TINHTRANG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HINH)
+        </dt>
+
+        <dd>
+            <img src="@Model.HINH" width="90" height="90" alt="ERROR" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MALOAIPHONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MALOAIPHONG)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MAPHONG }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
