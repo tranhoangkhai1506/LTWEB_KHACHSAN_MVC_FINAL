@@ -1,0 +1,35 @@
+﻿@model WEB_KHACHSAN_MVC.Models.LOAIPHONG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutEmloyee.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LOAIPHONG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENLOAIPHONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENLOAIPHONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIATHUE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIATHUE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { maLoaiPhong = Model.MALOAIPHONG }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

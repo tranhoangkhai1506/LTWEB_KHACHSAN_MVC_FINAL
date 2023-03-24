@@ -88,5 +88,10 @@ namespace WEB_KHACHSAN_MVC.Employee
             context.SubmitChanges();
             return RedirectToAction("ListDichVu");
         }
+        public ActionResult DetailDichVu(int maDichVu)
+        {
+            var D_dichvu = context.DICHVUs.Where(m => m.MADICHVU == maDichVu).First();
+            return View(D_dichvu);
+        }
     }
 }

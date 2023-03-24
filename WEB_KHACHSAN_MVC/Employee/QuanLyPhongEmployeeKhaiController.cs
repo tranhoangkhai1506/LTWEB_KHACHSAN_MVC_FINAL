@@ -94,5 +94,11 @@ namespace WEB_KHACHSAN_MVC.Employee
             context.SubmitChanges();
             return RedirectToAction("ListPhong");
         }
+
+        public ActionResult Details(int id)
+        {
+            var D_sach = context.PHONGs.Where(m => m.MAPHONG == id).FirstOrDefault();
+            return View(D_sach);
+        }
     }
 }

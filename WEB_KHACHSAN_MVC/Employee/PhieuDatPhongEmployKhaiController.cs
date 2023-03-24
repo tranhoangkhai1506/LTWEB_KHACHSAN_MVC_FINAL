@@ -101,5 +101,11 @@ namespace WEB_KHACHSAN_MVC.Employee
             data.SubmitChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Details(int id)
+        {
+            var D_PhieuDatPhong = data.PHIEUDATPHONGs.Where(m => Convert.ToInt32(m.MAPHIEUDATPHONG) == id).First();
+            return View(D_PhieuDatPhong);
+        }
     }
 }

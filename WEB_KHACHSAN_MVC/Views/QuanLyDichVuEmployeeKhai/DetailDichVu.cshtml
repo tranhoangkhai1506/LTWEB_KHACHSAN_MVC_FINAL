@@ -1,0 +1,51 @@
+﻿@model WEB_KHACHSAN_MVC.Models.DICHVU
+
+@{
+    ViewBag.Title = "DetailDichVu";
+    Layout = "~/Views/Shared/_LayoutEmloyee.cshtml";
+}
+
+<h2>DetailDichVu</h2>
+
+<div>
+    <h4>DICHVU</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TENDICHVU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENDICHVU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DONVITINH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DONVITINH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIATHUEDICHVU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIATHUEDICHVU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MALOAIDICHVU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MALOAIDICHVU)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { maDichVu = Model.MADICHVU }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

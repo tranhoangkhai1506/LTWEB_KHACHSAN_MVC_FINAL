@@ -81,5 +81,11 @@ namespace WEB_KHACHSAN_MVC.Employee
             context.SubmitChanges();
             return RedirectToAction("ListLoaiPhong");
         }
+
+        public ActionResult Details(int maLoaiPhong)
+        {
+            var D_LoaiPhong = context.LOAIPHONGs.Where(m => Convert.ToInt32(m.MALOAIPHONG) == maLoaiPhong).First();
+            return View(D_LoaiPhong);
+        }
     }
 }

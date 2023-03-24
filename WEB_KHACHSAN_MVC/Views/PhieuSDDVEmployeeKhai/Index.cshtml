@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WEB_KHACHSAN_MVC.Models.PHIEUSDDV>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutEmloyee.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAYSUDUNG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MADICHVU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAPHIEUDATPHONG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MANHANVIEN)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYSUDUNG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MADICHVU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAPHIEUDATPHONG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MANHANVIEN)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MAPHIEUSDDV }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MAPHIEUSDDV }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MAPHIEUSDDV })
+        </td>
+    </tr>
+}
+
+</table>

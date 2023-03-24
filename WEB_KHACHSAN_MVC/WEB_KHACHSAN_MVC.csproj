@@ -147,6 +147,7 @@
     <Compile Include="Employee\LoaiDichVuEmployKhaiController.cs" />
     <Compile Include="Employee\LoaiPhongEmployeeKhaiController.cs" />
     <Compile Include="Employee\PhieuDatPhongEmployKhaiController.cs" />
+    <Compile Include="Employee\PhieuSDDVEmployeeKhaiController.cs" />
     <Compile Include="Employee\QuanLyDichVuEmployeeKhaiController.cs" />
     <Compile Include="Employee\QuanLyPhongEmployeeKhaiController.cs" />
     <Compile Include="Global.asax.cs">
@@ -449,6 +450,15 @@
     <Content Include="Views\TaiKhoanHuy\Details.cshtml" />
     <Content Include="Views\KhachHangEmployeeKhai\Details.cshtml" />
     <Content Include="Views\LoaiDichVuEmployKhai\DetailsLoaiDichVu.cshtml" />
+    <Content Include="Views\LoaiPhongEmployeeKhai\Details.cshtml" />
+    <Content Include="Views\PhieuDatPhongEmployKhai\Details.cshtml" />
+    <Content Include="Views\QuanLyDichVuEmployeeKhai\DetailDichVu.cshtml" />
+    <Content Include="Views\QuanLyPhongEmployeeKhai\Details.cshtml" />
+    <Content Include="Views\PhieuSDDVEmployeeKhai\Index.cshtml" />
+    <Content Include="Views\PhieuSDDVEmployeeKhai\Details.cshtml" />
+    <Content Include="Views\PhieuSDDVEmployeeKhai\Create.cshtml" />
+    <Content Include="Views\PhieuSDDVEmployeeKhai\Edit.cshtml" />
+    <Content Include="Views\PhieuSDDVEmployeeKhai\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
