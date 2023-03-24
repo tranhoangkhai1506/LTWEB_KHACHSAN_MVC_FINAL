@@ -126,6 +126,7 @@
     <Compile Include="Administrator\NhanVienHuyController.cs" />
     <Compile Include="Administrator\PhanQuyenHuyController.cs" />
     <Compile Include="Administrator\PhieuDatPhongQuangController.cs" />
+    <Compile Include="Administrator\PhieuSDDVQuangController.cs" />
     <Compile Include="Administrator\PhongHuyController.cs" />
     <Compile Include="Administrator\TaiKhoanHuyController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -435,6 +436,11 @@
     <Content Include="Views\NhanVienHuy\Details.cshtml" />
     <Content Include="Views\PhanQuyenHuy\Details.cshtml" />
     <Content Include="Views\PhieuDatPhongQuang\Details.cshtml" />
+    <Content Include="Views\PhieuSDDVQuang\Index.cshtml" />
+    <Content Include="Views\PhieuSDDVQuang\Details.cshtml" />
+    <Content Include="Views\PhieuSDDVQuang\Create.cshtml" />
+    <Content Include="Views\PhieuSDDVQuang\Edit.cshtml" />
+    <Content Include="Views\PhieuSDDVQuang\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
