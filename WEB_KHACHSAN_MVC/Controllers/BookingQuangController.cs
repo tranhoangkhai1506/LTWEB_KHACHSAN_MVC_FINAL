@@ -55,6 +55,7 @@ namespace WEB_KHACHSAN_MVC.Controllers
             return View(all_PhongTrong);
         }
 
+        
         public ActionResult TaoPhieuDatPhong()
         {
             return View();
@@ -83,6 +84,7 @@ namespace WEB_KHACHSAN_MVC.Controllers
                     {
                         pd.SONGUOI = int.Parse(C_songuoi);
                         pd.NGAYNHANPHONG = Convert.ToDateTime(C_ngaynhanphong);
+                        ngayNhanPhong = Convert.ToDateTime(pd.NGAYNHANPHONG);
                         pd.NGAYTRADUKIEN = Convert.ToDateTime(C_ngaytradukien);
                         pd.MAPHONG = maPhongBooking;
                         pd.MAKH = khachhang.MAKH;
@@ -91,13 +93,14 @@ namespace WEB_KHACHSAN_MVC.Controllers
                         context.PHIEUDATPHONGs.InsertOnSubmit(pd);
                         phongDuocThue.TINHTRANG = "Đang được thuê";
                         context.SubmitChanges();
-                        return RedirectToAction("Payment","VnPayQuang");
+                        return RedirectToAction("QuestionUseOrtherService", "BookingQuang");
                     } 
                 }
             }
             return this.TaoPhieuDatPhong();
         }
         public static int maPhongBooking;
+        public static DateTime ngayNhanPhong;
         public ActionResult ThemKhachHang(int MaPhong)
         {
             maPhongBooking = MaPhong;
@@ -131,8 +134,47 @@ namespace WEB_KHACHSAN_MVC.Controllers
 
         public ActionResult DangKyThanhCong()
         {
-           
             return View();
+        }
+
+        public ActionResult QuestionUseOrtherService()
+        {
+            return View();
+        }
+
+        public ActionResult CreateSuDungDichVu()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateSuDungDichVu(FormCollection collection, PHIEUSDDV psd)
+        {
+            KHACHHANG khachhang = context.KHACHHANGs.Where(p => p.CCCD == long.Parse(cccdKhachHang_Booking)).FirstOrDefault();
+            var C_ngaysudung = collection["NGAYSUDUNG"];
+            var C_madichvu = collection["MADICHVU"];
+            var C_manhanvien = collection["MANHANVIEN"];
+            PHIEUDATPHONG maPhieuDatPhong = new PHIEUDATPHONG();
+             if (khachhang != null)
+             {
+                maPhieuDatPhong = context.PHIEUDATPHONGs.Where(
+                p => p.MAKH == khachhang.MAKH && p.NGAYNHANPHONG == ngayNhanPhong && p.MAPHONG == maPhongBooking).FirstOrDefault();
+             }
+
+            if (string.IsNullOrEmpty(C_madichvu))
+            {
+                ViewData["Error"] = "Don't empty!";
+            }
+            else if (maPhieuDatPhong != null)
+            {
+                psd.NGAYSUDUNG = Convert.ToDateTime(C_ngaysudung);
+                psd.MADICHVU = int.Parse(C_madichvu);
+                psd.MAPHIEUDATPHONG = maPhieuDatPhong.MAPHIEUDATPHONG;
+                psd.MANHANVIEN = int.Parse(C_manhanvien);
+                context.PHIEUSDDVs.InsertOnSubmit(psd);
+                context.SubmitChanges();
+                return RedirectToAction("Payment", "VnPayQuang");
+            }
+            return this.CreateSuDungDichVu();
         }
     }
 }

@@ -1,0 +1,51 @@
+﻿@model WEB_KHACHSAN_MVC.Models.PHIEUSDDV
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PHIEUSDDV</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYSUDUNG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYSUDUNG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MADICHVU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MADICHVU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAPHIEUDATPHONG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAPHIEUDATPHONG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MANHANVIEN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MANHANVIEN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MAPHIEUSDDV }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

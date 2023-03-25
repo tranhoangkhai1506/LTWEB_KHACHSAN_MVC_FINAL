@@ -142,6 +142,7 @@
     <Compile Include="Controllers\RoomQuangController.cs" />
     <Compile Include="Controllers\ServiceHuyController.cs" />
     <Compile Include="Controllers\TestimonialDinhController.cs" />
+    <Compile Include="Controllers\UseOrtherServiceKhaiController.cs" />
     <Compile Include="Employee\HomeEmployeeKhaiController.cs" />
     <Compile Include="Employee\KhachHangEmployeeKhaiController.cs" />
     <Compile Include="Employee\LoaiDichVuEmployKhaiController.cs" />
@@ -465,6 +466,12 @@
     <Content Include="Views\PhieuSDDVEmployeeKhai\Delete.cshtml" />
     <Content Include="Views\BookingQuang\DangKyThanhCong.cshtml" />
     <Content Include="Views\VnPayQUANG\PaymentConfirm.cshtml" />
+    <Content Include="Views\UseOrtherServiceKhai\Index.cshtml" />
+    <Content Include="Views\UseOrtherServiceKhai\Details.cshtml" />
+    <Content Include="Views\UseOrtherServiceKhai\Create.cshtml" />
+    <Content Include="Views\UseOrtherServiceKhai\Edit.cshtml" />
+    <Content Include="Views\BookingQuang\QuestionUseOrtherService.cshtml" />
+    <Content Include="Views\BookingQuang\CreateSuDungDichVu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "QuestionUseOrtherService";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align: center" >DO YOU WANNA USE ANOTHER SERVICES?</h2>
+
+<br />
+<div style="width: 25%; margin: 0 auto;">
+    <a class="btn btn-success" href="@Url.Action("CreateSuDungDichVu", "BookingQuang")">YES</a>
+    <a class="btn btn-danger" href="@Url.Action("Payment","VnPayQuang")">NO, THANKS!!</a>
+</div>
