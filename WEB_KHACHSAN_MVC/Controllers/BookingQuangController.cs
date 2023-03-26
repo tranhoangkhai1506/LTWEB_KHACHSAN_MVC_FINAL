@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using WEB_KHACHSAN_MVC.Models;
@@ -68,11 +71,15 @@ namespace WEB_KHACHSAN_MVC.Controllers
             var C_ngaytradukien = collection["NGAYTRADUKIEN"];
             if (int.Parse(C_songuoi) == 0)
             {
-                ViewData["Error"] = "Don't empty!";
+                ViewData["SoNguoi"] = "Số người không hợp lệ";
             }
-            else if (C_ngaynhanphong.ToString() == "")
+            else if (Convert.ToDateTime(C_ngaynhanphong) < DateTime.Now)
             {
-                ViewData["NgayNhanPhong"] = "Chac huy met moi r!";
+                ViewData["NgayNhanPhong"] = "Ngày nhận phòng phải lớn hơn ngày hiện tại!!";
+            }
+            else if (Convert.ToDateTime(C_ngaytradukien) < DateTime.Now)
+            {
+                ViewData["NgayNhanPhong"] = "Ngày nhận phòng phải lớn hơn ngày hiện tại!!";
             }
             else
             {
@@ -134,6 +141,57 @@ namespace WEB_KHACHSAN_MVC.Controllers
 
         public ActionResult DangKyThanhCong()
         {
+            KHACHHANG khachhang = context.KHACHHANGs.Where(p => p.CCCD == long.Parse(cccdKhachHang_Booking)).FirstOrDefault();
+            // lay phieu thue => lastordefautl
+
+
+            if (khachhang != null && khachhang.EMAIL != "")
+            {
+                PHIEUDATPHONG phieuthue_KH = context.PHIEUDATPHONGs.Where(p => p.MAKH == khachhang.MAKH).ToArray().Last();
+                EmailViewModel emailVm = new EmailViewModel();
+
+                emailVm.EmailBody = @"<h3>Hello! </h3> <br /> <br />" +
+                                "Ngày Nhận Phòng: "+ phieuthue_KH.NGAYNHANPHONG + "<br/><br" +
+                                "Ngày Trả Phòng Dự Kiến: " + phieuthue_KH.NGAYTRADUKIEN +
+                                "It's a Demo Email";
+
+                emailVm.SenderEmailAddress = System.Configuration.ConfigurationManager.AppSettings["SenderEmail"];
+                emailVm.SenderPassword = System.Configuration.ConfigurationManager.AppSettings["SenderPassword"];
+                emailVm.SmtpHostServer = System.Configuration.ConfigurationManager.AppSettings["smtpHostServer"];
+                emailVm.SmtpPort = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["smtpPort"]);
+                emailVm.ReceiverEmailAddress = khachhang.EMAIL;
+                emailVm.EmailSubject = "Lotus Gaats chao qui vi";
+                try
+                {
+                    var client = new SmtpClient(emailVm.SmtpHostServer, emailVm.SmtpPort)
+                    {
+                        EnableSsl = true,
+                        Timeout = 100000,
+                        DeliveryMethod = SmtpDeliveryMethod.Network,
+                        UseDefaultCredentials = false,
+                        Credentials = new NetworkCredential(emailVm.SenderEmailAddress, emailVm.SenderPassword)
+                    };
+                    var mailMessage = new MailMessage
+                    {
+                        IsBodyHtml = true,
+                        BodyEncoding = Encoding.UTF8,
+                        From = new MailAddress(emailVm.SenderEmailAddress)
+                    };
+                    mailMessage.To.Add(emailVm.ReceiverEmailAddress);
+                    mailMessage.Subject = emailVm.EmailSubject;
+                    mailMessage.Body = emailVm.EmailBody;
+                    client.Send(mailMessage);
+
+                    ViewBag.ThongBao = "Check mail ho bo m cai!";
+
+                    return View();
+                }
+                catch (Exception)
+                {
+                    ViewBag.ThongBao = "Khong goi duoc mail";
+                    return View();
+                }
+            }
             return View();
         }
 
