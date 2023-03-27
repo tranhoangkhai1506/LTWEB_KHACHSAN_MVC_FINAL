@@ -10,13 +10,18 @@
 <p>
     @Html.ActionLink("Create New", "CreateLoaiPhong")
 </p>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TENLOAIPHONG)
+            Tên loại phòng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GIATHUE)
+            Giá thuê
         </th>
         <th></th>
     </tr>
