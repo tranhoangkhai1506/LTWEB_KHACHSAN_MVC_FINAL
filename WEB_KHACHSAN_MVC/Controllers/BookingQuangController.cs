@@ -150,17 +150,18 @@ namespace WEB_KHACHSAN_MVC.Controllers
                 PHIEUDATPHONG phieuthue_KH = context.PHIEUDATPHONGs.Where(p => p.MAKH == khachhang.MAKH).ToArray().Last();
                 EmailViewModel emailVm = new EmailViewModel();
 
-                emailVm.EmailBody = @"<h3>Hello! </h3> <br /> <br />" +
-                                "Ngày Nhận Phòng: "+ phieuthue_KH.NGAYNHANPHONG + "<br/><br" +
-                                "Ngày Trả Phòng Dự Kiến: " + phieuthue_KH.NGAYTRADUKIEN +
-                                "It's a Demo Email";
+                emailVm.EmailBody = @"<h3>Hello " + khachhang.TENKH + "! </h3> <br />" +
+                                "Ngày Nhận Phòng: "+ phieuthue_KH.NGAYNHANPHONG + "<br/>" +
+                                "Ngày Trả Phòng Dự Kiến: " + phieuthue_KH.NGAYTRADUKIEN + "<br/>" +
+                                "Ngày gửi: " + DateTime.Now.ToString() + "<br/>" +
+                                "<br/>Thanks for using our services!";
 
                 emailVm.SenderEmailAddress = System.Configuration.ConfigurationManager.AppSettings["SenderEmail"];
                 emailVm.SenderPassword = System.Configuration.ConfigurationManager.AppSettings["SenderPassword"];
                 emailVm.SmtpHostServer = System.Configuration.ConfigurationManager.AppSettings["smtpHostServer"];
                 emailVm.SmtpPort = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["smtpPort"]);
                 emailVm.ReceiverEmailAddress = khachhang.EMAIL;
-                emailVm.EmailSubject = "Lotus Gaats chao qui vi";
+                emailVm.EmailSubject = "LOTUS - COMFIRM";
                 try
                 {
                     var client = new SmtpClient(emailVm.SmtpHostServer, emailVm.SmtpPort)
@@ -181,14 +182,10 @@ namespace WEB_KHACHSAN_MVC.Controllers
                     mailMessage.Subject = emailVm.EmailSubject;
                     mailMessage.Body = emailVm.EmailBody;
                     client.Send(mailMessage);
-
-                    ViewBag.ThongBao = "Check mail ho bo m cai!";
-
                     return View();
                 }
                 catch (Exception)
                 {
-                    ViewBag.ThongBao = "Khong goi duoc mail";
                     return View();
                 }
             }
