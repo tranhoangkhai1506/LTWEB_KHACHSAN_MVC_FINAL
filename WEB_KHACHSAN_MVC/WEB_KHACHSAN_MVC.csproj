@@ -473,6 +473,7 @@
     <Content Include="Views\UseOrtherServiceKhai\Edit.cshtml" />
     <Content Include="Views\BookingQuang\QuestionUseOrtherService.cshtml" />
     <Content Include="Views\BookingQuang\CreateSuDungDichVu.cshtml" />
+    <Content Include="Views\BookingQuang\DanhSachDichVu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

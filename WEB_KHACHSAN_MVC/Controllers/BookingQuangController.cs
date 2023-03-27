@@ -197,8 +197,17 @@ namespace WEB_KHACHSAN_MVC.Controllers
             return View();
         }
 
-        public ActionResult CreateSuDungDichVu()
+        public ActionResult DanhSachDichVu()
         {
+            var listDichVu = from all in context.DICHVUs select all;
+            return View(listDichVu);
+        }
+
+        public static int maDichVuBooking;
+
+        public ActionResult CreateSuDungDichVu(int maDichVu)
+        {
+            maDichVuBooking = maDichVu;
             return View();
         }
         [HttpPost]
@@ -217,19 +226,19 @@ namespace WEB_KHACHSAN_MVC.Controllers
 
             if (string.IsNullOrEmpty(C_madichvu))
             {
-                ViewData["Error"] = "Don't empty!";
+                ViewData["Error"] = "Service ID don't empty!";
             }
             else if (maPhieuDatPhong != null)
             {
                 psd.NGAYSUDUNG = Convert.ToDateTime(C_ngaysudung);
                 psd.MADICHVU = int.Parse(C_madichvu);
                 psd.MAPHIEUDATPHONG = maPhieuDatPhong.MAPHIEUDATPHONG;
-                psd.MANHANVIEN = int.Parse(C_manhanvien);
+                psd.MANHANVIEN = 1;
                 context.PHIEUSDDVs.InsertOnSubmit(psd);
                 context.SubmitChanges();
                 return RedirectToAction("Payment", "VnPayQuang");
             }
-            return this.CreateSuDungDichVu();
+            return this.CreateSuDungDichVu(maDichVuBooking);
         }
     }
 }
