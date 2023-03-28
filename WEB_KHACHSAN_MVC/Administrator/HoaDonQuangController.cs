@@ -32,6 +32,19 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var E_ngaythanhtoan = collection["NGAYTHANHTOAN"];
             var E_maphieudatphong= collection["MAPHIEUDATPHONG"];
             var E_manhanvien = collection["MANHANVIEN"];
+
+            PHIEUDATPHONG phieudatphong = data.PHIEUDATPHONGs.Where(p => p.MAPHIEUDATPHONG == int.Parse(E_maphieudatphong)).FirstOrDefault();
+            if (phieudatphong == null)
+            {
+                ViewData["Error_BookingCard"] = "Not Found Booking Card!";
+            }
+
+            PHONG phongReturn = data.PHONGs.Where(p => p.MAPHONG == phieudatphong.MAPHONG).FirstOrDefault();
+            if (phongReturn == null)
+            {
+                ViewData["Error_BookingCard_Room"] = "Not Found Room!";
+            }
+
             if (string.IsNullOrEmpty(E_manhanvien))
             {
                 ViewData["Error"] = "Don't empty!";
@@ -42,6 +55,7 @@ namespace WEB_KHACHSAN_MVC.Administrator
                 hd.NGAYTHANHTOAN = Convert.ToDateTime(E_ngaythanhtoan);
                 hd.MAPHIEUDATPHONG = int.Parse(E_maphieudatphong);
                 hd.MANHANVIEN = int.Parse(E_manhanvien);
+                phongReturn.TINHTRANG = "Bình thường";
                 data.HOADONs.InsertOnSubmit(hd);
                 data.SubmitChanges();
                 return RedirectToAction("Index");
@@ -62,6 +76,18 @@ namespace WEB_KHACHSAN_MVC.Administrator
             var E_ngaythanhtoan = collection["NGAYTHANHTOAN"];
             var E_maphieudatphong = collection["MAPHIEUDATPHONG"];
             var E_manhanvien = collection["MANHANVIEN"];
+            PHIEUDATPHONG phieudatphong = data.PHIEUDATPHONGs.Where(p => p.MAPHIEUDATPHONG == int.Parse(E_maphieudatphong)).FirstOrDefault();
+            if (phieudatphong == null)
+            {
+                ViewData["Error_BookingCard"] = "Not Found Booking Card!";
+            }
+
+            PHONG phongReturn = data.PHONGs.Where(p=> p.MAPHONG == phieudatphong.MAPHONG).FirstOrDefault();
+            if (phongReturn == null)
+            {
+                ViewData["Error_BookingCard_Room"] = "Not Found Room!";
+            }
+
             if (string.IsNullOrEmpty(E_manhanvien))
             {
                 ViewData["Error"] = "Don't empty!";
@@ -72,6 +98,7 @@ namespace WEB_KHACHSAN_MVC.Administrator
                 hd.NGAYTHANHTOAN = Convert.ToDateTime(E_ngaythanhtoan);
                 hd.MAPHIEUDATPHONG = int.Parse(E_maphieudatphong);
                 hd.MANHANVIEN = int.Parse(E_manhanvien);
+                phongReturn.TINHTRANG = "Bình thường";
                 UpdateModel(hd);
                 data.SubmitChanges();
                 return RedirectToAction("Index");

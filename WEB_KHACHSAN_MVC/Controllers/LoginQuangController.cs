@@ -29,7 +29,7 @@ namespace WEB_KHACHSAN_MVC.Controllers
                 if (taikhoandangnhap != null)
                 {
                     if (taikhoandangnhap.MAPHANQUYEN == 1)
-                    {
+                    { 
                         return RedirectToAction("Index", "HomeAdminQuang");
                     }
                     else

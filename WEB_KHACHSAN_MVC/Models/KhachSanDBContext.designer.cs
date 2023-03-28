@@ -65,7 +65,7 @@ namespace WEB_KHACHSAN_MVC.Models
     partial void DeleteTAIKHOAN(TAIKHOAN instance);
         #endregion
         public KhachSanDBContextDataContext() :
-                base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QUANLYKHACHSAN_WEBConnectionString6"].ConnectionString, mappingSource)
+                base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QUANLYKHACHSAN_WEBConnectionString3"].ConnectionString, mappingSource)
         {
             OnCreated();
         }

@@ -85,31 +85,31 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" name="Name" placeholder="Your Name">
+                                    <input type="text" class="form-control" name="Name" placeholder="Your Name" required>
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" name="Email" placeholder="Your Email">
+                                    <input type="email" class="form-control" name="Email" placeholder="Your Email" required>
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input" name="Check In" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" />
+                                    <input type="text" class="form-control datetimepicker-input" name="Check In" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" required/>
                                     <label for="checkin">Check In</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating date" id="date4" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input" name="Check Out" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
+                                    <input type="text" class="form-control datetimepicker-input" name="Check Out" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" required/>
                                     <label for="checkout">Check Out</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <select class="form-select" name="Adult">
+                                    <select class="form-select" name="Adult" required>
                                         <option value="Adult 1">Adult 1</option>
                                         <option value="Adult 2">Adult 2</option>
                                         <option value="Adult 3">Adult 3</option>
@@ -119,7 +119,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <select class="form-select" name="Child">
+                                    <select class="form-select" name="Child" required>
                                         <option value="Child 1">Child 1</option>
                                         <option value="Child 2">Child 2</option>
                                         <option value="Child 3">Child 3</option>
@@ -129,7 +129,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <select class="form-select" name="Type of rooms">
+                                    <select class="form-select" name="Type of rooms" required>
                                         <option value="Standard room">Standard room</option>
                                         <option value="Deluxe room">Deluxe room</option>
                                         <option value="Suite">Suite</option>

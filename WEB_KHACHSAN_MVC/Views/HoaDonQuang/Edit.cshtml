@@ -38,6 +38,8 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.MAPHIEUDATPHONG, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MAPHIEUDATPHONG, "", new { @class = "text-danger" })
+                @ViewData["Error_BookingCard"]
+                @ViewData["Error_BookingCard_Room"]
             </div>
         </div>
 
