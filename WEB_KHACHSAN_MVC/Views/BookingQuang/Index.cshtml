@@ -30,17 +30,18 @@
                         <div class="row g-2">
                             <div class="col-md-3">
                                 <div class="date" id="date1" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input" name="ngayNhanPhong" placeholder="Check in" data-target="#date1" data-toggle="datetimepicker" />
+                                    <input type="text" class="form-control datetimepicker-input" id="dateNhan" name="ngayNhanPhong" placeholder="Check in" data-target="#date1" data-toggle="datetimepicker" required />
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="date" id="date2" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input" placeholder="Check out" name="ngayTraDuKien" data-target="#date2" data-toggle="datetimepicker" />
+                                    <input type="text" class="form-control datetimepicker-input" id="dateTra" placeholder="Check out" name="ngayTraDuKien" data-target="#date2" data-toggle="datetimepicker" required/>
+                                    @ViewBag.Thongbao
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="date" id="date2" data-target-input="nearest">
-                                    <input type="number" class="form-control datetimepicker-input" placeholder="Số người" name="soNguoi" />
+                                    <input type="number" class="form-control datetimepicker-input" placeholder="How many people?" name="soNguoi" min="1" max="10" required/>
                                 </div>
                             </div>
                         </div>
@@ -95,14 +96,14 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-floating date" name="date3" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input" name="checkin" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker"/>
+                                <div class="form-floating date" id="date3" data-target-input="nearest">
+                                    <input type="text" class="form-control datetimepicker-input" name="Check In" placeholder="Check In" data-target="#date3" data-toggle="datetimepicker" />
                                     <label for="checkin">Check In</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-floating date" name="date4" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input" name="checkout" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
+                                <div class="form-floating date" id="date4" data-target-input="nearest">
+                                    <input type="text" class="form-control datetimepicker-input" name="Check Out" placeholder="Check Out" data-target="#date4" data-toggle="datetimepicker" />
                                     <label for="checkout">Check Out</label>
                                 </div>
                             </div>
@@ -138,7 +139,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Special Request" name="slecte" style="height: 100px"></textarea>
+                                    <textarea class="form-control" placeholder="Special Request" name="Special Request" style="height: 100px"></textarea>
                                     <label for="message">Special Request</label>
                                 </div>
                             </div>

@@ -21,6 +21,12 @@ namespace WEB_KHACHSAN_MVC.Controllers
 
         public ActionResult Booking(DateTime ngayNhanPhong, DateTime ngayTraDuKien, int soNguoi)
         {
+            if(ngayTraDuKien <= ngayNhanPhong)
+            {
+                ViewBag.Thongbao = "The check-out date must be later than the check-in date.";
+                return View("Index");
+            }
+
             var listPhongTrong_BinhThuong = context.PHONGs.Where(p => p.TINHTRANG.Contains("Bình thường") && p.SONGUOITOIDA >= soNguoi).ToList();
             var listPhongDangDuocThue = context.PHONGs.Where(p => p.TINHTRANG.Contains("Đang được thuê") && p.SONGUOITOIDA >= soNguoi).ToList();
             List<PHIEUDATPHONG> listPhieuDatPhong = context.PHIEUDATPHONGs.ToList();

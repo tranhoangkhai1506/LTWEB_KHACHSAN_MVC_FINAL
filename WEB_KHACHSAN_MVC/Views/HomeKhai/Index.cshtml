@@ -49,8 +49,8 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-6">
                 <h6 class="section-title text-start text-primary text-uppercase">About Us</h6>
-                <h1 class="mb-4">Welcome to <span class="text-primary text-uppercase">Hotelier</span></h1>
-                <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                <h1 class="mb-4">Welcome to <span class="text-primary text-uppercase">LOTUS</span></h1>
+                <p class="mb-4">Hotel Lotus is a luxurious accommodation option situated in a prime location in the heart of a bustling city. As soon as you enter the hotel's impressive lobby, you'll be greeted by a warm and inviting atmosphere that exudes elegance and sophistication.</p>
                 <div class="row g-3 pb-4">
                     <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
                         <div class="border rounded p-1">
@@ -113,12 +113,12 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="room-item shadow rounded overflow-hidden">
                     <div class="position-relative">
-                        <img class="img-fluid" src="img/room-1.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
+                        <img class="img-fluid" src="~/img/room-1.jpg" alt="">
+                        <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">200.000 VNĐ</small>
                     </div>
                     <div class="p-4 mt-2">
                         <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Junior Suite</h5>
+                            <h5 class="mb-0">Phòng Đơn</h5>
                             <div class="ps-2">
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
@@ -128,14 +128,14 @@
                             </div>
                         </div>
                         <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>1 Bed</small>
+                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>1 Bath</small>
                             <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                         </div>
-                        <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <p class="text-body mb-3">Phòng đơn giành cho 1 người hoặc cặp tình nhân thuê.</p>
                         <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
+                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="@Url.Action("ViewPhongLoai1","RoomQuang")">View Detail</a>
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="@Url.Action("Index","BookingQuang")">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -143,12 +143,12 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="room-item shadow rounded overflow-hidden">
                     <div class="position-relative">
-                        <img class="img-fluid" src="img/room-2.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
+                        <img class="img-fluid" src="~/img/room-2.jpg" alt="">
+                        <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">400.000 VNĐ</small>
                     </div>
                     <div class="p-4 mt-2">
                         <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Executive Suite</h5>
+                            <h5 class="mb-0">Phòng Đôi</h5>
                             <div class="ps-2">
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
@@ -158,14 +158,14 @@
                             </div>
                         </div>
                         <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
+                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>2 Bed</small>
                             <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
                             <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                         </div>
-                        <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <p class="text-body mb-3">Phòng đôi giành cho 1 người hoặc cặp tình nhân với nhiều tiện nghi hơn.</p>
                         <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
+                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="@Url.Action("ViewPhongLoai2","RoomQuang")">View Detail</a>
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="@Url.Action("Index","BookingQuang")">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -173,12 +173,12 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                 <div class="room-item shadow rounded overflow-hidden">
                     <div class="position-relative">
-                        <img class="img-fluid" src="img/room-3.jpg" alt="">
-                        <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
+                        <img class="img-fluid" src="~/img/room-3.jpg" alt="">
+                        <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">600.000 VNĐ</small>
                     </div>
                     <div class="p-4 mt-2">
                         <div class="d-flex justify-content-between mb-3">
-                            <h5 class="mb-0">Super Deluxe</h5>
+                            <h5 class="mb-0">Phòng VIP</h5>
                             <div class="ps-2">
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
@@ -188,14 +188,14 @@
                             </div>
                         </div>
                         <div class="d-flex mb-3">
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
-                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>1 Bed</small>
+                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>1 Bath</small>
                             <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                         </div>
-                        <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <p class="text-body mb-3">Phòng cao cấp nhất giá cả đắt đỏ với đầy đủ tiện nghi bậc nhất.</p>
                         <div class="d-flex justify-content-between">
-                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
-                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
+                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="@Url.Action("ViewPhongLoai3","RoomQuang")">View Detail</a>
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="@Url.Action("Index","BookingQuang")">Book Now</a>
                         </div>
                     </div>
                 </div>
