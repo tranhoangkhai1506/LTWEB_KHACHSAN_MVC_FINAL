@@ -364,7 +364,6 @@
     <Content Include="Views\BookingQuang\Index.cshtml" />
     <Content Include="Views\RoomQuang\Index.cshtml" />
     <Content Include="Views\ContactHuy\Index.cshtml" />
-    <Content Include="Views\RoomQuang\ViewPhong.cshtml" />
     <Content Include="Views\BookingQuang\Booking.cshtml" />
     <Content Include="Views\BookingQuang\TaoPhieuDatPhong.cshtml" />
     <Content Include="Views\BookingQuang\ThemKhachHang.cshtml" />
@@ -475,6 +474,9 @@
     <Content Include="Views\BookingQuang\CreateSuDungDichVu.cshtml" />
     <Content Include="Views\BookingQuang\DanhSachDichVu.cshtml" />
     <Content Include="Views\ServiceHuy\ViewService.cshtml" />
+    <Content Include="Views\RoomQuang\ViewPhongLoai1.cshtml" />
+    <Content Include="Views\RoomQuang\ViewPhongLoai2.cshtml" />
+    <Content Include="Views\RoomQuang\ViewPhongLoai3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

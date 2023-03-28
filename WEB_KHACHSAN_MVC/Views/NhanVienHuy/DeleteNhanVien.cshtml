@@ -5,77 +5,49 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>DeleteNhanVien</h2>
+<h2 style="text-align:center">Xóa Nhân Viên</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>NHANVIEN</h4>
+<div style="width: 14%; margin: 0 auto">
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TENNHANVIEN)
-        </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TENNHANVIEN)
+            Tên Nhân Viên: @Html.DisplayFor(model => model.TENNHANVIEN)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NAMSINH)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.NAMSINH)
+            Năm Sinh: @Html.DisplayFor(model => model.NAMSINH)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EMAIL)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.EMAIL)
+            Email: @Html.DisplayFor(model => model.EMAIL)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CCCD)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.CCCD)
+            CCCD: @Html.DisplayFor(model => model.CCCD)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CHUCVU)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.CHUCVU)
+            Chức Vụ: @Html.DisplayFor(model => model.CHUCVU)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DIACHI)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.DIACHI)
+            Địa Chỉ: @Html.DisplayFor(model => model.DIACHI)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DT)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.DT)
+            Điện Thoại: @Html.DisplayFor(model => model.DT)
         </dd>
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "ListNhanVien")
+            <div class="btn btn-secondary">@Html.ActionLink("Back", "ListNhanVien")</div>
+            <input type="submit" value="Delete" class="btn btn-danger" />
         </div>
     }
 </div>

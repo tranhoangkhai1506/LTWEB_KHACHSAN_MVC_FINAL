@@ -4,37 +4,46 @@
     ViewBag.Title = "ListPhanQuyen";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<div style="text-align:center">
+    <h2>Danh Sách Phân Quyền</h2>
+    <p class="btn btn-success">@Html.ActionLink("Create", "CreatePhanQuyen")</p>
+</div>
 
-<h2>ListPhanQuyen</h2>
 
-<p>
-    @Html.ActionLink("Create New", "CreatePhanQuyen")
-</p>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+
 <table class="table">
-    <tr>
+    <tr style="text-align:center">
         <th>
             @Html.DisplayNameFor(model => model.TENPHANQUYEN)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.QUYENHAN)
         </th>
-        <th></th>
+        <th>
+            Chức Năng
+        </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TENPHANQUYEN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QUYENHAN)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditPhanQuyen", new { maPhanQuyen = item.MAPHANQUYEN }) |
-            @Html.ActionLink("Details", "Details", new { maPhanQuyen = item.MAPHANQUYEN }) |
-            @Html.ActionLink("Delete", "DeletePhanQuyen", new { maPhanQuyen = item.MAPHANQUYEN })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center">
+            <td>
+                @Html.DisplayFor(modelItem => item.TENPHANQUYEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUYENHAN)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditPhanQuyen", new { maPhanQuyen = item.MAPHANQUYEN }) |
+                @Html.ActionLink("Details", "Details", new { maPhanQuyen = item.MAPHANQUYEN }) |
+                @Html.ActionLink("Delete", "DeletePhanQuyen", new { maPhanQuyen = item.MAPHANQUYEN })
+            </td>
+        </tr>
+    }
 
 </table>

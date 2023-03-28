@@ -4,32 +4,20 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<div class="btn btn-secondary">@Html.ActionLink("Back", "ListLoaiPhong")</div>
 
-<h2>Details</h2>
+<h2 style="text-align:center">Chi Tiết Loại Phòng</h2>
 
-<div>
-    <h4>LOAIPHONG</h4>
-    <hr />
+<div style="width: 12%; margin: 0 auto">
+    <br />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TENLOAIPHONG)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.TENLOAIPHONG)
+            Tên Loại Phòng : @Html.DisplayFor(model => model.TENLOAIPHONG)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GIATHUE)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.GIATHUE)
+            Giá Thuê: @Html.DisplayFor(model => model.GIATHUE)
         </dd>
-
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MALOAIPHONG }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

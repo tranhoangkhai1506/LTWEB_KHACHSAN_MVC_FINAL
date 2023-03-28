@@ -5,41 +5,53 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>ListLoaiPhong</h2>
-
-<p>
-    @Html.ActionLink("Create New", "CreateLoaiPhong")
-</p>
 <style>
     table, th, td {
         border: 1px solid black;
     }
 </style>
+<div style="text-align: center">
+    <h2>Danh Sách Loại Phòng</h2>
+    <p class="btn btn-success">
+        @Html.ActionLink("Thêm Loại Phòng", "CreateLoaiPhong")
+    </p>
+</div>
+
+<br />
 <table class="table">
-    <tr>
+    <tr style="text-align:center">
         <th>
-            Tên loại phòng
+            Mã Loại Phòng
         </th>
         <th>
-            Giá thuê
+            Tên Loại Phòng
         </th>
-        <th></th>
+        <th>
+            Giá Thuê
+        </th>
+        <th style="text-align:center">
+            Chức năng
+        </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TENLOAIPHONG)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GIATHUE)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditLoaiPhong", new { maLoaiPhong = item.MALOAIPHONG }) |
-            @Html.ActionLink("Details", "Details", new { maLoaiPhong = item.MALOAIPHONG }) |
-            @Html.ActionLink("Delete", "DeleteLoaiPhong", new { maLoaiPhong = item.MALOAIPHONG })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center">
+            <td>
+                @Html.DisplayFor(modelItem => item.MALOAIPHONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENLOAIPHONG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIATHUE)
+            </td>
+            <td style="text-align:center">
+                @Html.ActionLink("Edit", "EditLoaiPhong", new { maLoaiPhong = item.MALOAIPHONG }) |
+                @Html.ActionLink("Details", "Details", new { maLoaiPhong = item.MALOAIPHONG }) |
+                @Html.ActionLink("Delete", "DeleteLoaiPhong", new { maLoaiPhong = item.MALOAIPHONG })
+            </td>
+        </tr>
+    }
 </table>
+

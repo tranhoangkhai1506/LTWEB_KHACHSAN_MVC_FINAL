@@ -4,72 +4,40 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<div class="btn btn-secondary">@Html.ActionLink("Back", "ListNhanVien")</div>
 
-<h2>Details</h2>
+<h2 style="text-align:center">Chi Tiết Nhân Viên</h2>
 
-<div>
-    <h4>NHANVIEN</h4>
+<div style="width: 20%; margin-left:550px">
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TENNHANVIEN)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.TENNHANVIEN)
+            Tên Nhân Viên: @Html.DisplayFor(model => model.TENNHANVIEN)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NAMSINH)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.NAMSINH)
+            Năm Sinh: @Html.DisplayFor(model => model.NAMSINH)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EMAIL)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.EMAIL)
+            Email: @Html.DisplayFor(model => model.EMAIL)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CCCD)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.CCCD)
+            CCCD: @Html.DisplayFor(model => model.CCCD)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CHUCVU)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.CHUCVU)
+            Chức Vụ: @Html.DisplayFor(model => model.CHUCVU)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DIACHI)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.DIACHI)
+            Địa Chỉ: @Html.DisplayFor(model => model.DIACHI)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DT)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.DT)
+            Điện Thoại: @Html.DisplayFor(model => model.DT)
         </dd>
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MANHANVIEN }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

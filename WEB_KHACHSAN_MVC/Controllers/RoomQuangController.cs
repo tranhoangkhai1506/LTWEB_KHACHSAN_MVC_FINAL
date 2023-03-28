@@ -15,9 +15,19 @@ namespace WEB_KHACHSAN_MVC.Controllers
         {
             return View();
         }
-        public ActionResult ViewPhong()
+        public ActionResult ViewPhongLoai1()
         {
-            var all_Phong = from ss in data.PHONGs select ss;
+            var all_Phong = data.PHONGs.Where(p => p.MALOAIPHONG == 1);
+            return View(all_Phong);
+        }
+        public ActionResult ViewPhongLoai2()
+        {
+            var all_Phong = data.PHONGs.Where(p => p.MALOAIPHONG == 2);
+            return View(all_Phong);
+        }
+        public ActionResult ViewPhongLoai3()
+        {
+            var all_Phong = data.PHONGs.Where(p => p.MALOAIPHONG == 3);
             return View(all_Phong);
         }
     }

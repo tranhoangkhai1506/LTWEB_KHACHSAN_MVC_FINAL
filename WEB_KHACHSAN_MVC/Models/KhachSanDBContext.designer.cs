@@ -66,7 +66,7 @@ namespace WEB_KHACHSAN_MVC.Models
     #endregion
 		
 		public KhachSanDBContextDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QUANLYKHACHSAN_WEBConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QUANLYKHACHSAN_WEBConnectionString3"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
