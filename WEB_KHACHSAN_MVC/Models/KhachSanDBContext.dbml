@@ -1,12 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYKHACHSAN_WEB" Class="KhachSanDBContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-M1CIIM24\SQLEXPRESS;Initial Catalog=QUANLYKHACHSAN_WEB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QUANLYKHACHSAN_WEBConnectionString2" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.LOAIDICHVU" Member="LOAIDICHVUs">
-    <Type Name="LOAIDICHVU">
-      <Column Name="MALOAIDICHVU" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TENLOAIDICHVU" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Association Name="LOAIDICHVU_DICHVU" Member="DICHVUs" ThisKey="MALOAIDICHVU" OtherKey="MALOAIDICHVU" Type="DICHVU" />
-    </Type>
-  </Table>
   <Table Name="dbo.DICHVU" Member="DICHVUs">
     <Type Name="DICHVU">
       <Column Name="MADICHVU" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -39,6 +31,13 @@
       <Association Name="KHACHHANG_PHIEUDATPHONG" Member="PHIEUDATPHONGs" ThisKey="MAKH" OtherKey="MAKH" Type="PHIEUDATPHONG" />
     </Type>
   </Table>
+  <Table Name="dbo.LOAIDICHVU" Member="LOAIDICHVUs">
+    <Type Name="LOAIDICHVU">
+      <Column Name="MALOAIDICHVU" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TENLOAIDICHVU" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="LOAIDICHVU_DICHVU" Member="DICHVUs" ThisKey="MALOAIDICHVU" OtherKey="MALOAIDICHVU" Type="DICHVU" />
+    </Type>
+  </Table>
   <Table Name="dbo.LOAIPHONG" Member="LOAIPHONGs">
     <Type Name="LOAIPHONG">
       <Column Name="MALOAIPHONG" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -58,8 +57,8 @@
       <Column Name="DIACHI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="DT" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
       <Association Name="NHANVIEN_HOADON" Member="HOADONs" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="HOADON" />
-      <Association Name="NHANVIEN_PHIEUSDDV" Member="PHIEUSDDVs" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="PHIEUSDDV" />
       <Association Name="NHANVIEN_PHIEUDATPHONG" Member="PHIEUDATPHONGs" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="PHIEUDATPHONG" />
+      <Association Name="NHANVIEN_PHIEUSDDV" Member="PHIEUSDDVs" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="PHIEUSDDV" />
       <Association Name="NHANVIEN_TAIKHOAN" Member="TAIKHOANs" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="TAIKHOAN" />
     </Type>
   </Table>
@@ -69,18 +68,6 @@
       <Column Name="TENPHANQUYEN" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="QUYENHAN" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Association Name="PHANQUYEN_TAIKHOAN" Member="TAIKHOANs" ThisKey="MAPHANQUYEN" OtherKey="MAPHANQUYEN" Type="TAIKHOAN" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PHIEUSDDV" Member="PHIEUSDDVs">
-    <Type Name="PHIEUSDDV">
-      <Column Name="MAPHIEUSDDV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="NGAYSUDUNG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="MADICHVU" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MAPHIEUDATPHONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MANHANVIEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="DICHVU_PHIEUSDDV" Member="DICHVU" ThisKey="MADICHVU" OtherKey="MADICHVU" Type="DICHVU" IsForeignKey="true" DeleteRule="CASCADE" />
-      <Association Name="NHANVIEN_PHIEUSDDV" Member="NHANVIEN" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
-      <Association Name="PHIEUDATPHONG_PHIEUSDDV" Member="PHIEUDATPHONG" ThisKey="MAPHIEUDATPHONG" OtherKey="MAPHIEUDATPHONG" Type="PHIEUDATPHONG" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.PHIEUDATPHONG" Member="PHIEUDATPHONGs">
@@ -98,6 +85,18 @@
       <Association Name="KHACHHANG_PHIEUDATPHONG" Member="KHACHHANG" ThisKey="MAKH" OtherKey="MAKH" Type="KHACHHANG" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="NHANVIEN_PHIEUDATPHONG" Member="NHANVIEN" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="PHONG_PHIEUDATPHONG" Member="PHONG" ThisKey="MAPHONG" OtherKey="MAPHONG" Type="PHONG" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHIEUSDDV" Member="PHIEUSDDVs">
+    <Type Name="PHIEUSDDV">
+      <Column Name="MAPHIEUSDDV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NGAYSUDUNG" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MADICHVU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MAPHIEUDATPHONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MANHANVIEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PHIEUDATPHONG_PHIEUSDDV" Member="PHIEUDATPHONG" ThisKey="MAPHIEUDATPHONG" OtherKey="MAPHIEUDATPHONG" Type="PHIEUDATPHONG" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="DICHVU_PHIEUSDDV" Member="DICHVU" ThisKey="MADICHVU" OtherKey="MADICHVU" Type="DICHVU" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="NHANVIEN_PHIEUSDDV" Member="NHANVIEN" ThisKey="MANHANVIEN" OtherKey="MANHANVIEN" Type="NHANVIEN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PHONG" Member="PHONGs">

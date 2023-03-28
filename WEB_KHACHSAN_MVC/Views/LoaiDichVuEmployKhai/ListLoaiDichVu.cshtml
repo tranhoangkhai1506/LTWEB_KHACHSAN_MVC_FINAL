@@ -6,14 +6,18 @@
 }
 
 <h2>ListLoaiDichVu</h2>
-
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
 <p>
     @Html.ActionLink("Create New", "CreateLoaiDichVu")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TENLOAIDICHVU)
+            Tên Loại Dịch Vụ
         </th>
         <th></th>
     </tr>

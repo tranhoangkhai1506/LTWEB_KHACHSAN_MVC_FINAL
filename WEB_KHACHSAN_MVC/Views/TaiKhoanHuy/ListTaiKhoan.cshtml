@@ -6,23 +6,27 @@
 }
 
 <h2>ListTaiKhoan</h2>
-
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
 <p>
     @Html.ActionLink("Create New", "CreateTaiKhoan")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TENDANGNHAP)
+            Tên Đăng Nhập
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MATKHAU)
+            Mật Khẩu
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MANHANVIEN)
+            Mã Nhân Viên
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MAPHANQUYEN)
+            Mã Phân Quyền
         </th>
         <th></th>
     </tr>

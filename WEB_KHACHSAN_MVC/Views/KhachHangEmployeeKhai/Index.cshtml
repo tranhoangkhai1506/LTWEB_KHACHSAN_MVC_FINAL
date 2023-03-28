@@ -6,23 +6,27 @@
 }
 
 <h2>CUSTOMER</h2>
-
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TENKH)
+            Tên Khách Hàng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CCCD)
+            Căn Cước Công Dân
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EMAIL)
+            Email
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DT)
+            Điện Thoại
         </th>
         <th></th>
     </tr>

@@ -6,26 +6,30 @@
 }
 
 <h2>ListPhong</h2>
-
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
 <p>
     @Html.ActionLink("Create New", "CreatePhong")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TENPHONG)
+            Tên Phòng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SONGUOITOIDA)
+            Số Người Tối Đa
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TINHTRANG)
+            Tình Trạng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HINH)
+            Hình
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MALOAIPHONG)
+            Mã Loại Phòng
         </th>
         <th></th>
     </tr>
