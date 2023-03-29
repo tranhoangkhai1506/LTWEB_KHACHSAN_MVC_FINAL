@@ -422,7 +422,6 @@
     <Content Include="Views\LoaiDichVuEmployKhai\ListLoaiDichVu.cshtml" />
     <Content Include="Views\LoaiDichVuEmployKhai\CreateLoaiDichVu.cshtml" />
     <Content Include="Views\LoaiDichVuEmployKhai\EditLoaiDichVu.cshtml" />
-    <Content Include="Views\LoaiDichVuEmployKhai\DeleteLoaiDichVu.cshtml" />
     <Content Include="Views\LoaiPhongEmployeeKhai\ListLoaiPhong.cshtml" />
     <Content Include="Views\LoaiPhongEmployeeKhai\CreateLoaiPhong.cshtml" />
     <Content Include="Views\LoaiPhongEmployeeKhai\EditLoaiPhong.cshtml" />
@@ -478,6 +477,7 @@
     <Content Include="Views\RoomQuang\ViewPhongLoai1.cshtml" />
     <Content Include="Views\RoomQuang\ViewPhongLoai2.cshtml" />
     <Content Include="Views\RoomQuang\ViewPhongLoai3.cshtml" />
+    <Content Include="Views\LoaiDichVuEmployKhai\DeleteLoaiDichVu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
