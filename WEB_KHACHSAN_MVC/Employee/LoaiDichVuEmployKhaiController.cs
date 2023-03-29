@@ -64,9 +64,9 @@ namespace WEB_KHACHSAN_MVC.Employee
                 }
                 return this.EditLoaiDichVu(maLoaiDichVu);
             }
-        public ActionResult DetailsLoaiDichVu(int id)
+        public ActionResult DetailsLoaiDichVu(int maLoaiDichVu)
         {
-            var D_sach = context.LOAIDICHVUs.Where(m => m.MALOAIDICHVU == id).FirstOrDefault();
+            var D_sach = context.LOAIDICHVUs.Where(m => m.MALOAIDICHVU == maLoaiDichVu).FirstOrDefault();
             return View(D_sach);
         }
         public ActionResult DeleteLoaiDichVu(int maLoaiDichVu)
@@ -74,13 +74,13 @@ namespace WEB_KHACHSAN_MVC.Employee
                 var dbDelete = context.LOAIDICHVUs.First(m => m.MALOAIDICHVU == maLoaiDichVu);
                 return View(dbDelete);
             }
-            [HttpPost]
-            public ActionResult DeleteLoaiDichVu(int maLoaiDichVu, FormCollection collection)
-            {
-                var dbDelete = context.LOAIDICHVUs.Where(m => m.MALOAIDICHVU == maLoaiDichVu).First();
-                context.LOAIDICHVUs.DeleteOnSubmit(dbDelete);
-                context.SubmitChanges();
-                return RedirectToAction("ListLoaiDichVu");
-            }
+        [HttpPost]
+        public ActionResult DeleteLoaiDichVu(int maLoaiDichVu, FormCollection collection)
+        {
+            var dbDelete = context.LOAIDICHVUs.Where(m => m.MALOAIDICHVU == maLoaiDichVu).First();
+            context.LOAIDICHVUs.DeleteOnSubmit(dbDelete);
+            context.SubmitChanges();
+            return RedirectToAction("ListLoaiDichVu");
         }
+    }
 }

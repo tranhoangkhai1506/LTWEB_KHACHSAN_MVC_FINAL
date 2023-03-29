@@ -19,7 +19,7 @@
         <div class="form-group">
 
             <div class="col-md-12">
-                Tên Loại Phòng :@Html.EditorFor(model => model.TENLOAIPHONG, new { htmlAttributes = new { @class = "form-control" } })
+                Tên Loại Phòng :@Html.EditorFor(model => model.TENLOAIPHONG, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.TENLOAIPHONG, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -27,7 +27,7 @@
         <div class="form-group">
 
             <div class="col-md-12">
-                Giá Thuê :@Html.EditorFor(model => model.GIATHUE, new { htmlAttributes = new { @class = "form-control" } })
+                Giá Thuê :@Html.EditorFor(model => model.GIATHUE, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.GIATHUE, "", new { @class = "text-danger" })
             </div>
         </div>

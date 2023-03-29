@@ -29,7 +29,7 @@
     <div class="form-group">
         Số Người Tối Đa
         <div class="col-md-10">
-            @Html.EditorFor(model => model.SONGUOITOIDA, new { htmlAttributes = new { @class = "form-control" }, required = "required" })
+            @Html.EditorFor(model => model.SONGUOITOIDA, new { htmlAttributes = new { @class = "form-control" }, required = "required", min = "1" })
             @Html.ValidationMessageFor(model => model.SONGUOITOIDA, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -53,7 +53,7 @@
     <div class="form-group">
         Mã Phòng
         <div class="col-md-10">
-            @Html.EditorFor(model => model.MALOAIPHONG, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.EditorFor(model => model.MALOAIPHONG, new { htmlAttributes = new { @class = "form-control", required = "required", min = "1" } })
             @Html.ValidationMessageFor(model => model.MALOAIPHONG, "", new { @class = "text-danger" })
         </div>
     </div>
