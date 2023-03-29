@@ -21,9 +21,14 @@ namespace WEB_KHACHSAN_MVC.Controllers
 
         public ActionResult Booking(DateTime ngayNhanPhong, DateTime ngayTraDuKien, int soNguoi)
         {
-            if(ngayTraDuKien <= ngayNhanPhong)
+            if(ngayNhanPhong < DateTime.Now)
             {
-                ViewBag.Thongbao = "The check-out date must be later than the check-in date.";
+                ViewBag.Thongbao_Checkin = "The check-out date must be later than today.";
+                return View("Index");
+            }
+            if (ngayTraDuKien <= ngayNhanPhong)
+            {
+                ViewBag.Thongbao_Checkout = "The check-out date must be later than the check-in date.";
                 return View("Index");
             }
 
@@ -83,9 +88,9 @@ namespace WEB_KHACHSAN_MVC.Controllers
             {
                 ViewData["NgayNhanPhong"] = "Ngày nhận phòng phải lớn hơn ngày hiện tại!!";
             }
-            else if (Convert.ToDateTime(C_ngaytradukien) < DateTime.Now)
+            else if (Convert.ToDateTime(C_ngaytradukien) < DateTime.Now && Convert.ToDateTime(C_ngaytradukien) < Convert.ToDateTime(C_ngaynhanphong))
             {
-                ViewData["NgayNhanPhong"] = "Ngày nhận phòng phải lớn hơn ngày hiện tại!!";
+                ViewData["NgayTraPhong"] = "Ngày trả phòng không hợp lệ!!";
             }
             else
             {
@@ -156,8 +161,10 @@ namespace WEB_KHACHSAN_MVC.Controllers
                 PHIEUDATPHONG phieuthue_KH = context.PHIEUDATPHONGs.Where(p => p.MAKH == khachhang.MAKH).ToArray().Last();
                 EmailViewModel emailVm = new EmailViewModel();
 
-                emailVm.EmailBody = @"<h3>Hello " + khachhang.TENKH + "! </h3> <br />" +
-                                "Ngày Nhận Phòng: "+ phieuthue_KH.NGAYNHANPHONG + "<br/>" +
+                emailVm.EmailBody = @"<h2>Hello " + khachhang.TENKH + "! </h2> <br />"+
+                                "<h3>THÔNG TIN PHIẾU ĐẶT PHÒNG</h3>"+ 
+                                "Mã Phiếu đặt Phòng: " + phieuthue_KH.MAPHIEUDATPHONG + "<br/>" +
+                                "Ngày Nhận Phòng: " + phieuthue_KH.NGAYNHANPHONG + "<br/>" +
                                 "Ngày Trả Phòng Dự Kiến: " + phieuthue_KH.NGAYTRADUKIEN + "<br/>" +
                                 "Ngày gửi: " + DateTime.Now.ToString() + "<br/>" +
                                 "<br/>Thanks for using our services!";

@@ -29,9 +29,7 @@ namespace WEB_KHACHSAN_MVC.Administrator
         public ActionResult Create(FormCollection collection, HOADON hd)
         {
             var E_tongtien = collection["TONGTIEN"];
-            var E_ngaythanhtoan = collection["NGAYTHANHTOAN"];
             var E_maphieudatphong= collection["MAPHIEUDATPHONG"];
-            var E_manhanvien = collection["MANHANVIEN"];
 
             PHIEUDATPHONG phieudatphong = data.PHIEUDATPHONGs.Where(p => p.MAPHIEUDATPHONG == int.Parse(E_maphieudatphong)).FirstOrDefault();
             if (phieudatphong == null)
@@ -44,17 +42,12 @@ namespace WEB_KHACHSAN_MVC.Administrator
             {
                 ViewData["Error_BookingCard_Room"] = "Not Found Room!";
             }
-
-            if (string.IsNullOrEmpty(E_manhanvien))
-            {
-                ViewData["Error"] = "Don't empty!";
-            }
             else
             {
                 hd.TONGTIEN = Convert.ToDecimal(E_tongtien);
-                hd.NGAYTHANHTOAN = Convert.ToDateTime(E_ngaythanhtoan);
+                hd.NGAYTHANHTOAN = DateTime.Now;
                 hd.MAPHIEUDATPHONG = int.Parse(E_maphieudatphong);
-                hd.MANHANVIEN = int.Parse(E_manhanvien);
+                hd.MANHANVIEN = 1;
                 phongReturn.TINHTRANG = "Bình thường";
                 data.HOADONs.InsertOnSubmit(hd);
                 data.SubmitChanges();

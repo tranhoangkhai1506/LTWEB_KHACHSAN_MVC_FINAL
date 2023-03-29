@@ -27,7 +27,10 @@
             <td>@Html.DisplayFor(modelItem => item.TINHTRANG)</td>
             <td>@Html.DisplayFor(modelItem => item.MALOAIPHONG)</td>
             <td>
-                @Html.ActionLink("Book Now", "Detail", new { id = item.MAPHONG })
+                <div>
+                    <a class="btn btn-success" href="@Url.Action("Index", "BookingQuang",
+                    new { @MaPhong = item.MAPHONG})">BOOK NOW</a>
+                </div>
             </td>
         </tr>
     }
