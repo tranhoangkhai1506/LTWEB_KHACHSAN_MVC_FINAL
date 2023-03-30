@@ -25,7 +25,7 @@ namespace WEB_KHACHSAN_MVC.Controllers
             {
                 foreach (var loai in all_LoaiPhong)
                 {
-                    if (phong.MALOAIPHONG == loai.MALOAIPHONG && loai.TENLOAIPHONG.Contains("Phòng đơn"))
+                    if (phong.MALOAIPHONG == loai.MALOAIPHONG && String.Equals(loai.TENLOAIPHONG, "phòng đơn", StringComparison.OrdinalIgnoreCase))
                     {
                         listPhongDon.Add(phong);
                     }
@@ -42,7 +42,7 @@ namespace WEB_KHACHSAN_MVC.Controllers
             {
                 foreach (var loai in all_LoaiPhong)
                 {
-                    if (phong.MALOAIPHONG == loai.MALOAIPHONG && loai.TENLOAIPHONG.Contains("Phòng đôi"))
+                    if (phong.MALOAIPHONG == loai.MALOAIPHONG && String.Equals(loai.TENLOAIPHONG, "phòng đôi", StringComparison.OrdinalIgnoreCase))
                     {
                         listPhongDoi.Add(phong);
                     }
@@ -59,7 +59,7 @@ namespace WEB_KHACHSAN_MVC.Controllers
             {
                 foreach (var loai in all_LoaiPhong)
                 {
-                    if (phong.MALOAIPHONG == loai.MALOAIPHONG && loai.TENLOAIPHONG.Contains("Phòng VIP"))
+                    if (phong.MALOAIPHONG == loai.MALOAIPHONG && String.Equals(loai.TENLOAIPHONG, "phòng vip", StringComparison.OrdinalIgnoreCase))
                     {
                         listPhongVIP.Add(phong);
                     }

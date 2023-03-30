@@ -58,8 +58,7 @@ namespace WEB_KHACHSAN_MVC.Controllers
             }
             else
             {
-                var all_PhongTrong = context.PHONGs.Where(p => p.TINHTRANG == "Bình thường").ToList();
-                return Redirect(@Url.Action("ThongBaoKhongCoPhongTrong","BookingQuang", "all_PhongTrong"));
+                return Redirect(@Url.Action("ThongBaoKhongCoPhongTrong","BookingQuang"));
             }            
         }
 
