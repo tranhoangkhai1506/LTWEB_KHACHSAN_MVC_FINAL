@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_LayoutEmloyee.cshtml";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 }
 
 <h2>Create</h2>
@@ -18,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.NGAYSUDUNG, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NGAYSUDUNG, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.NGAYSUDUNG, new { htmlAttributes = new { @class = "form-control" , @type = "datetime", required = "required" } })
                 @Html.ValidationMessageFor(model => model.NGAYSUDUNG, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -26,24 +26,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MADICHVU, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MADICHVU, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MADICHVU, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.MADICHVU, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MAPHIEUDATPHONG, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.MAPHIEUDATPHONG, htmlAttributes: new { @class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MAPHIEUDATPHONG, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MAPHIEUDATPHONG, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.MAPHIEUDATPHONG, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MANHANVIEN, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MANHANVIEN, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MANHANVIEN, "", new { @class = "text-danger" })
             </div>
         </div>
 

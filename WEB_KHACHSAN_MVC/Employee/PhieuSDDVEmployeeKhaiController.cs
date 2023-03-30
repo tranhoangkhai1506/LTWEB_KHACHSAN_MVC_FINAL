@@ -42,7 +42,7 @@ namespace WEB_KHACHSAN_MVC.Employee
                 psd.NGAYSUDUNG = Convert.ToDateTime(C_ngaysudung);
                 psd.MADICHVU = int.Parse(C_madichvu);
                 psd.MAPHIEUDATPHONG = int.Parse(C_maphieudatphong);
-                psd.MANHANVIEN = int.Parse(C_manhanvien);
+                psd.MANHANVIEN = 1;
                 data.PHIEUSDDVs.InsertOnSubmit(psd);
                 data.SubmitChanges();
                 return RedirectToAction("Index");
