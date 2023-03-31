@@ -5,35 +5,115 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@*@using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal" style="text-align:center" >
+            <h4>ĐĂNG NHẬP</h4>
+            <hr />
+            <div class="form-group">
+                <h5>Tài Khoản</h5>
+                <div class="col-md-4" style=" width: 20%; margin: 0 auto">
+                    @Html.EditorFor(model => model.TENDANGNHAP, new { htmlAttributes = new { @class = "form-control", @type = "text" } })
+                    @Html.ValidationMessageFor(model => model.TENDANGNHAP, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            @Html.ValidationSummary(true, "ViewBag", new { @class = "text-danger" })
+            <div class="form-group">
+                <h5>Mật Khẩu</h5>
+                <div class="col-md-4" style=" width: 20%; margin: 0 auto">
+                    @Html.EditorFor(model => model.MATKHAU, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                    @Html.ValidationMessageFor(model => model.MATKHAU, "", new { @class = "text-danger" })
+                    <h6 style="color: red">@ViewBag.ThongBao</h6>
+                </div>
+            </div>
+            <br />
+            <div class="form-group" style="margin-left:175px">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Đăng Nhập" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    }*@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    <section class="h-100 gradient-form" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-5 mx-md-4">
 
-    <div class="form-horizontal" style="text-align:center" >
-        <h4>ĐĂNG NHẬP</h4>
-        <hr />
-        <div class="form-group">
-            <h5>Tài Khoản</h5>
-            <div class="col-md-4" style=" width: 20%; margin: 0 auto">
-                @Html.EditorFor(model => model.TENDANGNHAP, new { htmlAttributes = new { @class = "form-control", @type = "text" } })
-                @Html.ValidationMessageFor(model => model.TENDANGNHAP, "", new { @class = "text-danger" })
+                                    <div class="text-center">
+                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                                             style="width: 185px;" alt="logo">
+                                        <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+                                    </div>
+
+                                    <form>
+                                        <p>Please login to your account</p>
+
+                                        <div class="form-group">
+                                            <h5>Tài Khoản</h5>
+                                            <div class="form-outline mb-4">
+                                                @Html.EditorFor(model => model.TENDANGNHAP, new { htmlAttributes = new { @class = "form-control", @type = "text" } })
+                                                @Html.ValidationMessageFor(model => model.TENDANGNHAP, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <h5>Mật Khẩu</h5>
+                                            <div class="form-outline mb-4">
+                                                @Html.EditorFor(model => model.MATKHAU, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                                                @Html.ValidationMessageFor(model => model.MATKHAU, "", new { @class = "text-danger" })
+                                                <h6 style="color: red">@ViewBag.ThongBao</h6>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="text-center pt-1 mb-5 pb-1">
+                                            <input type="submit" value="Đăng Nhập" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" />
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                    <h4 class="mb-4">We are more than just a company</h4>
+                                    <p class="small mb-0">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <br />
-        @Html.ValidationSummary(true, "ViewBag", new { @class = "text-danger" })
-        <div class="form-group">
-            <h5>Mật Khẩu</h5>
-            <div class="col-md-4" style=" width: 20%; margin: 0 auto">
-                @Html.EditorFor(model => model.MATKHAU, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
-                @Html.ValidationMessageFor(model => model.MATKHAU, "", new { @class = "text-danger" })
-                <h6 style="color: red">@ViewBag.ThongBao</h6>
-            </div>
-        </div>
-        <br />
-        <div class="form-group" style="margin-left:175px">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Đăng Nhập" class="btn btn-success" />
-            </div>
-        </div>
-    </div>
+    </section>
 }
+<style>
+    .gradient-custom-2 {
+        background: #fccb90;
+        background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+        background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    }
+    @*@media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+}*@
+</style>

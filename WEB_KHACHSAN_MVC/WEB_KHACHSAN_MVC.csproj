@@ -197,13 +197,13 @@
     <Content Include="img\background-home-1.jpg" />
     <Content Include="img\background-home-2.jpg" />
     <Content Include="img\lotus.ico" />
+    <Content Include="img\room-4.jpg" />
+    <Content Include="img\room-5.jpg" />
+    <Content Include="img\room-6.jpg" />
     <Content Include="img\video.jpg" />
     <Content Include="img\room-1.jpg" />
     <Content Include="img\room-2.jpg" />
     <Content Include="img\room-3.jpg" />
-    <Content Include="img\room-4.jpg" />
-    <Content Include="img\room-5.jpg" />
-    <Content Include="img\room-6.jpg" />
     <Content Include="img\team-1.jpg" />
     <Content Include="img\team-2.jpg" />
     <Content Include="img\team-3.jpg" />
