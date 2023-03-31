@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QUANLYKHACHSAN_WEB" Class="KhachSanDBContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-M1CIIM24\SQLEXPRESS;Initial Catalog=QUANLYKHACHSAN_WEB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QUANLYKHACHSAN_WEBConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DICHVU" Member="DICHVUs">
     <Type Name="DICHVU">
       <Column Name="MADICHVU" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
