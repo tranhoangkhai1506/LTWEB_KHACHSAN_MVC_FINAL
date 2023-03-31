@@ -3,6 +3,12 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link href="~/css/style.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+
 <!-- Carousel Start -->
 <div class="container-fluid p-0 mb-5">
     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -113,7 +119,22 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="room-item shadow rounded overflow-hidden">
                     <div class="position-relative">
-                        <img class="img-fluid" src="~/img/room-1.jpg" alt="">
+                        <img class="thumb-main" class="img-fluid" src="~/img/room-1.jpg" width="500" height="300" alt="">
+                        <div class="slider-nav">
+                            <div class="btn-prev">
+                                <i class="fa-solid fa-angle-left"></i>
+                            </div>
+                            <div class="btn-next">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <ul id="list-thumb">
+                            <li class="thumb-item active"><img src="~/img/room-1.jpg" width="80" height="40" alt=""></li>
+                            <li class="thumb-item"><img src="~/img/room-2.jpg" width="80" height="40" alt=""></li>
+                            <li class="thumb-item"><img src="~/img/room-3.jpg" width="80" height="40" alt=""></li>
+                            <li class="thumb-item"><img src="~/img//room-4.jpg" width="80" height="40" alt=""></li>
+                        </ul>
+                        <br />
                         <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">200.000 VNĐ</small>
                     </div>
                     <div class="p-4 mt-2">
@@ -132,7 +153,7 @@
                             <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>1 Bath</small>
                             <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                         </div>
-                        <p class="text-body mb-3">Phòng đơn giành cho 1 người hoặc cặp tình nhân thuê.</p>
+                        <p class="text-body mb-3">Single room for 1 person or couples to rent at a reasonable price.</p>
                         <div class="d-flex justify-content-between">
                             <a class="btn btn-sm btn-primary rounded py-2 px-4" href="@Url.Action("ViewPhongLoai1","RoomQuang")">View Detail</a>
                             <a class="btn btn-sm btn-dark rounded py-2 px-4" href="@Url.Action("Index","BookingQuang")">Book Now</a>
@@ -140,10 +161,28 @@
                     </div>
                 </div>
             </div>
+
+
+
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="room-item shadow rounded overflow-hidden">
                     <div class="position-relative">
-                        <img class="img-fluid" src="~/img/room-2.jpg" alt="">
+                        <img class="thumb-main-1" class="img-fluid" src="~/img/room-5.jpg" accesskeywidth="500" height="300" alt="">
+                        <div class="slider-nav-1">
+                            <div class="btn-prev-1">
+                                <i class="fa-solid fa-angle-left"></i>
+                            </div>
+                            <div class="btn-next-1">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <ul id="list-thumb-1">
+                            <li class="thumb-item-1 active"><img src="~/img/room-5.jpg" width="80" height="40" alt=""></li>
+                            <li class="thumb-item-1"><img src="~/img/room-6.jpg" width="80" height="40" alt=""></li>
+                            <li class="thumb-item-1"><img src="~/img/room-7.jpg" width="80" height="40" alt=""></li>
+                            <li class="thumb-item-1"><img src="~/img/room-8.jpg" width="80" height="40" alt=""></li>
+                        </ul>
+                        <br />
                         <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">400.000 VNĐ</small>
                     </div>
                     <div class="p-4 mt-2">
@@ -162,7 +201,7 @@
                             <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
                             <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                         </div>
-                        <p class="text-body mb-3">Phòng đôi giành cho 1 người hoặc cặp tình nhân với nhiều tiện nghi hơn.</p>
+                        <p class="text-body mb-3">Double room for 1 person or couple with more amenities.</p>
                         <div class="d-flex justify-content-between">
                             <a class="btn btn-sm btn-primary rounded py-2 px-4" href="@Url.Action("ViewPhongLoai2","RoomQuang")">View Detail</a>
                             <a class="btn btn-sm btn-dark rounded py-2 px-4" href="@Url.Action("Index","BookingQuang")">Book Now</a>
@@ -173,7 +212,22 @@
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                 <div class="room-item shadow rounded overflow-hidden">
                     <div class="position-relative">
-                        <img class="img-fluid" src="~/img/room-3.jpg" alt="">
+                        <img class="thumb-main-2" class="img-fluid" src="~/img/room-9.jpg" width="500" height="300" alt="">
+                        <div class="slider-nav-2">
+                            <div class="btn-prev-2">
+                                <i class="fa-solid fa-angle-left"></i>
+                            </div>
+                            <div class="btn-next-2">
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                        </div>
+                        <ul id="list-thumb-2">
+                            <li class="thumb-item-2 active"><img src="~/img/room-9.jpg" width="80" height="40" alt=""></li>
+                            <li class="thumb-item-2"><img src="~/img/room-10.jpg" width="80" height="40" alt=""></li>
+                            <li class="thumb-item-2"><img src="~/img/room-11.jpg" width="80" height="40" alt=""></li>
+                            <li class="thumb-item-2"><img src="~/img/room-12.jpg" width="80" height="40" alt=""></li>
+                        </ul>
+                        <br />
                         <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">600.000 VNĐ</small>
                     </div>
                     <div class="p-4 mt-2">
@@ -192,7 +246,7 @@
                             <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>1 Bath</small>
                             <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
                         </div>
-                        <p class="text-body mb-3">Phòng cao cấp nhất giá cả đắt đỏ với đầy đủ tiện nghi bậc nhất.</p>
+                        <p class="text-body mb-3">The most expensive room with the most luxurious amenities.</p>
                         <div class="d-flex justify-content-between">
                             <a class="btn btn-sm btn-primary rounded py-2 px-4" href="@Url.Action("ViewPhongLoai3","RoomQuang")">View Detail</a>
                             <a class="btn btn-sm btn-dark rounded py-2 px-4" href="@Url.Action("Index","BookingQuang")">Book Now</a>
@@ -439,3 +493,244 @@
     </div>
 </div>
 <!-- Team End -->
+<style>
+    #wrapper {
+        width: 960px;
+        margin: 0 auto;
+    }
+
+    #wp-slider {
+        width: 400px;
+    }
+
+    #show-picture {
+        height: 300px;
+        position: relative;
+    }
+
+    /*style room 1*/
+    .slider-nav div {
+        position: absolute;
+        top: 50%;
+        background-color: #917373;
+        width: 26px;
+        height: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-50%);
+    }
+
+        .slider-nav div:hover {
+            cursor: pointer;
+            background-color: #d45a5a;
+            color: #fff;
+        }
+
+        .slider-nav div.btn-next {
+            right: 0;
+        }
+
+    ul#list-thumb {
+        padding: 0px;
+        margin-top: 20px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        ul#list-thumb li.thumb-item {
+            flex-basis: 80px;
+            border: 2px solid #928e8e;
+            opacity: 0.8;
+        }
+
+            ul#list-thumb li.thumb-item:hover {
+                cursor: pointer;
+            }
+
+            ul#list-thumb li.thumb-item.active {
+                border: 2px solid #d45a5a;
+                opacity: 1;
+            }
+    /*style room 2*/
+    .slider-nav-1 div {
+        position: absolute;
+        top: 50%;
+        background-color: #917373;
+        width: 26px;
+        height: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-50%);
+    }
+
+        .slider-nav-1 div:hover {
+            cursor: pointer;
+            background-color: #d45a5a;
+            color: #fff;
+        }
+
+        .slider-nav-1 div.btn-next-1 {
+            right: 0;
+        }
+
+    ul#list-thumb-1 {
+        padding: 0px;
+        margin-top: 20px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        ul#list-thumb-1 li.thumb-item-1 {
+            flex-basis: 80px;
+            border: 2px solid #928e8e;
+            opacity: 0.8;
+        }
+
+            ul#list-thumb-1 li.thumb-item-1:hover {
+                cursor: pointer;
+            }
+
+            ul#list-thumb-1 li.thumb-item-1.active {
+                border: 2px solid #d45a5a;
+                opacity: 1;
+            }
+
+    /*style room 3*/
+    .slider-nav-2 div {
+        position: absolute;
+        top: 50%;
+        background-color: #917373;
+        width: 26px;
+        height: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-50%);
+    }
+
+        .slider-nav-2 div:hover {
+            cursor: pointer;
+            background-color: #d45a5a;
+            color: #fff;
+        }
+
+        .slider-nav-2 div.btn-next-2 {
+            right: 0;
+        }
+
+    ul#list-thumb-2 {
+        padding: 0px;
+        margin-top: 20px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        ul#list-thumb-2 li.thumb-item-2 {
+            flex-basis: 80px;
+            border: 2px solid #928e8e;
+            opacity: 0.8;
+        }
+
+            ul#list-thumb-2 li.thumb-item-2:hover {
+                cursor: pointer;
+            }
+
+            ul#list-thumb-2 li.thumb-item-2.active {
+                border: 2px solid #d45a5a;
+                opacity: 1;
+            }
+</style>
+
+<script>
+    // js room 1
+    $(document).ready(function () {
+        // Xử lý click vào ảnh
+        $('li.thumb-item').click(function () {
+            var srcthumb = $(this).find('img').attr('src');
+            $(".thumb-main").attr('src', srcthumb);
+            $('li.thumb-item').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        // Xử lý click vào nút next
+        $('.btn-next').click(function () {
+            if ($('#list-thumb li.thumb-item:last-child').hasClass('active')) {
+                $('#list-thumb li.thumb-item:first-child').click();
+            } else {
+                $('#list-thumb li.thumb-item.active').next().click();
+            }
+        });
+
+        // Xử lý click vào nút prev
+        $('.btn-prev').click(function () {
+            if ($('#list-thumb li.thumb-item:first-child').hasClass('active')) {
+                $('#list-thumb li.thumb-item:last-child').click();
+            } else {
+                $('#list-thumb li.thumb-item.active').prev().click();
+            }
+        });
+    });
+
+    // js room 2
+    $(document).ready(function () {
+        // Xử lý click vào ảnh
+        $('li.thumb-item-1').click(function () {
+            var srcthumb = $(this).find('img').attr('src');
+            $(".thumb-main-1").attr('src', srcthumb);
+            $('li.thumb-item-1').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        // Xử lý click vào nút next
+        $('.btn-next-1').click(function () {
+            if ($('#list-thumb-1 li.thumb-item-1:last-child').hasClass('active')) {
+                $('#list-thumb-1 li.thumb-item-1:first-child').click();
+            } else {
+                $('#list-thumb-1 li.thumb-item-1.active').next().click();
+            }
+        });
+
+        // Xử lý click vào nút prev
+        $('.btn-prev-1').click(function () {
+            if ($('#list-thumb-1 li.thumb-item-1:first-child').hasClass('active')) {
+                $('#list-thumb-1 li.thumb-item-1:last-child').click();
+            } else {
+                $('#list-thumb-1 li.thumb-item-1.active').prev().click();
+            }
+        });
+    });
+
+    // js room 3
+    $(document).ready(function () {
+        // Xử lý click vào ảnh
+        $('li.thumb-item-2').click(function () {
+            var srcthumb = $(this).find('img').attr('src');
+            $(".thumb-main-2").attr('src', srcthumb);
+            $('li.thumb-item-2').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        // Xử lý click vào nút next
+        $('.btn-next-2').click(function () {
+            if ($('#list-thumb-2 li.thumb-item-2:last-child').hasClass('active')) {
+                $('#list-thumb-2 li.thumb-item-2:first-child').click();
+            } else {
+                $('#list-thumb-2 li.thumb-item-2.active').next().click();
+            }
+        });
+
+        // Xử lý click vào nút prev
+        $('.btn-prev-2').click(function () {
+            if ($('#list-thumb-2 li.thumb-item-2:first-child').hasClass('active')) {
+                $('#list-thumb-2 li.thumb-item-2:last-child').click();
+            } else {
+                $('#list-thumb-2 li.thumb-item-2.active').prev().click();
+            }
+        });
+    });
+</script>

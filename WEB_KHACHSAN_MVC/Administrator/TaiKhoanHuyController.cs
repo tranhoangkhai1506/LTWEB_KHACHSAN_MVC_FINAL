@@ -131,7 +131,7 @@ namespace WEB_KHACHSAN_MVC.Administrator
             }
             else if (!hasMiniMaxChars.IsMatch(input))
             {
-                ketQua = "Mật khẩu phải có ít nhất 8 kí tự đến 15 kí tự";
+                ketQua = "Mật khẩu phải có ít nhất 6 kí tự đến 8 kí tự";
                 return false;
             }
             else if (!hasNumber.IsMatch(input))
