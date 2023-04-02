@@ -12,11 +12,13 @@
 </div>
 
 
+
 <style>
     table, th, td {
         border: 1px solid black;
     }
 </style>
+
 
 <table class="table">
     <tr style="text-align:center">
@@ -78,8 +80,7 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.MAPHIEUDATPHONG }) |
-                @Html.ActionLink("Details", "Details", new { id = item.MAPHIEUDATPHONG }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MAPHIEUDATPHONG })
+                @Html.ActionLink("Details", "Details", new { id = item.MAPHIEUDATPHONG })
             </td>
         </tr>
     }

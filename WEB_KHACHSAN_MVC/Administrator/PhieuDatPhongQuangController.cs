@@ -91,19 +91,5 @@ namespace WEB_KHACHSAN_MVC.Administrator
             }
             return this.Edit(id);
         }
-
-        public ActionResult Delete(int id)
-        {
-            var dbDelete = data.PHIEUDATPHONGs.First(m => m.MAPHIEUDATPHONG == id);
-            return View(dbDelete);
-        }
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            var dbDelete = data.PHIEUDATPHONGs.Where(m => m.MAPHIEUDATPHONG == id).First();
-            data.PHIEUDATPHONGs.DeleteOnSubmit(dbDelete);
-            data.SubmitChanges();
-            return RedirectToAction("Index");
-        }
     }
 }

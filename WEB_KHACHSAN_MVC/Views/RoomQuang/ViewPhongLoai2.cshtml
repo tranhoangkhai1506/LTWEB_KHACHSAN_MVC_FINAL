@@ -27,10 +27,19 @@
             <td>@Html.DisplayFor(modelItem => item.TINHTRANG)</td>
             <td>@Html.DisplayFor(modelItem => item.MALOAIPHONG)</td>
             <td>
-                <div>
-                    <a class="btn btn-success" href="@Url.Action("Index", "BookingQuang",
-                    new { @MaPhong = item.MAPHONG})">BOOK NOW</a>
-                </div>
+                @if (String.Equals(item.TINHTRANG, "Bình thường", StringComparison.OrdinalIgnoreCase))
+                {
+                    <div>
+                        <a class="btn btn-success" href="@Url.Action("ThemKhachHang", "BookingQuang",
+                                        new { @MaPhong = item.MAPHONG})">BOOK NOW</a>
+                    </div>
+                }
+                else
+                {
+                    <div>
+                        <a class="btn btn-danger">UNREALDY</a>
+                    </div>
+                }
             </td>
         </tr>
     }

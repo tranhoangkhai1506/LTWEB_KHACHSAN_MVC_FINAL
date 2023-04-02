@@ -134,6 +134,13 @@ namespace WEB_KHACHSAN_MVC.Controllers
             if (string.IsNullOrEmpty(E_TenKhachHang))
             {
                 ViewData["Error"] = "Don't empty!";
+                return this.ThemKhachHang(maPhongBooking);
+            }
+            KHACHHANG kiemTraKhachHang = context.KHACHHANGs.Where(p => p.MAKH == int.Parse(E_CCCD)).FirstOrDefault();
+            if (kiemTraKhachHang != null)
+            {
+                cccdKhachHang_Booking = kiemTraKhachHang.CCCD.ToString();
+                return RedirectToAction("TaoPhieuDatPhong");
             }
             else
             {
@@ -145,16 +152,12 @@ namespace WEB_KHACHSAN_MVC.Controllers
                 context.KHACHHANGs.InsertOnSubmit(kh);
                 context.SubmitChanges();
                 return RedirectToAction("TaoPhieuDatPhong");
-            }
-            return this.ThemKhachHang(maPhongBooking);
+            } 
         }
-
         public ActionResult DangKyThanhCong()
         {
             KHACHHANG khachhang = context.KHACHHANGs.Where(p => p.CCCD == long.Parse(cccdKhachHang_Booking)).FirstOrDefault();
             // lay phieu thue => lastordefautl
-
-
             if (khachhang != null && khachhang.EMAIL != "")
             {
                 PHIEUDATPHONG phieuthue_KH = context.PHIEUDATPHONGs.Where(p => p.MAKH == khachhang.MAKH).ToArray().Last();
@@ -165,6 +168,7 @@ namespace WEB_KHACHSAN_MVC.Controllers
                                 "Mã Phiếu đặt Phòng: " + phieuthue_KH.MAPHIEUDATPHONG + "<br/>" +
                                 "Ngày Nhận Phòng: " + phieuthue_KH.NGAYNHANPHONG + "<br/>" +
                                 "Ngày Trả Phòng Dự Kiến: " + phieuthue_KH.NGAYTRADUKIEN + "<br/>" +
+                                "Tiền Cọc: " + phieuthue_KH.TIENCOC + "<br/>" +
                                 "Ngày gửi: " + DateTime.Now.ToString() + "<br/>" +
                                 "<br/>Thanks for using our services!";
 
@@ -194,11 +198,10 @@ namespace WEB_KHACHSAN_MVC.Controllers
                     mailMessage.Subject = emailVm.EmailSubject;
                     mailMessage.Body = emailVm.EmailBody;
                     client.Send(mailMessage);
-                    return View();
                 }
                 catch (Exception)
                 {
-                    return View();
+                    return HttpNotFound();
                 }
             }
             return View();
@@ -251,6 +254,22 @@ namespace WEB_KHACHSAN_MVC.Controllers
                 return RedirectToAction("Payment", "VnPayQuang");
             }
             return this.CreateSuDungDichVu(maDichVuBooking);
+        }
+
+        public ActionResult ThanhToanCocKhongThanhCong()
+        {
+            KHACHHANG khachhang = context.KHACHHANGs.Where(p => p.CCCD == long.Parse(cccdKhachHang_Booking)).FirstOrDefault();           
+            PHIEUDATPHONG PhieuDatPhong = new PHIEUDATPHONG();
+            if (khachhang != null)
+            {
+                PhieuDatPhong = context.PHIEUDATPHONGs.Where(
+                p => p.MAKH == khachhang.MAKH && p.NGAYNHANPHONG == ngayNhanPhong && p.MAPHONG == maPhongBooking).FirstOrDefault();
+            }
+
+            context.PHIEUDATPHONGs.DeleteOnSubmit(PhieuDatPhong);
+            context.KHACHHANGs.DeleteOnSubmit(khachhang);
+            context.SubmitChanges();
+            return View();
         }
     }
 }

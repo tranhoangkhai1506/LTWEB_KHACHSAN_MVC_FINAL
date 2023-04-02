@@ -4,18 +4,20 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WEB_KHACHSAN_MVC.Controllers;
 
 namespace WEB_KHACHSAN_MVC.Others
 {
     public class VnPayQUANGController : Controller
     {
+        BookingQuangController bookingQuangController;
         // GET: VnPayQUANG
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Payment(string E_tiencoc)
+        public ActionResult Payment()
         {
             string url = ConfigurationManager.AppSettings["Url"];
             string returnUrl = ConfigurationManager.AppSettings["ReturnUrl"];
@@ -71,13 +73,14 @@ namespace WEB_KHACHSAN_MVC.Others
                 {
                     if (vnp_ResponseCode == "00")
                     {
-                        //Thanh toán thành công
-                        ViewBag.Message = "Thanh toán thành công hóa đơn " + orderId + " | Mã giao dịch: " + vnpayTranId;
+                        ViewBag.Message = "Thanh toán thành công hóa đơn: " + orderId;
+                        ViewBag.MaGiaoDich = "Mã giao dịch: " + vnpayTranId;
                     }
                     else
                     {
-                        //Thanh toán không thành công. Mã lỗi: vnp_ResponseCode
-                        ViewBag.Message = "Có lỗi xảy ra trong quá trình xử lý hóa đơn " + orderId + " | Mã giao dịch: " + vnpayTranId + " | Mã lỗi: " + vnp_ResponseCode;
+                        ViewBag.Message = "Có lỗi xảy ra trong quá trình xử lý hóa đơn: " + orderId;
+                        ViewBag.MaGiaoDich = "Mã giao dịch: " + vnpayTranId;
+                        ViewBag.MaLoi = "Mã lỗi: " + vnp_ResponseCode;
                     }
                 }
                 else
