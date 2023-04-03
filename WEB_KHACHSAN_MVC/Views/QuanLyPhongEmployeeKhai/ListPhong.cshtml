@@ -5,38 +5,48 @@
     Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h2>DANH SÁNH PHÒNG</h2>
 <style>
     table, th, td {
         border: 1px solid black;
     }
 </style>
-<p>
-    @Html.ActionLink("Create New", "CreatePhong")
-</p>
+<div style="text-align: center">
+    <h2>Danh Sách Phòng</h2>
+    <p class="btn btn-success">
+        @Html.ActionLink("Thêm Phòng", "CreatePhong")
+    </p>
+</div>
+
 <table class="table">
-    <tr>
+    <tr style="text-align:center">
         <th>
-            @Html.DisplayNameFor(model => model.TENPHONG)
+            Mã Phòng
+        <th>
+            Tên Phòng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SONGUOITOIDA)
+            Số Người Tối Đa
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TINHTRANG)
+            Tình Trạng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HINH)
+            Hình
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MALOAIPHONG)
+            Mã Loại Phòng
         </th>
-        <th></th>
+        <th>
+            Chức Năng
+        </th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr style="text-align:center">
+            <td>
+                @Html.DisplayFor(modelItem => item.MAPHONG)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TENPHONG)
             </td>
@@ -47,14 +57,14 @@
                 @Html.DisplayFor(modelItem => item.TINHTRANG)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.HINH)
+                <img src="@item.HINH" width="200" alt="">
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.MALOAIPHONG)
             </td>
             <td>
                 @Html.ActionLink("Edit", "EditPhong", new { maPhong = item.MAPHONG }) |
-                @Html.ActionLink("Details", "Details", new { maPhong = item.MAPHONG }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MAPHONG }) |
                 @Html.ActionLink("Delete", "DeletePhong", new { maPhong = item.MAPHONG })
             </td>
         </tr>

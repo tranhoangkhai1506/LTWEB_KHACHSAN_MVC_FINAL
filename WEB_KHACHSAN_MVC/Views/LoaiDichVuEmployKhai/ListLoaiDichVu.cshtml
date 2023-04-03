@@ -5,7 +5,8 @@
     Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h2>DANH SÁCH LOẠI DỊCH VỤ</h2>
+<h2>List</h2>
+
 <style>
     table, th, td {
         border: 1px solid black;
@@ -17,11 +18,7 @@
 <table class="table">
     <tr>
         <th>
-            Mã Loại Dịch Vụ
-        </th>
-
-        <th>
-            Tên Loại Dịch Vụ
+            @Html.DisplayNameFor(model => model.TENLOAIDICHVU)
         </th>
         <th></th>
     </tr>
@@ -30,14 +27,11 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.MALOAIDICHVU)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.TENLOAIDICHVU)
             </td>
             <td>
                 @Html.ActionLink("Edit", "EditLoaiDichVu", new { maLoaiDichVu = item.MALOAIDICHVU }) |
-                @Html.ActionLink("Details", "DetailsLoaiDichVu", new { maLoaiDichVu = item.MALOAIDICHVU }) |
+                @Html.ActionLink("Details", "Detail", new { maLoaiDichVu = item.MALOAIDICHVU }) |
                 @Html.ActionLink("Delete", "DeleteLoaiDichVu", new { maLoaiDichVu = item.MALOAIDICHVU })
             </td>
         </tr>

@@ -5,35 +5,43 @@
     Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h2>CUSTOMER</h2>
 <style>
     table, th, td {
         border: 1px solid black;
     }
 </style>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div style="text-align: center">
+    <h2>Danh Sách Khách Hàng</h2>
+    <p class="btn btn-success">
+        @Html.ActionLink("Thêm Khách hàng", "Create")
+    </p>
+</div>
 <table class="table">
     <tr>
         <th>
-            Tên Khách Hàng
+            Mã Khách hàng
         </th>
         <th>
-            Căn Cước Công Dân
+            Tên khách hàng
+        </th>
+        <th>
+            Căn cước công dân
         </th>
         <th>
             Email
         </th>
         <th>
-            Điện Thoại
+            Số điện thoại
         </th>
-        <th></th>
+        <th style="text-align:center">Chức năng</th>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MAKH)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TENKH)
             </td>

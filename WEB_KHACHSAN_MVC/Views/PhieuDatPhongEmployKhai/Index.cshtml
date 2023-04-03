@@ -4,48 +4,56 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 }
+<div style="text-align:center">
+    <h2>Thông Tin Phiếu Đặt Phòng</h2>
+    <p class="btn btn-success">
+        @Html.ActionLink("Create", "Create")
+    </p>
+</div>
 
-<h2>BOOKING CARD</h2>
+
+
 <style>
     table, th, td {
         border: 1px solid black;
     }
 </style>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+
 <table class="table">
-    <tr>
+    <tr style="text-align:center">
         <th>
-            @Html.DisplayNameFor(model => model.MAPHIEUDATPHONG)
+            Mã Phiếu Đặt Phòng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SONGUOI)
+            Số Người
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NGAYNHANPHONG)
+            Ngày Nhận Phòng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NGAYTRADUKIEN)
+            Ngày Trả Dự Kiến
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TIENCOC)
+            Tiền Cọc
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MAPHONG)
+            Mã Phòng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MAKH)
+            Mã Khách Hàng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MANHANVIEN)
+            Mã Nhân Viên
         </th>
-        <th></th>
+        <th>
+            Chức Năng
+        </th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr style="text-align:center">
             <td>
                 @Html.DisplayFor(modelItem => item.MAPHIEUDATPHONG)
             </td>

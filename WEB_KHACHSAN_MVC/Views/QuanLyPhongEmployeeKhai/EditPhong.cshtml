@@ -5,65 +5,63 @@
     Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h2>CHỈNH SỬA THÔNG TIN PHÒNG</h2>
+<h2 style="text-align:center">Sửa Phòng</h2>
+
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
+    <div class="form-horizontal" style="width: 14%; margin: 0 auto; text-align:center">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.MAPHONG)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TENPHONG, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            Tên Phòng
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.TENPHONG, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.TENPHONG, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SONGUOITOIDA, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SONGUOITOIDA, new { htmlAttributes = new { @class = "form-control", required = "required", min = "1" } })
+            Số Người Tối Đa
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.SONGUOITOIDA, new { htmlAttributes = new { @class = "form-control" }, required = "required", min = "1" })
                 @Html.ValidationMessageFor(model => model.SONGUOITOIDA, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TINHTRANG, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            Tình Trạng
+            <div class="col-md-12">
                 @Html.EditorFor(model => model.TINHTRANG, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.TINHTRANG, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.HINH, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.HINH, new { htmlAttributes = new { @class = "form-control" } })
+            Hình
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.HINH, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.HINH, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MALOAIPHONG, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MALOAIPHONG, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            Mã Phòng
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.MALOAIPHONG, new { htmlAttributes = new { @class = "form-control", required = "required", min = "1" } })
                 @Html.ValidationMessageFor(model => model.MALOAIPHONG, "", new { @class = "text-danger" })
             </div>
         </div>
-        <br /> 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-success" />
-            </div>
+    </div>
+    <br />
+    <div class="form-group" style="display: flex; justify-content: center; margin-left: 505px">
+        <div class="col-md-offset-2 col-md-10">
+            <div class="btn btn-secondary"> @Html.ActionLink("Back", "ListPhong") </div>
+            <input type="submit" value="Save" class="btn btn-success" />
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "ListPhong")
-</div>

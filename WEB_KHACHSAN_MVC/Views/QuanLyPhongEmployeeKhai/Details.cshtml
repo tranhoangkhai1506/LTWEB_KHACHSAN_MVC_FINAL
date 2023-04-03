@@ -2,58 +2,38 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_LayoutEmloyee.cshtml";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h2>Details</h2>
+<div class="btn btn-secondary">@Html.ActionLink("Back", "ListPhong")</div>
 
-<div>
-    <h4>PHONG</h4>
+<h2 style="text-align:center">Chi Tiết Phòng</h2>
+<div style="width: 16%; margin: 0 auto">
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TENPHONG)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.TENPHONG)
+            Mã phòng: @Html.DisplayFor(model => model.MAPHONG)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SONGUOITOIDA)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.SONGUOITOIDA)
+            Tên Phòng: @Html.DisplayFor(model => model.TENPHONG)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TINHTRANG)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.TINHTRANG)
+            Số Người Tối Đa: @Html.DisplayFor(model => model.SONGUOITOIDA)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.HINH)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.HINH)
+            Tình Trạng: @Html.DisplayFor(model => model.TINHTRANG)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MALOAIPHONG)
-        </dt>
+        <dd>
+            Hình: <img src="@Model.HINH" width="90" height="90" alt="ERROR" />
+        </dd>
 
         <dd>
-            @Html.DisplayFor(model => model.MALOAIPHONG)
+            Mã Loại Phòng: @Html.DisplayFor(model => model.MALOAIPHONG)
         </dd>
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MAPHONG }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

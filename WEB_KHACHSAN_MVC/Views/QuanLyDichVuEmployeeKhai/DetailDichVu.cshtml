@@ -2,50 +2,27 @@
 
 @{
     ViewBag.Title = "DetailDichVu";
-    Layout = "~/Views/Shared/_LayoutEmloyee.cshtml";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h2>DetailDichVu</h2>
+<div class="btn btn-secondary">@Html.ActionLink("Back", "ListDichVu")</div>
 
-<div>
-    <h4>DICHVU</h4>
+<h2 style="text-align:center">Chi Tiết Dịch Vụ</h2>
+
+<div style="width: 18%; margin: 0 auto">
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TENDICHVU)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.TENDICHVU)
+            Tên dịch vụ: @Html.DisplayFor(model => model.TENDICHVU)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DONVITINH)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.DONVITINH)
+            Đơn vị tính: @Html.DisplayFor(model => model.DONVITINH)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GIATHUEDICHVU)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.GIATHUEDICHVU)
+            Giá thuê dịch vụ: @Html.DisplayFor(model => model.GIATHUEDICHVU)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MALOAIDICHVU)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.MALOAIDICHVU)
+            Mã loại dịch vụ: @Html.DisplayFor(model => model.MALOAIDICHVU)
         </dd>
-
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { maDichVu = Model.MADICHVU }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

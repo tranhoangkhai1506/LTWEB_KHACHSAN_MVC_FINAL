@@ -1,50 +1,32 @@
 ﻿@model WEB_KHACHSAN_MVC.Models.KHACHHANG
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h2>INFORMATION CUSTOMER</h2>
+<div class="btn btn-secondary">@Html.ActionLink("Back", "Index")</div>
 
-<div>
+<h2 style="text-align:center">Chi Tiết Khách Hàng</h2>
+
+<div style="width: 25%; margin: 0 auto">
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            Tên Khách Hàng
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.TENKH)
+            Tên khách hàng: @Html.DisplayFor(model => model.TENKH)
         </dd>
 
-        <dt>
-            Căn Cước Công Dân
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.CCCD)
+            Căn cước công dân: @Html.DisplayFor(model => model.CCCD)
         </dd>
 
-        <dt>
-            Email
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.EMAIL)
+            Email: @Html.DisplayFor(model => model.EMAIL)
         </dd>
 
-        <dt>
-            Điện Thoại
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.DT)
+            Điện thoại: @Html.DisplayFor(model => model.DT)
         </dd>
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MAKH }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

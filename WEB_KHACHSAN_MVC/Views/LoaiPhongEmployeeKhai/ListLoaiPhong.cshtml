@@ -5,29 +5,42 @@
     Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h2>DÁNH SÁCH LOẠI PHÒNG</h2>
+
 <style>
     table, th, td {
         border: 1px solid black;
     }
 </style>
-<p>
-    @Html.ActionLink("Create New", "CreateLoaiPhong")
-</p>
+<div style="text-align: center">
+    <h2>Danh Sách Loại Phòng</h2>
+    <p class="btn btn-success">
+        @Html.ActionLink("Thêm Loại Phòng", "CreateLoaiPhong")
+    </p>
+</div>
+
+<br />
 <table class="table">
-    <tr>
+    <tr style="text-align:center">
         <th>
-            @Html.DisplayNameFor(model => model.TENLOAIPHONG)
+            Mã Loại Phòng
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GIATHUE)
+            Tên Loại Phòng
         </th>
-        <th></th>
+        <th>
+            Giá Thuê
+        </th>
+        <th>
+            Chức năng
+        </th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr style="text-align:center">
+            <td>
+                @Html.DisplayFor(modelItem => item.MALOAIPHONG)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TENLOAIPHONG)
             </td>
@@ -41,5 +54,5 @@
             </td>
         </tr>
     }
-
 </table>
+

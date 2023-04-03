@@ -5,29 +5,33 @@
     Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 }
 
-<h2>DANH SÁCH DỊCH VỤ</h2>
+
 
 <style>
     table, th, td {
         border: 1px solid black;
     }
 </style>
-<p>
-    @Html.ActionLink("Create New", "CreateDichVu")
-</p>
+<div style="text-align: center">
+    <h2>Danh Sách Dịch vụ</h2>
+    <p class="btn btn-success">
+        @Html.ActionLink("Thêm Dịch vụ", "CreateDichVu")
+    </p>
+</div>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TENDICHVU)
+            Tên dịch vụ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DONVITINH)
+            Đơn vị tính
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GIATHUEDICHVU)
+            Giá thuê dịch vụ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MALOAIDICHVU)
+            Mã loại dịch vụ
         </th>
         <th></th>
     </tr>
@@ -49,7 +53,7 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "EditDichVu", new { maDichVu = item.MADICHVU }) |
-                @Html.ActionLink("Details", "Details", new { maDichVu = item.MADICHVU }) |
+                @Html.ActionLink("Details", "DetailDichVu", new { maDichVu = item.MADICHVU }) |
                 @Html.ActionLink("Delete", "DeleteDichVu", new { maDichVu = item.MADICHVU })
             </td>
         </tr>
