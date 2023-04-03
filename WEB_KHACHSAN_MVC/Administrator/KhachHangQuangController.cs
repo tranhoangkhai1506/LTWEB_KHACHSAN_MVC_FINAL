@@ -89,6 +89,19 @@ namespace WEB_KHACHSAN_MVC.Administrator
         public ActionResult Delete(int id)
         {
             var dbDelete = data.KHACHHANGs.First(m => m.MAKH == id);
+            if (dbDelete != null)
+            {
+                PHIEUDATPHONG phieuDatPhong = data.PHIEUDATPHONGs.Where(p => p.MAKH == dbDelete.MAKH).FirstOrDefault();
+                if (phieuDatPhong != null)
+                {
+                    HOADON hoaDon = data.HOADONs.Where(p => p.MAPHIEUDATPHONG == phieuDatPhong.MAPHIEUDATPHONG).FirstOrDefault();
+                    if (hoaDon != null)
+                    {
+                        ViewData["Khongduocxoa"] = "Can`t be deleted! Try again!";
+                    }
+                    ViewData["Khongduocxoa"] = "Can`t be deleted! Try again!";
+                }
+            }
             return View(dbDelete);
         }
         [HttpPost]

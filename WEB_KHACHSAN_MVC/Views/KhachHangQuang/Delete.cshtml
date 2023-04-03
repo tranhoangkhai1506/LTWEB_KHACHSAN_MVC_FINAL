@@ -5,37 +5,50 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2 style="text-align:center">Xóa Khách Hàng</h2>
-<div style="width: 18%; margin: 0 auto">
-    <hr />
-    <dl class="dl-horizontal">
-        <dd>
-            Tên khách hàng: @Html.DisplayFor(model => model.TENKH)
-        </dd>
+@{
+    if (@ViewData["Khongduocxoa"] != null)
+    {
 
-        <dd>
-            Căn cước công dân: @Html.DisplayFor(model => model.CCCD)
-        </dd>
+        <h2 style="text-align:center">Can`t be deleted! Try again!</h2>
+    }
+    else
+    {
+        <h2 style="text-align:center">Xóa Khách Hàng</h2>
+        <div style="width: 18%; margin: 0 auto">
+            <hr />
+            <dl class="dl-horizontal">
+                <dd>
+                    Tên khách hàng: @Html.DisplayFor(model => model.TENKH)
+                </dd>
 
-        <dd>
-            Email: @Html.DisplayFor(model => model.EMAIL)
-        </dd>
+                <dd>
+                    Căn cước công dân: @Html.DisplayFor(model => model.CCCD)
+                </dd>
 
-        <dd>
-            Số điện thoại: @Html.DisplayFor(model => model.DT)
-        </dd>
+                <dd>
+                    Email: @Html.DisplayFor(model => model.EMAIL)
+                </dd>
 
-    </dl>
+                <dd>
+                    Số điện thoại: @Html.DisplayFor(model => model.DT)
+                </dd>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+            </dl>
 
-        <div class="form-actions no-color">
-            <div class="btn btn-secondary">
-                @Html.ActionLink("Back", "Index")
-            </div>
-            <input type="submit" value="Delete" class="btn btn-danger" />
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
+                <div class="form-actions no-color">
+                    <div class="btn btn-secondary">
+                        @Html.ActionLink("Back", "Index")
+                    </div>
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+
+                </div>
+            }
         </div>
     }
-</div>
+}
+
+
