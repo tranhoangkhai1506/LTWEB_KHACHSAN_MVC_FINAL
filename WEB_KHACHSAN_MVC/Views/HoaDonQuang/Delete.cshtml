@@ -5,53 +5,35 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>HOADON</h4>
+<h2 style="text-align:center">Xóa Hóa Đơn</h2>
+<div style="width: 28%; margin: 0 auto">
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TONGTIEN)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.TONGTIEN)
+            Tổng tiền: @Html.DisplayFor(model => model.TONGTIEN)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NGAYTHANHTOAN)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.NGAYTHANHTOAN)
+            Ngày thành toán: @Html.DisplayFor(model => model.NGAYTHANHTOAN)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MAPHIEUDATPHONG)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.MAPHIEUDATPHONG)
+            Mã Phiếu: @Html.DisplayFor(model => model.MAPHIEUDATPHONG)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MANHANVIEN)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.MANHANVIEN)
+            Mã nhân viên: @Html.DisplayFor(model => model.MANHANVIEN)
         </dd>
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
-
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <div class="btn btn-secondary">
+                @Html.ActionLink("Back", "Index")
+            </div>
+            <input type="submit" value="Delete" class="btn btn-danger" />
+
         </div>
+
     }
 </div>

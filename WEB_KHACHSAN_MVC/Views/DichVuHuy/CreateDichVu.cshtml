@@ -5,18 +5,17 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Create</h2>
+<h2 style="text-align:center">Thêm Dịch Vụ</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>DICHVU</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.TENDICHVU, htmlAttributes: new { @class = "control-label col-md-2" })
+            Tên dịch vụ
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TENDICHVU, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.TENDICHVU, "", new { @class = "text-danger" })
@@ -24,7 +23,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DONVITINH, htmlAttributes: new { @class = "control-label col-md-2" })
+            Đơn vị tính
             <div class="col-md-10">
                 @Html.EditorFor(model => model.DONVITINH, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.DONVITINH, "", new { @class = "text-danger" })
@@ -32,7 +31,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.GIATHUEDICHVU, htmlAttributes: new { @class = "control-label col-md-2" })
+            Giá thuê dịch vụ
             <div class="col-md-10">
                 @Html.EditorFor(model => model.GIATHUEDICHVU, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.GIATHUEDICHVU, "", new { @class = "text-danger" })
@@ -40,21 +39,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MALOAIDICHVU, htmlAttributes: new { @class = "control-label col-md-2" })
+            Mã loại dịch vụ
             <div class="col-md-10">
                 @Html.EditorFor(model => model.MALOAIDICHVU, new { htmlAttributes = new { @class = "form-control", required = "required", min = "1" } })
                 @Html.ValidationMessageFor(model => model.MALOAIDICHVU, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+    </div>
+    <br />
+    <div class="form-group" >
+        <div class="col-md-offset-2 col-md-10">
+            <div class="btn btn-secondary"> @Html.ActionLink("Back", "ListDichVu") </div>
+            <input type="submit" value="Save" class="btn btn-success" />
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "ListDichVu")
-</div>

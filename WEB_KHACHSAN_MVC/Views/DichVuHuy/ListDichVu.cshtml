@@ -5,16 +5,20 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>List</h2>
 
-<p>
-    @Html.ActionLink("Create New", "CreateDichVu")
-</p>
+
 <style>
     table, th, td {
         border: 1px solid black;
     }
 </style>
+<div style="text-align: center">
+    <h2>Danh Sách Dịch vụ</h2>
+    <p class="btn btn-success">
+        @Html.ActionLink("Thêm Dịch vụ", "CreateDichVu")
+    </p>
+</div>
+
 <table class="table">
     <tr>
         <th>
@@ -32,26 +36,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TENDICHVU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DONVITINH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GIATHUEDICHVU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MALOAIDICHVU)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditDichVu", new { maDichVu = item.MADICHVU }) |
-            @Html.ActionLink("Details", "DetailDichVu", new { maDichVu = item.MADICHVU }) |
-            @Html.ActionLink("Delete", "DeleteDichVu", new { maDichVu = item.MADICHVU })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENDICHVU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DONVITINH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIATHUEDICHVU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MALOAIDICHVU)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditDichVu", new { maDichVu = item.MADICHVU }) |
+                @Html.ActionLink("Details", "DetailDichVu", new { maDichVu = item.MADICHVU }) |
+                @Html.ActionLink("Delete", "DeleteDichVu", new { maDichVu = item.MADICHVU })
+            </td>
+        </tr>
+    }
 
 </table>

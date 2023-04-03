@@ -5,46 +5,28 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Detail</h2>
+<div class="btn btn-secondary">@Html.ActionLink("Back", "Index")</div>
 
-<div>
+<h2 style="text-align:center">Chi Tiết Khách Hàng</h2>
+
+<div style="width: 25%; margin: 0 auto">
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            Tên khách hàng
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.TENKH)
+            Tên khách hàng: @Html.DisplayFor(model => model.TENKH)
         </dd>
 
-        <dt>
-            Căn cước công dân
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.CCCD)
+            Căn cước công dân: @Html.DisplayFor(model => model.CCCD)
         </dd>
 
-        <dt>
-            Email
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.EMAIL)
+            Email: @Html.DisplayFor(model => model.EMAIL)
         </dd>
 
-        <dt>
-            Điện thoại
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.DT)
+            Điện thoại: @Html.DisplayFor(model => model.DT)
         </dd>
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MAKH }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

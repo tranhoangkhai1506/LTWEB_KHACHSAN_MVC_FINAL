@@ -5,46 +5,29 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Detail</h2>
+<div class="btn btn-secondary">@Html.ActionLink("Back", "Index")</div>
 
-<div>
+<h2 style="text-align:center">Chi Tiết Hóa đơn</h2>
+
+<div style="width: 28%; margin: 0 auto">
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            Tổng tiền
-        </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TONGTIEN)
+            Tổng tiền: @Html.DisplayFor(model => model.TONGTIEN)
         </dd>
 
-        <dt>
-            Ngày thanh toán
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.NGAYTHANHTOAN)
+            Ngày thanh toán: @Html.DisplayFor(model => model.NGAYTHANHTOAN)
         </dd>
 
-        <dt>
-            Mã phiếu đặt phòng
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.MAPHIEUDATPHONG)
+            Mã phiếu đặt phòng: @Html.DisplayFor(model => model.MAPHIEUDATPHONG)
         </dd>
 
-        <dt>
-            Mã nhân viên
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.MANHANVIEN)
+            Mã nhân viên: @Html.DisplayFor(model => model.MANHANVIEN)
         </dd>
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MAHOADON }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

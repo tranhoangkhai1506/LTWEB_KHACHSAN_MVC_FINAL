@@ -5,43 +5,24 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>KHACHHANG</h4>
+<h2 style="text-align:center">Xóa Hóa Đơn</h2>
+<div style="width: 28%; margin: 0 auto">
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TENKH)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.TENKH)
+            Tên khách hàng: @Html.DisplayFor(model => model.TENKH)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CCCD)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.CCCD)
+            Căn cước công dân: @Html.DisplayFor(model => model.CCCD)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.EMAIL)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.EMAIL)
+            Email: @Html.DisplayFor(model => model.EMAIL)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DT)
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.DT)
+            Số điện thoại: @Html.DisplayFor(model => model.DT)
         </dd>
 
     </dl>
@@ -50,8 +31,11 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <div class="btn btn-secondary">
+                @Html.ActionLink("Back", "Index")
+            </div>
+            <input type="submit" value="Delete" class="btn btn-danger" />
+
         </div>
     }
 </div>
