@@ -30,7 +30,7 @@
         <th>
             Giá Thuê
         </th>
-        <th style="text-align:center">
+        <th>
             Chức năng
         </th>
     </tr>
@@ -47,7 +47,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.GIATHUE)
             </td>
-            <td style="text-align:center">
+            <td>
                 @Html.ActionLink("Edit", "EditLoaiPhong", new { maLoaiPhong = item.MALOAIPHONG }) |
                 @Html.ActionLink("Details", "Details", new { maLoaiPhong = item.MALOAIPHONG }) |
                 @Html.ActionLink("Delete", "DeleteLoaiPhong", new { maLoaiPhong = item.MALOAIPHONG })

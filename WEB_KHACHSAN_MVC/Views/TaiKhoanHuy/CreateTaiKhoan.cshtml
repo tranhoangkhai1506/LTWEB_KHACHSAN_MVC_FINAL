@@ -5,56 +5,53 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>CreateTaiKhoan</h2>
+<h2 style="text-align:center">Thêm Tài Khoản</h2>
 
-@using (Html.BeginForm()) 
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    <h4>TAIKHOAN</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.TENDANGNHAP, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TENDANGNHAP, new { htmlAttributes = new { @class = "form-control", required = "required" } })
-            @Html.ValidationMessageFor(model => model.TENDANGNHAP, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.MATKHAU, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.MATKHAU, new { htmlAttributes = new { @class = "form-control", required = "required" } })
-            @Html.ValidationMessageFor(model => model.MATKHAU, "", new { @class = "text-danger" })
-            <h6 style="color: red">@ViewData["ChuoiMatKhauSai"]</h6>
-        </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.MANHANVIEN, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.MANHANVIEN, new { htmlAttributes = new { @class = "form-control", required = "required", min = "1" } })
-            @Html.ValidationMessageFor(model => model.MANHANVIEN, "", new { @class = "text-danger" })
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            Tên Đăng Nhập
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.TENDANGNHAP, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.TENDANGNHAP, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            Mật Khẩu
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.MATKHAU, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                @Html.ValidationMessageFor(model => model.MATKHAU, "", new { @class = "text-danger" })
+                <h6 style="color: red">@ViewData["ChuoiMatKhauSai"]</h6>
+            </div>
+        </div>
+
+        <div class="form-group">
+            Mã Nhân Viên
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.MANHANVIEN, new { htmlAttributes = new { @class = "form-control", required = "required", min = "1" } })
+                @Html.ValidationMessageFor(model => model.MANHANVIEN, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Mã Phân Quyền
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.MAPHANQUYEN, new { htmlAttributes = new { @class = "form-control", required = "required", min = "1" } })
+                @Html.ValidationMessageFor(model => model.MAPHANQUYEN, "", new { @class = "text-danger" })
+            </div>
         </div>
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.MAPHANQUYEN, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.MAPHANQUYEN, new { htmlAttributes = new { @class = "form-control", required = "required", min = "1" } })
-            @Html.ValidationMessageFor(model => model.MAPHANQUYEN, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
+    <br />
+    <div class="form-group" style="display: flex; justify-content: center; margin-left: 505px">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <div class="btn btn-secondary"> @Html.ActionLink("Back", "ListTaiKhoan") </div>
+            <input type="submit" value="Save" class="btn btn-success" />
         </div>
     </div>
-</div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "ListTaiKhoan")
-</div>

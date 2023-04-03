@@ -5,61 +5,35 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
+<div class="btn btn-secondary">@Html.ActionLink("Back", "ListPhong")</div>
 
-<div>
-    <h4>PHONG</h4>
+<h2 style="text-align:center">Chi Tiết Phòng</h2>
+<div style="width: 16%; margin: 0 auto">
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            Mã phòng
-        </dt>
         <dd>
-            @Html.DisplayFor(model => model.MAPHONG)
-        </dd>
-        <dt>
-            Tên Phòng
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TENPHONG)
+            Mã phòng: @Html.DisplayFor(model => model.MAPHONG)
         </dd>
 
-        <dt>
-            Số Người Tối Đa
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.SONGUOITOIDA)
+            Tên Phòng: @Html.DisplayFor(model => model.TENPHONG)
         </dd>
 
-        <dt>
-            Tình Trạng
-        </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.TINHTRANG)
+            Số Người Tối Đa: @Html.DisplayFor(model => model.SONGUOITOIDA)
         </dd>
 
-        <dt>
-            Hình
-        </dt>
-
         <dd>
-            <img src="@Model.HINH" width="90" height="90" alt="ERROR" />
+            Tình Trạng: @Html.DisplayFor(model => model.TINHTRANG)
         </dd>
 
-        <dt>
-            Mã Loại Phòng
-        </dt>
+        <dd>
+            Hình: <img src="@Model.HINH" width="90" height="90" alt="ERROR" />
+        </dd>
 
         <dd>
-            @Html.DisplayFor(model => model.MALOAIPHONG)
+            Mã Loại Phòng: @Html.DisplayFor(model => model.MALOAIPHONG)
         </dd>
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "EditPhong", new { maPhong = Model.MAPHONG }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

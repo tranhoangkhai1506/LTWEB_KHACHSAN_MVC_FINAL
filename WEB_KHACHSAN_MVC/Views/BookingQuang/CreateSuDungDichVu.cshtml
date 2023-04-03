@@ -18,8 +18,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.NGAYSUDUNG, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NGAYSUDUNG, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NGAYSUDUNG, "", new { @class = "text-danger" })
+                <div class="date" id="date1" data-target-input="nearest">
+                    <input type="text" class="form-control datetimepicker-input" name="NGAYSUDUNG" data-target="#date1" data-toggle="datetimepicker" required />
+                </div>
             </div>
         </div>
 

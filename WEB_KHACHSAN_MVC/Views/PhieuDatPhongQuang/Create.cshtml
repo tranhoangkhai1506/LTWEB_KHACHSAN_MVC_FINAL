@@ -25,16 +25,18 @@
         <div class="form-group">
             @Html.LabelFor(model => model.NGAYNHANPHONG, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-12">
-                @Html.EditorFor(model => model.NGAYNHANPHONG, new { htmlAttributes = new { @class = "form-control", required = "required" } })
-                @Html.ValidationMessageFor(model => model.NGAYNHANPHONG, "", new { @class = "text-danger" })
+                <div class="date" id="date1" data-target-input="nearest">
+                    <input type="text" class="form-control datetimepicker-input" name="NGAYNHANPHONG" data-target="#date1" data-toggle="datetimepicker" required />
+                </div>
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.NGAYTRADUKIEN, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-12">
-                @Html.EditorFor(model => model.NGAYTRADUKIEN, new { htmlAttributes = new { @class = "form-control", required = "required" } })
-                @Html.ValidationMessageFor(model => model.NGAYTRADUKIEN, "", new { @class = "text-danger" })
+                <div class="date" id="date2" data-target-input="nearest">
+                    <input type="text" class="form-control datetimepicker-input" name="NGAYTRADUKIEN" data-target="#date2" data-toggle="datetimepicker" required />
+                </div>
             </div>
         </div>
 
