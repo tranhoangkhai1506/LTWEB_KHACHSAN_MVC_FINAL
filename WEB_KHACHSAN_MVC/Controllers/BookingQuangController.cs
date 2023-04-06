@@ -93,11 +93,15 @@ namespace WEB_KHACHSAN_MVC.Controllers
             }
             else
             {
+
                 KHACHHANG khachhang = context.KHACHHANGs.Where(p => p.CCCD == long.Parse(cccdKhachHang_Booking)).FirstOrDefault();
                 PHONG phongDuocThue = context.PHONGs.Where(p => p.MAPHONG == maPhongBooking).FirstOrDefault();
                 if (phongDuocThue != null)
                 {
-                    if (khachhang != null)
+                    if (phongDuocThue.SONGUOITOIDA < int.Parse(C_songuoi))
+                    {
+                         ViewData["SoNguoi"] = "Số người không vượt quá: " + phongDuocThue.SONGUOITOIDA;
+                    }else if (khachhang != null)
                     {
                         pd.SONGUOI = int.Parse(C_songuoi);
                         pd.NGAYNHANPHONG = Convert.ToDateTime(C_ngaynhanphong);
@@ -111,7 +115,7 @@ namespace WEB_KHACHSAN_MVC.Controllers
                         phongDuocThue.TINHTRANG = "Đang được thuê";
                         context.SubmitChanges();
                         return RedirectToAction("QuestionUseOrtherService", "BookingQuang");
-                    } 
+                    }
                 }
             }
             return this.TaoPhieuDatPhong();

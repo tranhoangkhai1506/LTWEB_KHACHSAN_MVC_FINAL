@@ -19,6 +19,9 @@
 <table class="table" style="text-align:center">
     <tr>
         <th>
+            Mã Nhân Viên
+        </th>
+        <th>
             Tên Nhân Viên
         </th>
         <th>
@@ -32,6 +35,9 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MANHANVIEN)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TENNHANVIEN)
             </td>
